@@ -1,0 +1,2 @@
+database.sql文件中含有项目所使用的数据库的ddl文件和截至20230909的测试数据。
+使用方法：在您的Oracle中建立一个名为release的空数据库，然后直接运行database.sql即可。

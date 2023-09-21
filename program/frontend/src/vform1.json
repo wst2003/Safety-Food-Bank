@@ -1,0 +1,623 @@
+﻿{
+  "widgetList": [
+    {
+      "key": 55244,
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "key": 49790,
+              "type": "input",
+              "icon": "text-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_NAME",
+                "label": "📌商品名称",
+                "labelAlign": "label-center-align",
+                "type": "text",
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "readonly": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "showPassword": false,
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "minLength": null,
+                "maxLength": null,
+                "showWordLimit": false,
+                "prefixIcon": "",
+                "suffixIcon": "",
+                "appendButton": false,
+                "appendButtonDisabled": false,
+                "buttonIcon": "custom-search",
+                "onCreated": "",
+                "onMounted": "",
+                "onInput": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": "",
+                "onAppendButtonClick": ""
+              },
+              "id": "input74799"
+            },
+            {
+              "key": 52329,
+              "type": "textarea",
+              "icon": "textarea-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_INTRODUCTION",
+                "label": "📝商品描述",
+                "labelAlign": "label-center-align",
+                "rows": 3,
+                "defaultValue": "",
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "readonly": false,
+                "disabled": false,
+                "hidden": false,
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "minLength": null,
+                "maxLength": null,
+                "showWordLimit": false,
+                "onCreated": "",
+                "onMounted": "",
+                "onInput": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "textarea81941"
+            }
+          ],
+          "options": {
+            "name": "gridCol104521",
+            "hidden": false,
+            "span": 14,
+            "offset": 0,
+            "push": 3,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-104521"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "select",
+              "icon": "select-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_CATEGORIES",
+                "label": "🍔商品类别",
+                "labelAlign": "label-center-align",
+                "defaultValue": [],
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "clearable": true,
+                "filterable": false,
+                "allowCreate": false,
+                "remote": false,
+                "automaticDropdown": false,
+                "multiple": true,
+                "multipleLimit": 6,
+                "optionItems": [
+                  {
+                    "value": "蔬菜",
+                    "label": "蔬菜"
+                  },
+                  {
+                    "value": "果品",
+                    "label": "果品"
+                  },
+                  {
+                    "value": "饮料",
+                    "label": "饮料"
+                  },
+                  {
+                    "value": "零食",
+                    "label": "零食"
+                  },
+                  {
+                    "value": "蛋奶",
+                    "label": "蛋奶"
+                  },
+                  {
+                    "value": "肉制品",
+                    "label": "肉制品"
+                  },
+                  {
+                    "value": "预制菜",
+                    "label": "预制菜"
+                  },
+                  {
+                    "value": "熟食",
+                    "label": "熟食"
+                  },
+                  {
+                    "value": "面点",
+                    "label": "面点"
+                  },
+                  {
+                    "value": "保健品",
+                    "label": "保健品"
+                  },
+                  {
+                    "value": "调味品",
+                    "label": "调味品"
+                  },
+                  {
+                    "value": "其他",
+                    "label": "其他"
+                  }
+                ],
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onRemoteQuery": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "select35419"
+            }
+          ],
+          "options": {
+            "name": "gridCol83210",
+            "hidden": false,
+            "span": 6,
+            "offset": 0,
+            "push": 3,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-83210"
+        }
+      ],
+      "options": {
+        "name": "grid56906",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": []
+      },
+      "id": "grid56906"
+    },
+    {
+      "key": 55244,
+      "type": "grid",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "key": 29847,
+              "type": "number",
+              "icon": "number-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_ORIPRICE",
+                "label": "💰商品原价",
+                "labelAlign": "label-center-align",
+                "defaultValue": 0.01,
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": true,
+                "hidden": false,
+                "required": true,
+                "requiredHint": "",
+                "validation": "number",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "min": 0.01,
+                "max": 100000000000,
+                "precision": 2,
+                "step": 1,
+                "controlsPosition": "right",
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "number70244"
+            }
+          ],
+          "options": {
+            "name": "gridCol35604",
+            "hidden": false,
+            "span": 7,
+            "offset": 0,
+            "push": 3,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-35604"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "key": 29847,
+              "type": "number",
+              "icon": "number-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_LEFT",
+                "label": "📊商品余量",
+                "labelAlign": "label-center-align",
+                "defaultValue": 1,
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "disabled": false,
+                "hidden": false,
+                "required": true,
+                "requiredHint": "",
+                "validation": "number",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "min": 1,
+                "max": 100000000000,
+                "precision": 0,
+                "step": 1,
+                "controlsPosition": "right",
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "number41801"
+            }
+          ],
+          "options": {
+            "name": "gridCol72488",
+            "hidden": false,
+            "span": 6,
+            "offset": 0,
+            "push": 3,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-72488"
+        },
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "type": "date",
+              "icon": "date-field",
+              "formItemFlag": true,
+              "options": {
+                "name": "COM_EXPIRATIONDATE",
+                "label": "📆保质期至",
+                "labelAlign": "label-center-align",
+                "type": "date",
+                "defaultValue": null,
+                "placeholder": "",
+                "columnWidth": "200px",
+                "size": "",
+                "labelWidth": null,
+                "labelHidden": false,
+                "readonly": false,
+                "disabled": true,
+                "hidden": false,
+                "clearable": false,
+                "editable": false,
+                "format": "YYYY-MM-DD",
+                "valueFormat": "YYYY-MM-DD",
+                "required": true,
+                "requiredHint": "",
+                "validation": "",
+                "validationHint": "",
+                "customClass": [],
+                "labelIconClass": null,
+                "labelIconPosition": "rear",
+                "labelTooltip": null,
+                "onCreated": "",
+                "onMounted": "",
+                "onChange": "",
+                "onFocus": "",
+                "onBlur": "",
+                "onValidate": ""
+              },
+              "id": "date94236"
+            }
+          ],
+          "options": {
+            "name": "gridCol109551",
+            "hidden": false,
+            "span": 6,
+            "offset": 0,
+            "push": 4,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-109551"
+        }
+      ],
+      "options": {
+        "name": "grid39955",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": []
+      },
+      "id": "grid39955"
+    },
+    {
+      "key": 28338,
+      "type": "grid",
+      "alias": "",
+      "category": "container",
+      "icon": "grid",
+      "cols": [
+        {
+          "type": "grid-col",
+          "category": "container",
+          "icon": "grid-col",
+          "internal": true,
+          "widgetList": [
+            {
+              "key": 58077,
+              "type": "card",
+              "category": "container",
+              "icon": "card",
+              "widgetList": [
+                {
+                  "key": 108713,
+                  "type": "sub-form",
+                  "category": "container",
+                  "icon": "sub-form",
+                  "widgetList": [
+                    {
+                      "key": 108129,
+                      "type": "date",
+                      "icon": "date-field",
+                      "formItemFlag": true,
+                      "options": {
+                        "name": "TIME_POINT",
+                        "label": "⏰时间节点",
+                        "labelAlign": "label-left-align",
+                        "type": "date",
+                        "defaultValue": null,
+                        "placeholder": "",
+                        "columnWidth": "300px",
+                        "size": "",
+                        "autoFullWidth": true,
+                        "labelWidth": null,
+                        "labelHidden": false,
+                        "labelWrap": false,
+                        "readonly": false,
+                        "disabled": false,
+                        "hidden": false,
+                        "clearable": false,
+                        "editable": false,
+                        "format": "YYYY-MM-DD",
+                        "valueFormat": "YYYY-MM-DD",
+                        "required": true,
+                        "requiredHint": "",
+                        "validation": "",
+                        "validationHint": "",
+                        "customClass": [],
+                        "labelIconClass": null,
+                        "labelIconPosition": "rear",
+                        "labelTooltip": null,
+                        "onCreated": "",
+                        "onMounted": "",
+                        "onChange": "console.log('现在是'+localStorage.getItem('isFormDataFirstUpload'));\n  if(localStorage.getItem('isFormDataFirstUpload')==='1')\n  {\n    const cur = new Date(value).setHours(0, 0, 0, 0);\n    const today = new Date().setHours(0, 0, 0, 0);\n    console.log(cur);\n    console.log(today);\n    if (cur <= today) {\n      console.log('这个日期已经过了，不能改了');\n      this.setDisabled(true);\n      return;\n    }\n    else{\n      localStorage.setItem('isFormDataFirstUpload','0');\n    }\n  }\n  console.log(\"时间点更新！\");\n  if(value==null||value === ''){\n    console.log(\"设为空值，等用户改变\");\n    return;\n  }\n  \n  const cur = new Date(value).setHours(0, 0, 0, 0);\n  const exp = new Date(this.getWidgetRef('COM_EXPIRATIONDATE').getValue()).setHours(0, 0, 0, 0);\n  const today = new Date().setHours(0, 0, 0, 0);\n\n  if (cur < today) {\n    alert('日期不能小于今日！请重新填写');\n    this.setValue('');\n    return;\n  } else if (cur > exp) {\n    alert('日期不能大于保质期！请重新填写');\n    this.setValue('');\n    return;\n  } \n  \n  dateArray = Array.from(this.getWidgetRef('COM_TIME_PRICE').getSubFormValues());\n  let isStrictlyIncreasing = true;\n  for (let i = 1; i < dateArray.length; i++) {\n    if(dateArray[i - 1].TIME_POINT==null||dateArray[i - 1].TIME_POINT===''||dateArray[i].TIME_POINT==null||dateArray[i].TIME_POINT===''){\n      console.log(\"数组中有空值暂不比较\");\n      return;\n    }\n    const prevDate = new Date(dateArray[i - 1].TIME_POINT);\n    const currentDate = new Date(dateArray[i].TIME_POINT);\n    if (currentDate <= prevDate) {\n      isStrictlyIncreasing = false;\n      break;\n    }\n  }\n  \n  if (isStrictlyIncreasing) {\n    console.log(\"Dates are strictly increasing.\");\n  } else {\n    console.log(\"Dates are not strictly increasing. Fail!\");\n    alert('日期必须是递增的！请重新填写')\n    this.setValue('');\n  }",
+                        "onFocus": "",
+                        "onBlur": "",
+                        "onValidate": ""
+                      },
+                      "id": "date60200"
+                    },
+                    {
+                      "key": 112826,
+                      "type": "number",
+                      "icon": "number-field",
+                      "formItemFlag": true,
+                      "options": {
+                        "name": "PRICE_PERCENT",
+                        "label": "价格占原价百分比",
+                        "labelAlign": "label-left-align",
+                        "defaultValue": 0,
+                        "placeholder": "",
+                        "columnWidth": "200px",
+                        "size": "",
+                        "labelWidth": null,
+                        "labelHidden": false,
+                        "labelWrap": false,
+                        "disabled": false,
+                        "hidden": false,
+                        "required": true,
+                        "requiredHint": "",
+                        "validation": "",
+                        "validationHint": "",
+                        "customClass": [],
+                        "labelIconClass": null,
+                        "labelIconPosition": "rear",
+                        "labelTooltip": null,
+                        "min": 0,
+                        "max": 100,
+                        "precision": 0,
+                        "step": 1,
+                        "controlsPosition": "right",
+                        "onCreated": "",
+                        "onMounted": "",
+                        "onChange": "  if(localStorage.getItem('isFormDataFirstUpload')==='1'){\n    this.setDisabled(true);\n    return;\n  }\n  if(value==null||value === ''){\n    console.log(\"设为空值，等用户改变\");\n    return;\n  }\n  \n  percentArray = Array.from(this.getWidgetRef('COM_TIME_PRICE').getSubFormValues());\n  let isStrictlyDecreasing = true;\n  for (let i = 1; i < percentArray.length; i++) {\n    if(percentArray[i - 1].PRICE_PERCENT==null||percentArray[i - 1].PRICE_PERCENT===''||percentArray[i].PRICE_PERCENT==null||percentArray[i].PRICE_PERCENT===''){\n      console.log(\"数组中有空值暂不比较\");\n      return;\n    }\n    const prevPRICE_PERCENT = new Date(percentArray[i - 1].PRICE_PERCENT);\n    const currentPRICE_PERCENT = new Date(percentArray[i].PRICE_PERCENT);\n    if (prevPRICE_PERCENT <= currentPRICE_PERCENT) {\n      isStrictlyDecreasing = false;\n      break;\n    }\n  }\n  \n  if (!isStrictlyDecreasing) {\n    alert('百分比必须是递减的！请重新填写')\n    this.setValue('');\n  }",
+                        "onFocus": "",
+                        "onBlur": "",
+                        "onValidate": ""
+                      },
+                      "id": "number79596"
+                    }
+                  ],
+                  "options": {
+                    "name": "COM_TIME_PRICE",
+                    "showBlankRow": true,
+                    "showRowNumber": true,
+                    "labelAlign": "label-center-align",
+                    "hidden": false,
+                    "disabled": false,
+                    "actionColumnPosition": "left",
+                    "customClass": [],
+                    "onSubFormRowAdd": "",
+                    "onSubFormRowInsert": "",
+                    "onSubFormRowDelete": "",
+                    "onSubFormRowChange": ""
+                  },
+                  "id": "subform85346"
+                }
+              ],
+              "options": {
+                "name": "COM_TIME_PRICE_CARD",
+                "label": "📉设置降价节点",
+                "hidden": false,
+                "folded": false,
+                "showFold": true,
+                "cardWidth": "100%",
+                "shadow": "never",
+                "customClass": []
+              },
+              "id": "card14933"
+            }
+          ],
+          "options": {
+            "name": "gridCol86316",
+            "hidden": false,
+            "span": 15,
+            "offset": 0,
+            "push": 3,
+            "pull": 0,
+            "responsive": false,
+            "md": 12,
+            "sm": 12,
+            "xs": 12,
+            "customClass": []
+          },
+          "id": "grid-col-86316"
+        }
+      ],
+      "options": {
+        "name": "grid82604",
+        "hidden": false,
+        "gutter": 12,
+        "colHeight": null,
+        "customClass": []
+      },
+      "id": "grid82604"
+    }
+  ],
+  "formConfig": {
+    "modelName": "formData",
+    "refName": "vForm",
+    "rulesName": "rules",
+    "labelWidth": 80,
+    "labelPosition": "left",
+    "size": "",
+    "labelAlign": "label-left-align",
+    "cssCode": "",
+    "customClass": [],
+    "functions": "",
+    "layoutType": "PC",
+    "jsonVersion": 3,
+    "dataSources": [],
+    "onFormCreated": "",
+    "onFormMounted": "",
+    "onFormDataChange": ""
+  }
+}

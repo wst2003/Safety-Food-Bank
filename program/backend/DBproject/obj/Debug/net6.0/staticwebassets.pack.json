@@ -1,0 +1,985 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\ItemCF\\1000008.txt",
+      "PackagePath": "staticwebassets\\ItemCF\\1000008.txt"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\ItemCF\\1000012.txt",
+      "PackagePath": "staticwebassets\\ItemCF\\1000012.txt"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\ItemCF\\1000017.txt",
+      "PackagePath": "staticwebassets\\ItemCF\\1000017.txt"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\ItemCF\\1000018.txt",
+      "PackagePath": "staticwebassets\\ItemCF\\1000018.txt"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\ItemCF\\1000019.txt",
+      "PackagePath": "staticwebassets\\ItemCF\\1000019.txt"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\appeal_image\\appeal_img_1.jpg",
+      "PackagePath": "staticwebassets\\appeal_image\\appeal_img_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\appeal_image\\appeal_img_4.jpg",
+      "PackagePath": "staticwebassets\\appeal_image\\appeal_img_4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\appeal_image\\appeal_img_5.jpg",
+      "PackagePath": "staticwebassets\\appeal_image\\appeal_img_5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\appeal_image\\appeal_img_6.jpg",
+      "PackagePath": "staticwebassets\\appeal_image\\appeal_img_6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\appeal_image\\appeal_img_7.jpg",
+      "PackagePath": "staticwebassets\\appeal_image\\appeal_img_7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\3a717314-23df-49f0-8179-7838cbac4cd0.png",
+      "PackagePath": "staticwebassets\\chat_image\\3a717314-23df-49f0-8179-7838cbac4cd0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\4663205a-cf06-4940-be35-f6d8f499556e.png",
+      "PackagePath": "staticwebassets\\chat_image\\4663205a-cf06-4940-be35-f6d8f499556e.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\5447976c-c329-4a1d-a79f-5239125af8ac.png",
+      "PackagePath": "staticwebassets\\chat_image\\5447976c-c329-4a1d-a79f-5239125af8ac.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\9d3e28ff-e86b-4650-b6b6-f72440f6e6dd.png",
+      "PackagePath": "staticwebassets\\chat_image\\9d3e28ff-e86b-4650-b6b6-f72440f6e6dd.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\d0ce8762-8b43-454f-9c9e-0f77cd496fc6.png",
+      "PackagePath": "staticwebassets\\chat_image\\d0ce8762-8b43-454f-9c9e-0f77cd496fc6.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\d75fce9a-086e-487a-8fb4-2e596744a72b.png",
+      "PackagePath": "staticwebassets\\chat_image\\d75fce9a-086e-487a-8fb4-2e596744a72b.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\chat_image\\e7608ab8-10bb-4587-a0e1-cda99aeb989d.jpg",
+      "PackagePath": "staticwebassets\\chat_image\\e7608ab8-10bb-4587-a0e1-cda99aeb989d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\100\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\100\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\101\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\101\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\102\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\102\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\103\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\103\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\104\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\104\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\105\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\105\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\106\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\106\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\107\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\107\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\108\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\108\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\109\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\109\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\10\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\10\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\110\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\110\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\111\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\111\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\112\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\112\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\113\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\113\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\114\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\114\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\115\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\115\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\116\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\116\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\117\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\117\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\118\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\118\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\119\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\119\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\11\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\11\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\11\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\11\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\120\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\120\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\121\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\121\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\122\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\122\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\123\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\123\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\124\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\124\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\125\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\125\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\126\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\126\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\127\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\127\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\128\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\128\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\129\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\129\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\12\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\12\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\130\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\130\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\131\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\131\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\132\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\132\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\13\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\13\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\141\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\141\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\142\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\142\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\143\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\143\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\144\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\144\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\145\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\145\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\146\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\146\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\147\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\147\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\148\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\148\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\149\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\149\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\14\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\14\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\150\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\150\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\151\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\151\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\152\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\152\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\153\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\153\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\154\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\154\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\15\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\15\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\15\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\15\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\161\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\161\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\162\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\162\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\163\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\163\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\164\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\164\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\165\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\165\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\166\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\166\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\167\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\167\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\168\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\168\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\169\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\169\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\16\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\16\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\170\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\170\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\171\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\171\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\171\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\171\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\172\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\172\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\173\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\173\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\174\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\174\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\174\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\174\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\175\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\175\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\176\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\176\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\177\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\177\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\178\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\178\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\179\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\179\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\17\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\17\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\180\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\180\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\181\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\181\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\182\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\182\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\183\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\183\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\184\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\184\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\185\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\185\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\186\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\186\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\187\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\187\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\188\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\188\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\189\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\189\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\18\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\18\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\190\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\190\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\191\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\191\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\192\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\192\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\192\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\192\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\192\\com_image_2.png",
+      "PackagePath": "staticwebassets\\commodity_image\\192\\com_image_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\193\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\193\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\193\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\193\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\194\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\194\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\19\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\19\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\20\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\20\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\20\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\20\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\21\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\21\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\22\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\22\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\22\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\22\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\22\\com_image_2.png",
+      "PackagePath": "staticwebassets\\commodity_image\\22\\com_image_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\23\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\23\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\24\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\24\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\25\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\25\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\26\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\26\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\27\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\27\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\28\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\28\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\29\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\29\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\29\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\29\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\30\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\30\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\31\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\31\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\32\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\32\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\33\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\33\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\34\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\34\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\35\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\35\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\36\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\36\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\37\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\37\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\38\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\38\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\39\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\39\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\40\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\40\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\41\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\41\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\42\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\42\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\43\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\43\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\44\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\44\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\45\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\45\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\46\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\46\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\46\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\46\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\47\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\47\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\48\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\48\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\49\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\49\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\4\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\4\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\4\\com_image_1.jpg",
+      "PackagePath": "staticwebassets\\commodity_image\\4\\com_image_1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\50\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\50\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\51\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\51\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\52\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\52\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\53\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\53\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\54\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\54\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\55\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\55\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\56\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\56\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\57\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\57\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\58\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\58\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\59\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\59\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\5\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\5\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\61\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\61\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\62\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\62\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\63\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\63\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\64\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\64\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\65\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\65\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\66\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\66\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\67\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\67\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\68\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\68\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\69\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\69\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\6\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\6\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\70\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\70\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\71\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\71\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\72\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\72\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\73\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\73\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\74\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\74\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\75\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\75\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\75\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\75\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\76\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\76\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\77\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\77\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\78\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\78\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\79\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\79\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\7\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\7\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\7\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\7\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\80\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\80\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\81\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\81\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\82\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\82\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\83\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\83\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\84\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\84\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\85\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\85\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\86\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\86\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\87\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\87\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\88\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\88\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\89\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\89\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\8\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\8\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\8\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_image\\8\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\90\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\90\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\91\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\91\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\92\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\92\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\93\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\93\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\94\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\94\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\95\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\95\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\96\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\96\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\97\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\97\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\98\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\98\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\99\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\99\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_image\\9\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_image\\9\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\122\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\122\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\257\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\257\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\34\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\34\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\34\\com_image_1.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\34\\com_image_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\35\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\35\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\commodity_tmp\\378\\com_image_0.png",
+      "PackagePath": "staticwebassets\\commodity_tmp\\378\\com_image_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000004_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000004_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000005_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000005_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000006_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000006_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000009_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000009_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000010_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000010_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000011_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000011_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000013_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000013_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000014_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000014_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000015_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000015_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000016_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000016_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000021_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000021_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000022_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000022_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\licenses\\1000023_license.jpg",
+      "PackagePath": "staticwebassets\\licenses\\1000023_license.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000004_picture_ca0fc326-5728-4698-9b84-6aa3905a9e7e.png",
+      "PackagePath": "staticwebassets\\store_image\\1000004_picture_ca0fc326-5728-4698-9b84-6aa3905a9e7e.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000005_picture_f0850614-2c28-4c78-a26a-7721fc8a78d8.jpg",
+      "PackagePath": "staticwebassets\\store_image\\1000005_picture_f0850614-2c28-4c78-a26a-7721fc8a78d8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000006_picture_60481544-ff27-428f-9ff4-ecc69126eb76.jpg",
+      "PackagePath": "staticwebassets\\store_image\\1000006_picture_60481544-ff27-428f-9ff4-ecc69126eb76.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000009_picture_ae859242-b2c1-45ad-9141-27310c45def6.png",
+      "PackagePath": "staticwebassets\\store_image\\1000009_picture_ae859242-b2c1-45ad-9141-27310c45def6.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000010_picture_d58cdd94-96da-491c-b003-23891914988b.png",
+      "PackagePath": "staticwebassets\\store_image\\1000010_picture_d58cdd94-96da-491c-b003-23891914988b.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000011_picture_b1e56c9f-8ca7-4a54-b38b-e423076acd72.png",
+      "PackagePath": "staticwebassets\\store_image\\1000011_picture_b1e56c9f-8ca7-4a54-b38b-e423076acd72.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000013_picture_e9a6edf3-13a0-4343-8f97-347798f309d7.jpg",
+      "PackagePath": "staticwebassets\\store_image\\1000013_picture_e9a6edf3-13a0-4343-8f97-347798f309d7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000014_picture_80a29653-56f2-47a5-b4d4-2acd7ebfdbb7.png",
+      "PackagePath": "staticwebassets\\store_image\\1000014_picture_80a29653-56f2-47a5-b4d4-2acd7ebfdbb7.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000015_picture_02d5f6ee-ee0d-4f33-bbe6-3dab1d28ea23.png",
+      "PackagePath": "staticwebassets\\store_image\\1000015_picture_02d5f6ee-ee0d-4f33-bbe6-3dab1d28ea23.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000016_picture_ddc11795-8837-4a52-aa13-005ec3e768d2.png",
+      "PackagePath": "staticwebassets\\store_image\\1000016_picture_ddc11795-8837-4a52-aa13-005ec3e768d2.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000021_picture_19875f11-0912-4d23-9607-9bb306c15ebd.png",
+      "PackagePath": "staticwebassets\\store_image\\1000021_picture_19875f11-0912-4d23-9607-9bb306c15ebd.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000022_picture_911d7c12-1472-41d1-92b9-4ac71f3ce671.png",
+      "PackagePath": "staticwebassets\\store_image\\1000022_picture_911d7c12-1472-41d1-92b9-4ac71f3ce671.png"
+    },
+    {
+      "Id": "C:\\Users\\Administrator\\release\\backend\\DBproject\\wwwroot\\store_image\\1000023_picture_9cc26472-17ed-4e7e-963a-5c1557382021.png",
+      "PackagePath": "staticwebassets\\store_image\\1000023_picture_9cc26472-17ed-4e7e-963a-5c1557382021.png"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.DBproject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.DBproject.props",
+      "PackagePath": "build\\DBproject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.DBproject.props",
+      "PackagePath": "buildMultiTargeting\\DBproject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.DBproject.props",
+      "PackagePath": "buildTransitive\\DBproject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
