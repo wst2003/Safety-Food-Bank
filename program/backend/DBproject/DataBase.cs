@@ -1,4 +1,5 @@
-﻿using System;
+﻿//数据库类，含有大部分数据库的操作，供接口类调用
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
