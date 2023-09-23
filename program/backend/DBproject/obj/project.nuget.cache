@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CE+jI7/Wq262ysCxRrWQ7ekblj6UQE8EVGX6+13NkrlH6gG1yxfsjP5xn8v5kjUeBzGrp0o0NKNN/3MhvzYRHw==",
+  "dgSpecHash": "SyGb/wTPFpFHXvx7dPqtJQP/wR2o+ArHkMGDxN7zhtqz0spliVhzZtPiLU9fl4LUDUcuz/GMeqYQfqImaBHy9Q==",
   "success": true,
-  "projectFilePath": "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\DBproject.csproj",
+  "projectFilePath": "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",

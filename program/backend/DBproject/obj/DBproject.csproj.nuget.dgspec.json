@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\DBproject.csproj": {}
+    "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj": {}
   },
   "projects": {
-    "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\DBproject.csproj": {
+    "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\DBproject.csproj",
+        "projectUniqueName": "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj",
         "projectName": "DBproject",
-        "projectPath": "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\DBproject.csproj",
+        "projectPath": "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\2022-2023-2 Files\\数据库\\第19组_2052995_王诗腾_食保宝——临期食品交易系统\\program\\backend\\DBproject\\obj\\",
+        "outputPath": "D:\\FoodBank\\program\\backend\\DBproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

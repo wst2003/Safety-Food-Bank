@@ -37,7 +37,7 @@
       delete formData.com_image_upload;
       formData.IMAGE_KEY = localStorage.getItem('IMAGE_KEY');
       console.log("往后端传商品Json"+JSON.stringify(formData));
-      const response = await axios.post("/api/uploadcommodity/basic",JSON.stringify(formData),
+      const response = await axios.post("/api/sto/uploadcommodity/basic",JSON.stringify(formData),
       { headers: {'Content-Type': 'application/json'} } );
       console.log("商品上传成功后获得ID"+response.data);
       

@@ -517,7 +517,7 @@
   }
   const noticeUpload=()=>{
     dialogVisible.value = false;
-    axios.post('api/UploadCommodity/deleteCommodity?COM_ID='+goodsList.value[idx.value].com_id)
+    axios.post('api/sto/UpdateCommodity/delcommodity?COM_ID='+goodsList.value[idx.value].com_id)
           .then(response=>{
             console.log(response);
             ElNotification.success({

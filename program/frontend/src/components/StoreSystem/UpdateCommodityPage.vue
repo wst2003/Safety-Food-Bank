@@ -12,7 +12,7 @@
   <el-upload
     ref="uploadImageRef"
     v-model:file-list="fileList"
-    action="/api/uploadcommodity/updateImage"
+    action="/api/sto/updatecommodity/updateimg"
     list-type="picture-card"
     :data = COM_ID_TYPE     
     :auto-upload="true"
@@ -69,7 +69,7 @@ onBeforeMount(
 () =>{
   console.log('mount！');
   
-  axios.get('/api/uploadcommodity/form-data?COM_ID='+com_id.value) 
+  axios.get('/api/sto/updatecommodity/basic?COM_ID='+com_id.value) 
       .then(response =>{
           let newFormData = null
           console.log(response.data);
@@ -86,7 +86,7 @@ onMounted(()=>{
 //sto_ID.value=route.query.sto_id as string;
 sto_ID.value = sessionStorage.getItem('sto_id') as string;
 console.log(sto_ID.value);
-axios.get('/api/uploadcommodity/image-path?COM_ID='+com_id.value)
+axios.get('/api/sto/uploadcommodity/imgpath?COM_ID='+com_id.value)
   .then(response =>{
     response.data.forEach(path => {
       var urlPath = path.substr(10);
@@ -109,7 +109,7 @@ const submitForm = () => {
 vFormRef.value.getFormData().then(async formData => {
   formData.STO_ID = sto_ID.value;
   console.log(JSON.stringify(formData));
-  axios.post("/api/uploadcommodity/updateBasicData?COM_ID="+com_id.value,JSON.stringify(formData),{ headers: {'Content-Type': 'application/json'} } ).then(response =>{
+  axios.post("/api/sto/updatecommodity/updatebasic?COM_ID="+com_id.value,JSON.stringify(formData),{ headers: {'Content-Type': 'application/json'} } ).then(response =>{
     console.log(response.data);
     uploadImageRef.value!.submit()
     ElMessage({
@@ -148,7 +148,7 @@ return true;
 const handleRemove: UploadProps['onRemove'] = (uploadFile, uploadFiles) => {
 //console.log(uploadFile, uploadFiles)
 console.log("准备删除"+uploadFile.name);
-axios.post('/api/uploadcommodity/deleteImage?COM_ID='+com_id.value+"&COM_IMAGE="+uploadFile.name);
+axios.post('/api/sto/updatecommodity/delimg?COM_ID='+com_id.value+"&COM_IMAGE="+uploadFile.name);
 
 }
 
