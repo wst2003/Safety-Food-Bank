@@ -622,7 +622,7 @@ onMounted(()=>{
    com_id.value=route.query.com_id as string; 
    console.log(com_id.value);
    // console.log(trans.value['com_categories']);
-   axios.get('api/getDetail/1?com_id='+parseInt(com_id.value))
+   axios.get('/api/sto/StoreQueryCommodity/detail?com_id='+parseInt(com_id.value))
        .then(response => {
 
            console.log('Details Got successfully.');

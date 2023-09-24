@@ -325,7 +325,7 @@ console.log(sto_id);
 var Phone=phone.value;
 if(Phone.length==0)
   Phone="null";
-axios.get('api/searchCommodity/getcommoditytotal?STO_ID='+sto_id.value+'&COM_STATUS='+status.value)
+axios.get('/api/sto/StoreQueryCommodity/totalnum?STO_ID='+sto_id.value+'&COM_STATUS='+status.value)
   .then(response=>{
     tot.value=response.data;
   });

@@ -4,33 +4,90 @@ using System.Data;
 using System.Globalization;
 using System.IO;
 using Newtonsoft.Json;
-
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/sto/[controller]")]
     [ApiController]
-    public class SearchCommodityController : Controller
+    public class StoreQueryCommodityController : Controller      
     {
-        [HttpPost()]
-        [Consumes("application/json")]
-        public ActionResult searchCommodity([FromQuery] int STO_ID, [FromQuery] int com_begin_n, [FromQuery] int com_end_n, [FromBody]SearchOptionModel searchOptionModel)
+        [HttpGet("detail")]
+        public ActionResult storerGetComDetails1([FromQuery] int com_id)
         {
-            string ttt = "select COM_NAME,com_status from commodity where com_status =-1";
-            Console.WriteLine("ssss");
-            using (OracleCommand selectComIDCommand = new OracleCommand(ttt, DBproject.DataBase.oracleCon.con))
+            Console.WriteLine("传商品详情");
+            //商家获取自己的商品（详细）
+            CommodityForStorer1 jsonItem = new CommodityForStorer1();   //转json之用
+            string selectCommoditySQL = "select * from COMMODITY where COM_ID = " + com_id; //从COMMODITY中获取信息
+            using (OracleCommand selectCommodityCommand = new OracleCommand(selectCommoditySQL, DBproject.DataBase.oracleCon.con))
             {
-                using (OracleDataReader COMIDReader = selectComIDCommand.ExecuteReader())
+                using(OracleDataReader selectCommodityReader = selectCommodityCommand.ExecuteReader())
                 {
-                    while (COMIDReader.Read())
+                    while (selectCommodityReader.Read())
                     {
-                        Console.WriteLine(COMIDReader.GetString(0));
-                        Console.WriteLine(COMIDReader.GetInt32(1));
+                        jsonItem.com_id = selectCommodityReader.GetInt32("COM_ID");
+                        jsonItem.com_name = selectCommodityReader.GetString("com_name");
+                        jsonItem.com_introduction = selectCommodityReader.GetString("com_introduction");
+                        jsonItem.com_oriprice = selectCommodityReader.GetDouble("com_oriprice");
+                        string[] date = selectCommodityReader.GetString("com_expirationdate").Split('-');
+                        date[1] = date[1].Remove(date[1].IndexOf('月'));
+                        if (date[1].Length == 1) date[1] = "0" + date[1];
+                        jsonItem.com_expirationdate = string.Format("20{0}-{1}-{2}", date[2], date[1], date[0]);
+                        date = selectCommodityReader.GetString("com_uploaddate").Split('-');
+                        date[1] = date[1].Remove(date[1].IndexOf('月'));
+                        if (date[1].Length == 1) date[1] = "0" + date[1];
+                        jsonItem.com_uploaddate = string.Format("20{0}-{1}-{2}", date[2], date[1], date[0]); 
+                        jsonItem.com_left = selectCommodityReader.GetInt32("com_left");
+                        jsonItem.com_rating = selectCommodityReader.GetDouble("com_rating");
                     }
                 }
             }
+            //从COMMODITY_CATEGORIES中获取商品种类信息
+            string selectCommodityCateSQL = "select com_category from COMMODITY_CATEGORIES where com_id = " + com_id;
+            using (OracleCommand selectCommodityCateCommand = new OracleCommand(selectCommodityCateSQL, DBproject.DataBase.oracleCon.con))
+            {
+                using (OracleDataReader selectCommodityCateReader = selectCommodityCateCommand.ExecuteReader())
+                { 
+                    while(selectCommodityCateReader.Read())
+                    {
+                        jsonItem.com_categories.Add(selectCommodityCateReader.GetString("com_category"));
+                    }
+                }
+            }
+            //从COMMODITY_IMAGE中获取商品图片路径
+            string selectCommodityImageSQL = "select com_image from COMMODITY_IMAGE where com_id = " + com_id;
+            using (OracleCommand selectCommodityImageCommand = new OracleCommand(selectCommodityImageSQL, DBproject.DataBase.oracleCon.con))
+            {
+                using (OracleDataReader selectCommodityImageReader = selectCommodityImageCommand.ExecuteReader())
+                {
+                    while (selectCommodityImageReader.Read())
+                    {
+                        jsonItem.com_image.Add(selectCommodityImageReader.GetString("com_image"));
+                    }
+                }
+            }
+            //从COMMODITY_PRICE_CURVE中获取商品价格曲线
+            string selectCommodityPCSQL = "select COM_PC_TIME,COM_PC_PRICE from COMMODITY_PRICE_CURVE where com_id = " + com_id;
+            using (OracleCommand selectCommodityPCommand = new OracleCommand(selectCommodityPCSQL, DBproject.DataBase.oracleCon.con))
+            {
+                using (OracleDataReader selectCommodityPCReader = selectCommodityPCommand.ExecuteReader())
+                {
+                    while (selectCommodityPCReader.Read())
+                    {
+                        string[] date = selectCommodityPCReader.GetString("COM_PC_TIME").Split('-');
+                        date[1] = date[1].Remove(date[1].IndexOf('月'));
+                        if (date[1].Length == 1) date[1] = "0" + date[1];
+                        jsonItem.com_pc_time.Add(string.Format("20{0}-{1}-{2}", date[2], date[1], date[0]));
+                        jsonItem.com_pc_price.Add(selectCommodityPCReader.GetDouble("COM_PC_PRICE"));
+                    }
+                }
+            }
+            return Ok(JsonConvert.SerializeObject(jsonItem));
+        }
 
-
-                        string selectCOMIDSQL = "";
+        [HttpPost("list")]
+        [Consumes("application/json")]
+        public ActionResult searchCommodity([FromQuery] int STO_ID, [FromQuery] int com_begin_n, [FromQuery] int com_end_n, [FromBody] SearchOptionModel searchOptionModel)
+        {
+            string selectCOMIDSQL = "";
             string isAsc = "";
             string optionDate = "";
             if (searchOptionModel.order == 0) isAsc = "asc";
@@ -40,11 +97,11 @@ namespace DBproject.Controllers
             if (searchOptionModel.category.Count > 0)
             {
                 string cateList = "(";
-                foreach(string cate in searchOptionModel.category)
+                foreach (string cate in searchOptionModel.category)
                 {
-                    cateList+="'"+cate+"',";
+                    cateList += "'" + cate + "',";
                 }
-                cateList= cateList.Remove(cateList.Length - 1);
+                cateList = cateList.Remove(cateList.Length - 1);
                 cateList += ")";
                 selectCOMIDSQL = "select COM_ID from( " +
                     "select COM_ID,ROWNUM as ROW_NUM from( " +
@@ -55,7 +112,7 @@ namespace DBproject.Controllers
                     "HAVING COUNT(DISTINCT com_category) = " + searchOptionModel.category.Count + ") " +
                     "select COM_ID from COMMODITY where " +
                     "sto_ID = " + STO_ID + " and com_status =  " + searchOptionModel.status +
-                    " and COM_ID in (select COM_ID from specific_cate_ID ) and com_name like '%" + searchOptionModel.query + "%' " +optionDate+
+                    " and COM_ID in (select COM_ID from specific_cate_ID ) and com_name like '%" + searchOptionModel.query + "%' " + optionDate +
                     " order by COM_ID " + isAsc + ")) " +
                     "where ROW_NUM >= " + com_begin_n + " and ROW_NUM <= " + com_end_n;
             }
@@ -65,10 +122,12 @@ namespace DBproject.Controllers
                     "select COM_ID,ROWNUM as ROW_NUM from( " +
                     " select COM_ID from COMMODITY " +
                     "where sto_id = " + STO_ID + " and com_status = " + searchOptionModel.status + " and com_name like '%" + searchOptionModel.query + "%' " + optionDate +
-                    "order by COM_ID " + isAsc + ")) "+
+                    "order by COM_ID " + isAsc + ")) " +
                     "where ROW_NUM >= " + com_begin_n + " and ROW_NUM <= " + com_end_n;
-               
+
             }
+            Console.WriteLine(selectCOMIDSQL);
+            Console.WriteLine(searchOptionModel.status);
             List<CommodityForStorer0> jsonList = new List<CommodityForStorer0>();   //转json之用
             CommodityForStorer0 jsonItem;   //转json之用
             string selectSQL1 = "select com_id,com_name,com_left,com_uploaddate,com_expirationdate,com_oriprice from COMMODITY where COM_ID = :COM_ID";
@@ -87,9 +146,9 @@ namespace DBproject.Controllers
                         using (OracleCommand selectCommand1 = new OracleCommand(selectSQL1, DBproject.DataBase.oracleCon.con))
                         {
                             selectCommand1.Parameters.Add(new OracleParameter(":COM_ID", COMIDReader.GetInt32(0)));
-                            using(OracleDataReader selectReader1 = selectCommand1.ExecuteReader())
+                            using (OracleDataReader selectReader1 = selectCommand1.ExecuteReader())
                             {
-                                while(selectReader1.Read())//事实上只有一行
+                                while (selectReader1.Read())//事实上只有一行
                                 {
                                     jsonItem.com_id = selectReader1.GetInt32(0);
                                     jsonItem.com_name = selectReader1.GetString(1);
@@ -122,7 +181,7 @@ namespace DBproject.Controllers
                             selectComPCommand.Parameters.Add(new OracleParameter(":COM_ID", COMIDReader.GetInt32(0)));
                             using (OracleDataReader selectReader3 = selectComPCommand.ExecuteReader())
                             {
-                                Console.WriteLine(selectComPCommand.CommandText+ COMIDReader.GetInt32(0));
+                                Console.WriteLine(selectComPCommand.CommandText + COMIDReader.GetInt32(0));
                                 while (selectReader3.Read())
                                 {
                                     string[] date = selectReader3.GetString("COM_PC_TIME").Split('-');
@@ -136,7 +195,7 @@ namespace DBproject.Controllers
                                     int day = int.Parse(date[0]);
 
                                     DateTime dst = new DateTime(year, month, day);
-                                    if (current.Date<dst) break;
+                                    if (current.Date < dst) break;
                                     com_curr_price = selectReader3.GetDouble(1);
                                 }
                                 jsonItem.com_curr_price = com_curr_price;
@@ -161,8 +220,7 @@ namespace DBproject.Controllers
             Console.WriteLine(comDetail0);
             return Ok(comDetail0);
         }
-
-        [HttpGet("getcommoditytotal")]
+        [HttpGet("totalnum")]
         public ActionResult getcommoditytotal([FromQuery] int STO_ID, [FromQuery] int COM_STATUS)
         {
             string sql = "select count(*) from commodity where STO_ID = :STO_ID and COM_STATUS = :COM_STATUS";
@@ -180,21 +238,63 @@ namespace DBproject.Controllers
             }
             return Ok("" + 0);
         }
+    }
 
-        public class SearchOptionModel
+    public class CommodityForStorer0
+    {
+        public int com_id { get; set; }
+        public string com_name { get; set; }
+        public int com_left { get; set; }
+        public string com_uploaddate { get;set; }
+        public string com_expirationdate { get; set; }
+        public double com_curr_price { get; set; }
+        public List<string> com_categories { get; set; }
+
+        public List<string> com_image { get; set; }
+        public CommodityForStorer0()
         {
-            public int status { get; set; }
-            public int order { get; set; }
-
-            public List<string> category { get; set; }
-            public string query { get; set; }
-            public string COM_UPLOADDATE { get; set; }
-            public string COM_EXPIRATIONDATE { get; set; }
-            public SearchOptionModel()
-            {
-                COM_UPLOADDATE = "";
-                COM_EXPIRATIONDATE = "";
-            }
+            com_categories = new List<string>();
+            com_image = new List<string>();
         }
     }
+
+    public class CommodityForStorer1
+    {
+        public int com_id{ get; set; }
+        public string com_name { get; set; }
+        public string com_introduction { get; set; }
+        public double com_oriprice { get; set; }
+        public string com_expirationdate { get; set; }
+        public string com_uploaddate { get; set; }
+        public int com_left { get; set; }
+        public double com_rating { get; set; }
+        public List<string> com_categories { get; set; }
+        public List<double> com_pc_price { get; set; }
+        public List<string> com_pc_time { get; set; }
+        public List<string> com_image { get; set; }
+        public CommodityForStorer1()
+        {
+            com_categories = new List<string>();
+            com_pc_price = new List<double>();
+            com_pc_time = new List<string>();
+            com_image = new List<string>();
+        }
+    }
+
+    public class SearchOptionModel
+    {
+        public int status { get; set; }
+        public int order { get; set; }
+
+        public List<string> category { get; set; }
+        public string query { get; set; }
+        public string COM_UPLOADDATE { get; set; }
+        public string COM_EXPIRATIONDATE { get; set; }
+        public SearchOptionModel()
+        {
+            COM_UPLOADDATE = "";
+            COM_EXPIRATIONDATE = "";
+        }
+    }
+
 }

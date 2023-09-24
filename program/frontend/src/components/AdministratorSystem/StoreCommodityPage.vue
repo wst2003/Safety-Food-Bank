@@ -266,11 +266,11 @@
   const getGoodsList=async()=>{
     loading.value=Boolean(true);
     goodsList.value.length=0;
-    axios.get('api/searchCommodity/getcommoditytotal?STO_ID='+sto_id.value+'&COM_STATUS='+status.value)
+    axios.get('/api/sto/StoreQueryCommodity/totalnum?STO_ID='+sto_id.value+'&COM_STATUS='+status.value)
   .then(response=>{
     tot.value=response.data;
   });
-    axios.post('api/searchCommodity?STO_ID='+sto_id.value+'&com_begin_n='+(pagesize.value*(pagenum.value-1)+1)+'&com_end_n='+(pagesize.value*pagenum.value),{
+    axios.post('/api/sto/StoreQueryCommodity/list?STO_ID='+sto_id.value+'&com_begin_n='+(pagesize.value*(pagenum.value-1)+1)+'&com_end_n='+(pagesize.value*pagenum.value),{
       "status":status.value,
       "order":order.value,
       "category":category.value,
