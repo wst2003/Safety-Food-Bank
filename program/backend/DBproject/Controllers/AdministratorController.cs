@@ -10,7 +10,7 @@ namespace DBproject.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdministratorController : Controller
+    public class AdminController : Controller
     {
         [HttpGet("userlist")]
         public ActionResult userlist([FromQuery] QueryModel queryModel)
@@ -218,9 +218,6 @@ namespace DBproject.Controllers
             return Ok(JsonConvert.SerializeObject(responseModel));
         }
     }
-
-
-
 
     public class QueryModel
     {

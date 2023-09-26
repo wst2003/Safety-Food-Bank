@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/sto/[controller]")]
     [ApiController]
     public class VerficateController : Controller
     {

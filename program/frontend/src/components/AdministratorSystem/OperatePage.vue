@@ -170,7 +170,7 @@ import { id } from 'element-plus/es/locale';
     var Name=query.value;
     if(Name.length==0)
         Name="NULL";
-    axios.get('/api/administrator/userlist?ID_ORDER='+id_order.value+'&NAME_ORDER='+name_order.value+'&USER_NAME='+Name+'&USER_TYPE='+type.value+'&BEGIN_NUMBER='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUMBER='+(pagesize.value*pagenum.value)) 
+    axios.get('/api/admin/userlist?ID_ORDER='+id_order.value+'&NAME_ORDER='+name_order.value+'&USER_NAME='+Name+'&USER_TYPE='+type.value+'&BEGIN_NUMBER='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUMBER='+(pagesize.value*pagenum.value)) 
       .then(response=>{
         console.log(id_order.value);
         console.log(pagesize.value*(pagenum.value-1)+1);
@@ -320,7 +320,7 @@ const checkLeft2=()=>{
 }
 
 const getState=(index:number)=>{
-  axios.get('api/administrator/userstate?USER_ID='+goodsList.value[index].USER_ID+'&USER_TYPE='+type.value)
+  axios.get('api/admin/userstate?USER_ID='+goodsList.value[index].USER_ID+'&USER_TYPE='+type.value)
   .then(response=>{
     console.log('getState : '+(parseInt(response.data)==1));
     isOverDate.value[index]=(parseInt(response.data)==1);
@@ -334,7 +334,7 @@ const changeState=(index:number)=>{
   console.log('from_State : '+temp);
   temp^=1
   // dialogVisible.value=true;
-  axios.post('api/administrator/changeuserstate',{USER_ID:goodsList.value[index].USER_ID,USER_TYPE:type.value,TO_STATE:temp})
+  axios.post('api/admin/changeuserstate',{USER_ID:goodsList.value[index].USER_ID,USER_TYPE:type.value,TO_STATE:temp})
     .then(response=>{
       getState(index)
       ElNotification.success({

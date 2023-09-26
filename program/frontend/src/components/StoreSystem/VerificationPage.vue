@@ -339,7 +339,7 @@ console.log(sto_id);
 var Phone=phone.value;
 if(Phone.length==0)
 Phone="null";
-axios.get('api/storeindentlist/indentwithbox?STO_ID='+sto_id+'&TIME_ORDER='+order.value+'&BOX_BEGIN='+(pagesize.value*(pagenum.value-1)+1)+'&BOX_END='+(pagesize.value*pagenum.value)+"&USER_PHONE="+Phone+"&IND_STATE="+state.value) 
+axios.get('/api/sto/storeindentlist/indentbox?STO_ID='+sto_id+'&TIME_ORDER='+order.value+'&BOX_BEGIN='+(pagesize.value*(pagenum.value-1)+1)+'&BOX_END='+(pagesize.value*pagenum.value)+"&USER_PHONE="+Phone+"&IND_STATE="+state.value) 
 .then(response=>{
   console.log(pagesize.value*(pagenum.value-1)+1);
   console.log(pagesize.value*pagenum.value);
@@ -386,7 +386,7 @@ const resVerificate=ref({
   ]
 })
 const verificate=()=>{
-axios.post('api/verficate?'+"IND_VERFICATIONCODE="+query.value)
+axios.post('api/sto/verficate?'+"IND_VERFICATIONCODE="+query.value)
   .then(response=>{
     console.log(response.data);
     if(response.data=='核销失败'){

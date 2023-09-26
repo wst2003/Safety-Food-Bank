@@ -186,7 +186,7 @@ console.log(sto_id);
 var Phone=phone.value;
 if(Phone.length==0)
   Phone="null";
-axios.get('api/administrator/appeallist?TIME_ORDER='+order.value+'&BEGIN_NUM='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUM='+(pagesize.value*pagenum.value)) 
+axios.get('api/admin/appeallist?TIME_ORDER='+order.value+'&BEGIN_NUM='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUM='+(pagesize.value*pagenum.value)) 
   .then(response=>{
     console.log(pagesize.value*(pagenum.value-1)+1);
     console.log(pagesize.value*pagenum.value);
@@ -248,7 +248,7 @@ const resVerificate=ref({
     ]
   })
 const verificate=()=>{
-  axios.post('api/verficate?'+"IND_VERFICATIONCODE="+query.value)
+  axios.post('api/sto/verficate?'+"IND_VERFICATIONCODE="+query.value)
     .then(response=>{
       console.log(response.data);
       if(response.data=='核销失败'){

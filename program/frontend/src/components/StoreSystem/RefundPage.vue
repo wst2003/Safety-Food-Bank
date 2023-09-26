@@ -174,7 +174,7 @@ const getindentsList=async()=>{
   var Phone=phone.value;
   if(Phone.length==0)
     Phone='null';
-  axios.get('api/storeindentlist/refundlist?STO_ID='+sto_id+'&TIME_ORDER='+order.value+'&USER_PHONE='+Phone+'&BEGIN_NUMBER='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUMBER='+(pagesize.value*pagenum.value)) 
+  axios.get('api/sto/storeindentlist/refundlist?STO_ID='+sto_id+'&TIME_ORDER='+order.value+'&USER_PHONE='+Phone+'&BEGIN_NUMBER='+(pagesize.value*(pagenum.value-1)+1)+'&END_NUMBER='+(pagesize.value*pagenum.value)) 
     .then(response=>{
       console.log(pagesize.value*(pagenum.value-1)+1);
       console.log(pagesize.value*pagenum.value);

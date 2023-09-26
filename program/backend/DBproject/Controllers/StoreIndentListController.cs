@@ -7,11 +7,11 @@ using Newtonsoft.Json;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/sto/[controller]")]
     [ApiController]
     public class StoreIndentListController : Controller
     {
-        [HttpGet("indentwithbox")]
+        [HttpGet("indentbox")]
         public ActionResult getIndentWithBox([FromQuery] BoxQueryModel boxQueryModel)
         {
             string sorted_option = "";
