@@ -6,11 +6,11 @@ using System;
 namespace DBproject.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("api/pub/[controller]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
-        [HttpPost()]
+        [HttpPost("user")]
         [Consumes("application/json")]
         public IActionResult PostRegister([FromBody] RegisterModel model)
         {

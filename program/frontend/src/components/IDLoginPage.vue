@@ -43,7 +43,7 @@ import { useRouter } from 'vue-router';
   let geoc: BMapGL.Geocoder;
 
   const login_id = async ()=> {
-          axios.post('/api/login',  JSON.stringify({ 
+          axios.post('/api/pub/login',  JSON.stringify({ 
           user_ID_phonenumber:loginUsername.value,
           user_password:loginPassword.value,
           login_type:"0" 
@@ -89,7 +89,7 @@ import { useRouter } from 'vue-router';
                   
                   
                   /*获取用户位置*/
-                  axios.get('/api/getinformation/user', { params: {user_ID: response.data.user_ID } })
+                  axios.get('/api/pub/getinformation/user', { params: {user_ID: response.data.user_ID } })
                   .then((res) => {
                       user_address.value = res.data.user_address;
                       console.log(user_address.value);

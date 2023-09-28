@@ -91,7 +91,7 @@ const fileList1 = ref([]); // 用于保存商家图片的文件列表
 
 
   const get_comcategory=()=>{
-      axios.get('/api/category/getcategories'
+      axios.get('/api/pub/category/getcategories'
       ,{
         headers: {
               //'Content-Type': 'application/json', 
@@ -140,7 +140,7 @@ const registerStore = async () => {
       formData.append('com_categories[]',category)
     })
 
-    const response = await axios.post('/api/register/store', formData, {
+    const response = await axios.post('/api/pub/register/store', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },

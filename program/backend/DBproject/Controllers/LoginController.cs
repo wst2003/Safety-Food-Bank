@@ -6,7 +6,7 @@ using System;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pub/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {

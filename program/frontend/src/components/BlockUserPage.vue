@@ -153,7 +153,7 @@
     }
     console.log("尊敬的用户"+user_ID.value)
     try {
-      const response = await axios.get('/api/getinformation/user', { params: {user_ID:user_ID.value } });
+      const response = await axios.get('/api/pub/getinformation/user', { params: {user_ID:user_ID.value } });
       if (response.status === 200) {
         userInfo.value = response.data;
         console.log(userInfo.value);

@@ -197,7 +197,7 @@ const flag=route.query.flag;
 onMounted(async () => {
   //const sto_ID = route.query.id;
   const sto_ID = flag==null? sessionStorage.getItem('sto_id'):route.query.id;
-  const basic_response = await axios.get('/api/getinformation/user', { params: { user_ID:sto_ID } });
+  const basic_response = await axios.get('/api/pub/getinformation/user', { params: { user_ID:sto_ID } });
   if (basic_response.status === 200) {
     basicInfo.value = basic_response.data;
     console.log(basicInfo.value);
@@ -245,14 +245,14 @@ onMounted(async () => {
       });
     });
   
-  const response = await axios.get('/api/getinformation/store', { params: { sto_ID: sto_ID } });
+  const response = await axios.get('/api/pub/getinformation/store', { params: { sto_ID: sto_ID } });
   if (response.status === 200) {
     userInfo.value = response.data;
   } else {
     console.error(`Error: HTTP status code ${response.status}`);
   }
     // 获取已有的商家图片
-  const imgResponse = await axios.get('/api/getinformation/storeimg', { params: { sto_ID: sto_ID } });
+  const imgResponse = await axios.get('/api/pub/getinformation/storeimg', { params: { sto_ID: sto_ID } });
   if (imgResponse.status === 200) {
     storedImages.value = imgResponse.data.imageURL.map(pic => ({
       fullUrl: 'http://localhost:5000\\' + pic,
@@ -264,7 +264,7 @@ onMounted(async () => {
   }
 
 
-  const response_categoty = await axios.get('/api/category/getcategories');
+  const response_categoty = await axios.get('/api/pub/category/getcategories');
     if (response_categoty.status === 200) {
       categories.value = response_categoty.data.categorylist;
     } else {
@@ -275,7 +275,7 @@ onMounted(async () => {
 const deleteStoredImage = async (imageIndex) => {
   try {
     const relativePathToDelete = storedImages.value[imageIndex].relativePath;
-    const response = await axios.post('/api/modify/delstoreimg', {
+    const response = await axios.post('/api/pub/modify/delstoreimg', {
       sto_ID: basicInfo.value.user_ID, 
       url: relativePathToDelete
     }, {
@@ -338,7 +338,7 @@ const modifyUser = async () => {
     alert('商家图片数量必须在1-9张之间！');
     return;
   }
-    const userResponse = await axios.post('/api/modify/user', {
+    const userResponse = await axios.post('/api/pub/modify/user', {
         user_ID: basicInfo.value.user_ID,
         user_phone: basicInfo.value.user_phone,
         user_password: basicInfo.value.user_password,
@@ -364,7 +364,7 @@ const modifyUser = async () => {
       formData.append('categories', category);
     });
 
-    const storeResponse = await axios.post('/api/modify/store', formData, {
+    const storeResponse = await axios.post('/api/pub/modify/store', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

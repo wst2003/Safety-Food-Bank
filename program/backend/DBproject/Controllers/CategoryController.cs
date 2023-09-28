@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/pub/[controller]")]
     [ApiController]
     public class CategoryController :ControllerBase
     {

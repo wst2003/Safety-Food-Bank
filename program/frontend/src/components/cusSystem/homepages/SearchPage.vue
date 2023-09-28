@@ -322,7 +322,7 @@ onMounted(()=>{
     console.log("user_id.value:"+user_id.value);
     sortList.value=sortCom;
 
-    axios.get(baseURL+'/api/getinformation/user', { params: {user_ID: String(user_id.value) } })
+    axios.get(baseURL+'/api/pub/getinformation/user', { params: {user_ID: String(user_id.value) } })
     .then((res) => {
         user_address.value = res.data.user_address;
         console.log(user_address.value);

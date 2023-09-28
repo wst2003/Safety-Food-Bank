@@ -194,7 +194,7 @@
     const receive_id=ref('')
     const my_name=ref('')
   
-    const address='http://localhost:5000/api/'
+    const address='http://localhost:5000/api/pub'
   
     type Chat= {
         chatTime: string;
@@ -297,7 +297,7 @@
             const image=ref('')
             const response = await axios.get(address+'getinformation/store', { params: {sto_ID:content.storeID.toString() } });
             if (response.status === 200) {
-              const response1=await axios.get('api/getinformation/storeimg',{ params: {sto_ID:content.storeID.toString() } });
+              const response1=await axios.get('api/pub/getinformation/storeimg',{ params: {sto_ID:content.storeID.toString() } });
             image.value=response1.data.imageURL
             name.value = response.data.sto_name;
             }

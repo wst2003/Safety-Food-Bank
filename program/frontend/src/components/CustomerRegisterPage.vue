@@ -65,7 +65,7 @@
   const com_category=ref([]);
 
   const get_comcategory=()=>{
-      axios.get('/api/category/getcategories'
+      axios.get('/api/pub/category/getcategories'
       ,{
         headers: {
               //'Content-Type': 'application/json', 
@@ -88,7 +88,7 @@
     try {
       
   
-      const response = await axios.post('/api/register/customer', 
+      const response = await axios.post('/api/pub/register/customer', 
       JSON.stringify({ 
           cus_ID:cus_ID.value,
           cus_nickname:form.cus_nickname,
@@ -106,7 +106,7 @@
         const data = response.data;
         if (data.message === 'success') {
 
-          axios.post('/api/recommendation',
+          axios.post('/api/pub/recommendation',
           {
               user_id:cus_ID.value
           }).then(res=>{

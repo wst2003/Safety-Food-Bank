@@ -428,7 +428,7 @@ onMounted(async () => {
   console.log("这是ID"+user_ID.value);
   try {
     console.log(userInfo.value.cus_notes);
-    const response = await axios.get('/api/getinformation/user', { params: {user_ID:user_ID.value } });
+    const response = await axios.get('/api/pub/getinformation/user', { params: {user_ID:user_ID.value } });
     if (response.status === 200) {
       userInfo.value = response.data;
 
@@ -439,7 +439,7 @@ onMounted(async () => {
 
     console.log('##'+userInfo.value.user_type)
     if (userInfo.value.user_type === '0') {
-      const customerResponse = await axios.get('/api/getinformation/customer', { params: { cus_ID: user_ID.value } });
+      const customerResponse = await axios.get('/api/pub/getinformation/customer', { params: { cus_ID: user_ID.value } });
       if (customerResponse.status === 200) {
           Object.assign(userInfo.value, customerResponse.data);
           console.log(userInfo.value.cus_notes);
@@ -447,11 +447,11 @@ onMounted(async () => {
           console.error(`Error: HTTP status code ${customerResponse.status}`);
       }
     } else if (userInfo.value.user_type === '1') {
-      const storeResponse = await axios.get('/api/getinformation/store', { params: { sto_ID: user_ID.value } });
+      const storeResponse = await axios.get('/api/pub/getinformation/store', { params: { sto_ID: user_ID.value } });
       image.value='http://localhost:5000\\'+storeResponse.data.sto_licenseImg;
       if (storeResponse.status === 200) {
           Object.assign(userInfo.value, storeResponse.data);
-          const storePicResponse = await axios.get('/api/getinformation/storeimg', { params: { sto_ID: user_ID.value } });
+          const storePicResponse = await axios.get('/api/pub/getinformation/storeimg', { params: { sto_ID: user_ID.value } });
           storePictures.value = storePicResponse.data.imageURL.map(pic => 'http://localhost:5000\\' + pic);
       } else {
           console.error(`Error: HTTP status code ${storeResponse.status}`);

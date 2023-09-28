@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/Ka1mKdQL0pLO4gWSIYnIRw62Jtm10bNAuk2y4Sg1+c=",
+  "Hash": "KYkVHZU48GWP7OMzITbElBFn720nKEZxMYUnfYkxhnc=",
   "Source": "DBproject",
   "BasePath": "_content/DBproject",
   "Mode": "Default",
@@ -10,19 +10,19 @@
     {
       "Name": "DBproject\\wwwroot",
       "Source": "DBproject",
-      "ContentRoot": "D:\\GitHubDesktop\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\",
+      "ContentRoot": "D:\\2023 Fall\\Javaee\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\",
       "BasePath": "_content/DBproject",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\GitHubDesktop\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\ItemCF\\1000017.txt",
+      "Identity": "D:\\2023 Fall\\Javaee\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\ItemCF\\1000060.txt",
       "SourceId": "DBproject",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\GitHubDesktop\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\",
+      "ContentRoot": "D:\\2023 Fall\\Javaee\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\",
       "BasePath": "_content/DBproject",
-      "RelativePath": "ItemCF/1000017.txt",
+      "RelativePath": "ItemCF/1000060.txt",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -31,7 +31,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\ItemCF\\1000017.txt"
+      "OriginalItemSpec": "wwwroot\\ItemCF\\1000060.txt"
+    },
+    {
+      "Identity": "D:\\2023 Fall\\Javaee\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\ItemCF\\1000080.txt",
+      "SourceId": "DBproject",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\2023 Fall\\Javaee\\Safety-Food-Bank\\program\\backend\\DBproject\\wwwroot\\",
+      "BasePath": "_content/DBproject",
+      "RelativePath": "ItemCF/1000080.txt",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\ItemCF\\1000080.txt"
     }
   ]
 }

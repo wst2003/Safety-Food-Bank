@@ -97,7 +97,7 @@ const validatePhone = () => {
 
 const sendVarifyCode=async ()=> {
   //发送验证码前首先验证下手机号是否被注册
-  axios.post('/api/resetpassword/verify',  JSON.stringify({ 
+  axios.post('/api/pub/resetpassword/verify',  JSON.stringify({ 
           user_phone:phoneNumber.value
         }), {
           headers: {
@@ -150,7 +150,7 @@ const varify=()=>{
 }
 
 const sendNewPassword=async ()=>{
-  axios.post('/api/resetpassword',  JSON.stringify({ 
+  axios.post('api/pub/resetpassword/sendnewpassword',  JSON.stringify({ 
           user_phonenumber:phoneNumber.value,
           user_new_password:loginPassword.value }), {
           headers: {

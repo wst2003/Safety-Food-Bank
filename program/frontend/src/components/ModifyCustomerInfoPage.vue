@@ -142,7 +142,7 @@
     const user_ID = flag==null? sessionStorage.getItem('cus_id') as string:route.query.id;
     const cus_ID=user_ID;
     console.log(sessionStorage.getItem('cus_id'))
-    const response = await axios.get('/api/getinformation/user', { params: { user_ID:user_ID } });
+    const response = await axios.get('/api/pub/getinformation/user', { params: { user_ID:user_ID } });
     if (response.status === 200) {
       userInfo.value = response.data;
     } else {
@@ -188,14 +188,14 @@
       });
     });
 
-    const response_cus = await axios.get('/api/getinformation/customer', { params: { cus_ID } });
+    const response_cus = await axios.get('/api/pub/getinformation/customer', { params: { cus_ID } });
     if (response_cus.status === 200) {
       cusInfo.value = response_cus.data;
     } else {
       console.error(`Error: HTTP status code ${response_cus.status}`);
     }
 
-    const response_categoty = await axios.get('/api/category/getcategories');
+    const response_categoty = await axios.get('/api/pub/category/getcategories');
     if (response_categoty.status === 200) {
       categories.value = response_categoty.data.categorylist;
     } else {
@@ -239,14 +239,14 @@
 
   const modifyUser = async () => {
     try {
-      const userResponse = await axios.post('/api/modify/user', {
+      const userResponse = await axios.post('/api/pub/modify/user', {
         user_ID: userInfo.value.user_ID,
         user_phone: userInfo.value.user_phone,
         user_password: userInfo.value.user_password,
         user_address: userInfo.value.user_address,
       });
   
-      const customerResponse = await axios.post('/api/modify/customer', {
+      const customerResponse = await axios.post('/api/pub/modify/customer', {
         cus_ID: cusInfo.value.cus_ID,
         cus_nickname: cusInfo.value.cus_nickname,
         cus_notes: cusInfo.value.cus_notes,

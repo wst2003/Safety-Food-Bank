@@ -197,7 +197,7 @@ const register = async () => {
       user_type: form.user_type.toString(),
     };
     console.log(registerForm);
-    const response = await axios.post('/api/register', registerForm);
+    const response = await axios.post('/api/pub/register/user', registerForm);
     console.log(response.data);
     if (response.status === 200) {
       const data = response.data;
