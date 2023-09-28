@@ -343,7 +343,7 @@ const confirmRecharge = () => {
   .then((res) => {
     window.location.href = res.data.data.paymentUrl;
   });
-  axios.post('/api/balance/setBalance', {
+  axios.post('/api/cus/balance/setBalance', {
     cus_id: user_ID.value,
     balance: parseFloat(userInfo.value.user_balance) + parseFloat(recharge_amount.value),
   })
@@ -373,7 +373,7 @@ const confirmWithdraw = () => {
   })
   .then((res) => {
       if (res.data.success) {
-        axios.post('/api/balance/setBalance', {
+        axios.post('/api/cus/balance/setBalance', {
           cus_id: user_ID.value,
           balance: parseFloat(userInfo.value.user_balance) - parseFloat(withdraw_amount.value),
         })

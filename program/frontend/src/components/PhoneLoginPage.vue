@@ -149,7 +149,7 @@ const login_id=async ()=> {
       const fetchLocationData = () => {
         return new Promise(async (resolve, reject) => {
           try {
-            const response = await axios.get('/api/search/sendLocation');
+            const response = await axios.get('/api/cus/search/sendLocation');
             ori_sto_list.value = response.data.address_list;
             // 调用百度地图API进行排序
             await sortStoresByDistance(ori_sto_list.value);  // 确保此函数执行完成
@@ -197,7 +197,7 @@ const login_id=async ()=> {
     // 将排序结果发送到后端
     const sendSortedDataToBackend = async (sortedStoIds, userId) => {
       try {
-        const response = await axios.post('/api/search/getLocationSort', {
+        const response = await axios.post('/api/cus/search/getLocationSort', {
           sto_id: sortedStoIds,
           user_id: userId
         });

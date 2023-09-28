@@ -8,7 +8,7 @@ using System.Reflection.Metadata;
 
 namespace WebApplication3.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cus/[controller]")]
     [ApiController]
     public class IndentController : Controller
     {

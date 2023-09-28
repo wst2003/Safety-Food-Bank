@@ -30,7 +30,7 @@ namespace DBproject
 {
     public class DataBase
     {
-        private string connectString = @"DATA SOURCE=localhost:1521/orcl;TNS_ADMIN=C:\Users\Administrator\Oracle\network\admin;PERSIST SECURITY INFO=True;USER ID=C##PRO;Password=123456";
+        private string connectString = @"DATA SOURCE=localhost:1521/orcl;TNS_ADMIN=C:\Users\Administrator\Oracle\network\admin;PERSIST SECURITY INFO=True;USER ID=ANDEVIKING;Password=zx761000";
         public OracleConnection con;
         //静态类声明
         public static DataBase oracleCon;

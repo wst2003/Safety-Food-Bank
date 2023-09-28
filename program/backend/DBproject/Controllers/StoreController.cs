@@ -2,7 +2,7 @@
 using DBproject;
 namespace WebApplication3.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cus/[controller]")]
     [ApiController]
     public class StoreController : Controller
     {

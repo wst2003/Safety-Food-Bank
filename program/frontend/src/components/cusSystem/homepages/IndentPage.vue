@@ -340,7 +340,7 @@ const showRefundDialog = (ind_ID,com_ID) => {
   selectedIndentID.value = ind_ID;
   selectedComID.value = com_ID;
   console.log(selectedComID.value)
-  axios.get(baseURL + "/api/commodity/getCurve", {
+  axios.get(baseURL + "/api/cus/commodity/getCurve", {
       params: {
           com_id: selectedComID.value
       }
@@ -382,7 +382,7 @@ const requestData = {
   ind_rnotes: ind_rnotes.value,
 };
 
-axios.post(baseURL+'/api/indent/refund', requestData,{
+axios.post(baseURL+'/api/cus/indent/refund', requestData,{
           headers: {
               'Content-Type': 'application/json'
           }
@@ -419,7 +419,7 @@ const fetchIndents = () => {
   const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获取用户 ID
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
-  axios.post(baseURL + "/api/indent/getIndentList", {
+  axios.post(baseURL + "/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state,
       search_str: queryInfo.query,
@@ -451,7 +451,7 @@ onActivated(() => {
 const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获取用户 ID
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
-  axios.post(baseURL + "/api/indent/getIndentList", {
+  axios.post(baseURL + "/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state,
       search_str: '',
@@ -480,7 +480,7 @@ const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获�
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
   console.log("queryInfo:"+2*(queryInfo.pagenum-1)+2*queryInfo.pagenum)
-  axios.post(baseURL + "/api/indent/getIndentList", {
+  axios.post(baseURL + "/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state, 
       search_str: queryInfo.query,
@@ -534,7 +534,7 @@ const resetEvaluation = () => {
 
 const confirmEvaluation = async () => {
   try {
-      await axios.post(baseURL+'/api/indent/evaluation', {
+      await axios.post(baseURL+'/api/cus/indent/evaluation', {
         ind_id: currentIndentForEvaluation.value?.ind_ID,
         cmt_content: evaluation.value.comment,
         ind_rating: evaluation.value.score
@@ -605,7 +605,7 @@ const appMatters = ref<number | null>(null);
       try {
         console.log("base64数组："+sctImages.value);
        
-          const response = await axios.post(baseURL + `/api/appeal/createAppeal`, {
+          const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
             app_matters: appMatters.value,
             app_content: complaintText.value,
             sct_images: sctImages.value,

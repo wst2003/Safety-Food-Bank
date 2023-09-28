@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cus/[controller]")]
     [ApiController]
     public class RecommendationController : ControllerBase
     {

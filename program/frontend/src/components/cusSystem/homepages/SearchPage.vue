@@ -347,7 +347,7 @@ onMounted(()=>{
         console.log('用户地址请求失败')
     });
 
-    axios.get(baseURL+'/api/search/categories')
+    axios.get(baseURL+'/api/cus/search/categories')
     .then((res)=>{
         TagArr.value= res.data.com_categories as Array<string>
         console.log(TagArr.value)
@@ -369,7 +369,7 @@ function sortChange(value:number){
         //当前列表中有内容时，触发axios
         if(queryInfo.type=="商品"){
             axios.post(
-            baseURL+'/api/search/commodityList',
+            baseURL+'/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: queryInfo.query,
@@ -420,7 +420,7 @@ function sortChange(value:number){
         }
         else{
             axios.post(
-            baseURL+'/api/search/storeList',
+            baseURL+'/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: queryInfo.query,
@@ -551,7 +551,7 @@ function handleCurrentChange(){
     //触发axios
     if(queryInfo.type=="商品"){
             axios.post(
-            baseURL+'/api/search/commodityList',
+            baseURL+'/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: queryInfo.query,
@@ -598,7 +598,7 @@ function handleCurrentChange(){
         }
         else{
             axios.post(
-            baseURL+'/api/search/storeList',
+            baseURL+'/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: queryInfo.query,
@@ -664,8 +664,8 @@ function favorClick(item:Commodity_tab){
     
     item.favor_state==1?item.favor_state=0:item.favor_state=1
     axios.post(
-        baseURL+'/api/favorite/setFavorState',
-        //'http://127.0.0.1:4523/m1/3026709-0-default/api/favorite/setFavorState',
+        baseURL+'/api/cus/favorite/setFavorState',
+        //'http://127.0.0.1:4523/m1/3026709-0-default/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:item.com_id,
             cus_id:user_id.value,
@@ -693,7 +693,7 @@ function onSearchCom(){
         listIsCom.value=true;
         loading.value=true;
         axios.post(
-            baseURL+'/api/search/commodityList',
+            baseURL+'/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: search_str.value,
@@ -809,7 +809,7 @@ function onSearchSto(){
         loading.value=true;
         listIsCom.value=false;
         axios.post(
-            baseURL+'/api/search/storeList',
+            baseURL+'/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: search_str.value,

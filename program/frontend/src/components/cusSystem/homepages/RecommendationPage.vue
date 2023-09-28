@@ -206,7 +206,7 @@ onMounted(()=>{
     // 最新开业商家
     
     axios.post(
-            baseURL+'/api/search/storeList',
+            baseURL+'/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str:"",
@@ -240,7 +240,7 @@ onMounted(()=>{
 
     // 最热门商家
     axios.post(
-            baseURL+'/api/search/storeList',
+            baseURL+'/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str:"",
@@ -274,7 +274,7 @@ onMounted(()=>{
 
     // 最受好评商品
     axios.post(
-        baseURL+'/api/search/commodityList',
+        baseURL+'/api/cus/search/commodityList',
             JSON.stringify({
             cus_id: user_id.value,
             search_str:"",
@@ -310,7 +310,7 @@ onMounted(()=>{
 
     //无筛推荐列表
     loading.value=true;
-    axios.post( baseURL+'/api/search/commodityList',
+    axios.post( baseURL+'/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: '',
@@ -375,7 +375,7 @@ onMounted(()=>{
 
 
     // 全部标签
-    axios.get(baseURL+'/api/search/categories')
+    axios.get(baseURL+'/api/cus/search/categories')
     .then((res)=>{
         for(let item of res.data.com_categories as Array<string> ){
             TagArr.value.push({
@@ -395,7 +395,7 @@ onActivated(()=>{
 })
 
 onDeactivated(()=>{
-    axios.post('/api/recommendation',
+    axios.post('/api/cus/recommendation',
     {
         user_id:user_id.value as string
     }).then(res=>{
@@ -413,7 +413,7 @@ function onSearchCom(){
     console.log(TagSelected.value)
     loading.value=true;
     axios.post(
-        baseURL+'/api/search/commodityList',
+        baseURL+'/api/cus/search/commodityList',
         JSON.stringify({
             cus_id: user_id.value,
             search_str: "",
@@ -512,7 +512,7 @@ function favorClick(item:Commodity_tab){
     console.log("点击收藏按钮") 
     item.favor_state==1?item.favor_state=0:item.favor_state=1
     axios.post(
-        baseURL+'/api/favorite/setFavorState',
+        baseURL+'/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:item.com_id,
             cus_id:user_id.value,
@@ -541,7 +541,7 @@ function handleCurrentChange(){
     loading.value=true;
     //触发axios
     axios.post(
-    baseURL+'/api/search/commodityList',
+    baseURL+'/api/cus/search/commodityList',
     JSON.stringify({
         cus_id: user_id.value,
         search_str: "",

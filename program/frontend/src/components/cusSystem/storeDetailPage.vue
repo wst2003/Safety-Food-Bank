@@ -281,7 +281,7 @@ export default defineComponent({
         // cus_id.value = Number(route.query.cus_id);
         cus_id.value=Number(sessionStorage.getItem("cus_id"))
         console.log("cus_id.value:"+cus_id.value)
-        const response = await axios.get(baseURL + `/api/store/detail`, {
+        const response = await axios.get(baseURL + `/api/cus/store/detail`, {
           params: {
             sto_id: sto_id,
             cus_id:cus_id.value
@@ -382,7 +382,7 @@ export default defineComponent({
 
       // 发送 POST 请求到后端
       try {
-        const response = await axios.post(baseURL + '/api/favorite/setFavorState', {
+        const response = await axios.post(baseURL + '/api/cus/favorite/setFavorState', {
           com_id: commodity.com_id,
           cus_id: sessionStorage.getItem('cus_id'),
           favor_state: commodity.favor_state
@@ -472,7 +472,7 @@ export default defineComponent({
         try {
           console.log("base64数组："+sctImages.value);
           
-            const response = await axios.post(baseURL + `/api/appeal/createAppeal`, {
+            const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
               app_matters: appMatters.value,
               app_content: complaintText.value,
               sct_images: sctImages.value,

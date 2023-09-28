@@ -13,7 +13,7 @@ using System.IO;
 using DBproject;
 namespace WebApplication3.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/cus/[controller]")]
     [ApiController]
     public class SearchController : ControllerBase
     {
