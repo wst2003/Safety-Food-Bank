@@ -51,23 +51,7 @@ namespace DBproject.Controllers
             public string NTC_CONTENT { get; set; }
         }
 
-/*        [HttpGet]
-        public ActionResult updateNotice([FromBody] NoticeUpdateModel noticeModel)
-        {
-            string insertCommodity = "select NTC_CONTENT from NOTICE where NTC_ID=:NTC_ID";
-            using (OracleCommand inserCommoditytCommand = new OracleCommand(insertCommodity, DBproject.DataBase.oracleCon.con))
-            {
-                inserCommoditytCommand.Parameters.Add(new OracleParameter(":NTC_ID", noticeModel.NTC_ID));
-                inserCommoditytCommand.ExecuteNonQuery();
-            }
 
-            return Ok();
-        }
-
-        public class NoticeUpdateModel
-        {
-            public int NTC_ID { get; set; }
-        }*/
     }
 
 
