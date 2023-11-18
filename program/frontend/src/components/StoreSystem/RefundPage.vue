@@ -334,7 +334,7 @@ const appMatters = ref<number | null>(null);
       try {
         console.log("base64数组："+sctImages.value);
         
-          const response = await axios.post(`/api/appeal/createAppeal`, {
+          const response = await axios.post(`/api/cus/appeal/createAppeal`, {
             app_matters: appMatters.value,
             app_content: complaintText.value,
             sct_images: sctImages.value,

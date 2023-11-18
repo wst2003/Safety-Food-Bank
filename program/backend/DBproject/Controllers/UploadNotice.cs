@@ -8,7 +8,7 @@ using static DBproject.Controllers.UploadCommodityController;
 
 namespace DBproject.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/sto/[controller]")]
     [ApiController]
     public class UploadNoticeController : Controller
     {

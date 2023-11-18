@@ -120,9 +120,7 @@ import { ConsoleLogger } from '@microsoft/signalr/dist/esm/Utils';
     sto_id.value = sessionStorage.getItem('sto_id') as string;
     console.log(router.currentRoute.value.path);
     router.push({path:'/operate',query:{type:1}})
-    // if (router.currentRoute.value.path === '/') {
-    //   router.push('/store/detail');
-    // }
+    
   });
 
   const logout=()=>{

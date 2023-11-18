@@ -140,23 +140,7 @@ namespace DBproject.Controllers
             return Ok("更新成功！");
         }
 
-        [HttpGet("imgpath")]
-        public ActionResult getImagePath([FromQuery] int COM_ID)
-        {
-            string selectImagePathSQL = "select COM_IMAGE from COMMODITY_IMAGE where com_id = " + COM_ID;
-            List<string> imagePath = new List<string>();
-            using (OracleCommand selectImagePathCommand = new OracleCommand(selectImagePathSQL, DBproject.DataBase.oracleCon.con))
-            {
-                using (OracleDataReader selectImagePathReader = selectImagePathCommand.ExecuteReader())
-                {
-                    while (selectImagePathReader.Read())
-                    {
-                        imagePath.Add(selectImagePathReader.GetString(0));
-                    }
-                }
-            }
-            return Ok(JsonConvert.SerializeObject(imagePath));
-        }
+       
 
         [HttpPost("updateimg")]
         [Consumes("multipart/form-data")]

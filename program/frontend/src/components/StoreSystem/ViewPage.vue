@@ -694,7 +694,7 @@ onMounted(()=>{
            console.log('An error occurred:', error);
        });
 
-       axios.get(baseURL + `/api/commodity/detail`, {
+       axios.get(baseURL + `/api/cus/commodity/detail`, {
          params: {
            com_id: com_id.value,
            cus_id: Number(sessionStorage.getItem("sto_id")),
@@ -818,8 +818,8 @@ const replyVisible=ref(false)
      try {
        console.log("当前的父评论id是："+currentComment.value?.cmt_id)
 
-       const response = await axios.post(baseURL + '/api/commodity/comment', {
-         // const response = await axios.post('http://127.0.0.1:4523/m1/3026709-0-default/api/commodity/comment', {
+       const response = await axios.post(baseURL + '/api/cus/commodity/comment', {
+         
          user_id: sessionStorage.getItem("sto_id"),  // 这里使用固定的用户ID，你可以按需修改
          cmt_content: replyContent.value,
          cmt_father: currentComment.value?.cmt_id,
@@ -843,7 +843,7 @@ const replyVisible=ref(false)
          console.log("已经接收到com_id=" + com_id)
      
 
-         const response = await axios.get(baseURL + `/api/commodity/detail`, {
+         const response = await axios.get(baseURL + `/api/cus/commodity/detail`, {
            params: {
              com_id: com_id,
              cus_id: sessionStorage.getItem("sto_id")
@@ -898,39 +898,7 @@ const replyVisible=ref(false)
        console.error(error);
      }
    };
-   // const submitReply = async () => {
-   //   try {
-   //     console.log("当前的父评论id是："+currentComment.value?.cmt_id)
-
-   //     const response = await axios.post(baseURL + '/api/commodity/comment', {
-   //       user_id: sessionStorage.getItem("sto_id"), 
-   //       cmt_content: replyContent.value,
-   //       cmt_father: currentComment.value?.cmt_id,
-   //       com_id: commodity.value?.com_id
-   //     });
-
-   //     console.log("response.data.msg:" + response.data.msg)
-   //     // 添加新评论到评论列表中或处理响应
-   //     //  response.data.comment 包含了新评论的详细信息
-   //     console.log(response.data.comment)
-   //     const newComment = response.data.comment;
-
-   //     // 判断这是一个顶级评论还是子评论
-   //     if (newComment.cmt_father === 0) {
-   //       // 顶级评论
-   //       topComments.value.push(newComment);
-   //     } else {
-   //       // 子评论
-   //       if (currentComment.value) {
-   //         currentComment.value.children.push(newComment);
-   //       }
-   //     }
-   //     replyVisible.value = false;
-   //     replyContent.value = "";
-   //   } catch (error) {
-   //     console.error(error);
-   //   }
-   // };
+   
    const getParentContent = (fatherId) => {
      // const parentComment = topComments.value.find(comment => comment.cmt_id === fatherId);
      const parentComment = allComments.value[fatherId];
@@ -997,7 +965,7 @@ const replyVisible=ref(false)
        try {
          console.log("base64数组："+sctImages.value);
          
-           const response = await axios.post(`/api/appeal/createAppeal`, {
+           const response = await axios.post(`/api/sto/appeal/createAppeal`, {
              app_matters: appMatters.value,
              app_content: complaintText.value,
              sct_images: sctImages.value,

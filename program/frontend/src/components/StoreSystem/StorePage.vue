@@ -154,7 +154,7 @@
     
   }
   const noticeUpload=()=>{
-    axios.post('api/uploadNotice',{
+    axios.post('api/sto/uploadNotice',{
       STO_ID:sto_id.value,
       NTC_CONTENT:text.value})
     .then(response=>{

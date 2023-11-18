@@ -86,11 +86,12 @@ onMounted(()=>{
 //sto_ID.value=route.query.sto_id as string;
 sto_ID.value = sessionStorage.getItem('sto_id') as string;
 console.log(sto_ID.value);
-axios.get('/api/sto/uploadcommodity/imgpath?COM_ID='+com_id.value)
+axios.get('/api/sto/StoreQueryCommodity/imgpath?COM_ID='+com_id.value)
   .then(response =>{
     response.data.forEach(path => {
       var urlPath = path.substr(10);
       console.log(urlPath);
+      console.log(path+'ssssssssss');
       fileList.value.push(
         {
           name:path,

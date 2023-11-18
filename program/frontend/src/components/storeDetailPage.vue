@@ -212,7 +212,7 @@ export default defineComponent({
         const cus_id = route.query.cus_id
         console.log(cus_id)
         console.log(sto_id)
-        const response = await axios.get(baseURL + `/api/store/detail`, {
+        const response = await axios.get(baseURL + `/api/cus/store/detail`, {
           params: {
             sto_id: sto_id,
             cus_id:cus_id

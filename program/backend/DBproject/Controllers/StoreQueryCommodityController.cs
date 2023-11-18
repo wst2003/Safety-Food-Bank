@@ -238,6 +238,24 @@ namespace DBproject.Controllers
             }
             return Ok("" + 0);
         }
+
+        [HttpGet("imgpath")]
+        public ActionResult getImagePath([FromQuery] int COM_ID)
+        {
+            string selectImagePathSQL = "select COM_IMAGE from COMMODITY_IMAGE where com_id = " + COM_ID;
+            List<string> imagePath = new List<string>();
+            using (OracleCommand selectImagePathCommand = new OracleCommand(selectImagePathSQL, DBproject.DataBase.oracleCon.con))
+            {
+                using (OracleDataReader selectImagePathReader = selectImagePathCommand.ExecuteReader())
+                {
+                    while (selectImagePathReader.Read())
+                    {
+                        imagePath.Add(selectImagePathReader.GetString(0));
+                    }
+                }
+            }
+            return Ok(JsonConvert.SerializeObject(imagePath));
+        }
     }
 
     public class CommodityForStorer0

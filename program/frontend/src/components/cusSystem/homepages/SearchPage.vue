@@ -665,7 +665,7 @@ function favorClick(item:Commodity_tab){
     item.favor_state==1?item.favor_state=0:item.favor_state=1
     axios.post(
         baseURL+'/api/cus/favorite/setFavorState',
-        //'http://127.0.0.1:4523/m1/3026709-0-default/api/cus/favorite/setFavorState',
+       
         JSON.stringify({
             com_id:item.com_id,
             cus_id:user_id.value,
