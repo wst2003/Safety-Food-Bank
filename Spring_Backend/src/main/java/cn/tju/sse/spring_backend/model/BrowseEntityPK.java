@@ -12,15 +12,15 @@ import java.util.Objects;
 public class BrowseEntityPK implements Serializable {
     @Column(name = "BRO_TIME_START")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private Timestamp broTimeStart;
     @Column(name = "COM_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long comId;
+      
+    private int comId;
     @Column(name = "BROWSER_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int browserId;
 
     public Timestamp getBroTimeStart() {
@@ -31,11 +31,11 @@ public class BrowseEntityPK implements Serializable {
         this.broTimeStart = broTimeStart;
     }
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "SEQUENCES", schema = "food_bank", catalog = "")
 public class SequencesEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "NAME")
     private String name;

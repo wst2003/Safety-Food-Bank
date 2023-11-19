@@ -8,17 +8,14 @@ import java.util.Objects;
 @Table(name = "STOREIMAGE", schema = "food_bank", catalog = "")
 @IdClass(StoreimageEntityPK.class)
 public class StoreimageEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "STO_ID")
     private int stoId;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "STO_IMAGE")
     private String stoImage;
-    @ManyToOne
-    @JoinColumn(name = "STO_ID", referencedColumnName = "STO_ID", nullable = false)
-    private StoreEntity storeByStoId;
 
     public int getStoId() {
         return stoId;
@@ -47,13 +44,5 @@ public class StoreimageEntity {
     @Override
     public int hashCode() {
         return Objects.hash(stoId, stoImage);
-    }
-
-    public StoreEntity getStoreByStoId() {
-        return storeByStoId;
-    }
-
-    public void setStoreByStoId(StoreEntity storeByStoId) {
-        this.storeByStoId = storeByStoId;
     }
 }

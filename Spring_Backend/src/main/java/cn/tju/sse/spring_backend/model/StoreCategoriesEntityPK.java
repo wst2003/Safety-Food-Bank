@@ -11,11 +11,11 @@ import java.util.Objects;
 public class StoreCategoriesEntityPK implements Serializable {
     @Column(name = "STORE_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int storeId;
     @Column(name = "COM_CATEGORY")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private String comCategory;
 
     public int getStoreId() {

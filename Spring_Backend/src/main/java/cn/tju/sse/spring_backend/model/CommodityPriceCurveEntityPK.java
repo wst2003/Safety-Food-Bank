@@ -12,12 +12,12 @@ import java.util.Objects;
 public class CommodityPriceCurveEntityPK implements Serializable {
     @Column(name = "COM_PC_TIME")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private Date comPcTime;
     @Column(name = "COM_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long comId;
+      
+    private int comId;
 
     public Date getComPcTime() {
         return comPcTime;
@@ -27,11 +27,11 @@ public class CommodityPriceCurveEntityPK implements Serializable {
         this.comPcTime = comPcTime;
     }
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 

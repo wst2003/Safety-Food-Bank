@@ -3,20 +3,19 @@ package cn.tju.sse.spring_backend.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "INDENT", schema = "food_bank", catalog = "")
 public class IndentEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "IND_ID")
     private int indId;
     @Basic
     @Column(name = "IND_QUANTITY")
-    private Long indQuantity;
+    private Integer indQuantity;
     @Basic
     @Column(name = "IND_CREATIONTIME")
     private Date indCreationtime;
@@ -28,13 +27,13 @@ public class IndentEntity {
     private String indNotes;
     @Basic
     @Column(name = "IND_STATE")
-    private BigInteger indState;
+    private Integer indState;
     @Basic
     @Column(name = "CUS_ID")
     private Integer cusId;
     @Basic
     @Column(name = "COM_ID")
-    private Long comId;
+    private Integer comId;
     @Basic
     @Column(name = "IND_RTIME")
     private Date indRtime;
@@ -50,12 +49,6 @@ public class IndentEntity {
     @Basic
     @Column(name = "IND_RATING")
     private BigDecimal indRating;
-    @ManyToOne
-    @JoinColumn(name = "CUS_ID", referencedColumnName = "CUS_ID")
-    private CustomerEntity customerByCusId;
-    @ManyToOne
-    @JoinColumn(name = "COM_ID", referencedColumnName = "COM_ID")
-    private CommodityEntity commodityByComId;
 
     public int getIndId() {
         return indId;
@@ -65,11 +58,11 @@ public class IndentEntity {
         this.indId = indId;
     }
 
-    public Long getIndQuantity() {
+    public Integer getIndQuantity() {
         return indQuantity;
     }
 
-    public void setIndQuantity(Long indQuantity) {
+    public void setIndQuantity(Integer indQuantity) {
         this.indQuantity = indQuantity;
     }
 
@@ -97,11 +90,11 @@ public class IndentEntity {
         this.indNotes = indNotes;
     }
 
-    public BigInteger getIndState() {
+    public Integer getIndState() {
         return indState;
     }
 
-    public void setIndState(BigInteger indState) {
+    public void setIndState(Integer indState) {
         this.indState = indState;
     }
 
@@ -113,11 +106,11 @@ public class IndentEntity {
         this.cusId = cusId;
     }
 
-    public Long getComId() {
+    public Integer getComId() {
         return comId;
     }
 
-    public void setComId(Long comId) {
+    public void setComId(Integer comId) {
         this.comId = comId;
     }
 
@@ -172,21 +165,5 @@ public class IndentEntity {
     @Override
     public int hashCode() {
         return Objects.hash(indId, indQuantity, indCreationtime, indVerificationcode, indNotes, indState, cusId, comId, indRtime, indRnotes, indMoney, indRmoney, indRating);
-    }
-
-    public CustomerEntity getCustomerByCusId() {
-        return customerByCusId;
-    }
-
-    public void setCustomerByCusId(CustomerEntity customerByCusId) {
-        this.customerByCusId = customerByCusId;
-    }
-
-    public CommodityEntity getCommodityByComId() {
-        return commodityByComId;
-    }
-
-    public void setCommodityByComId(CommodityEntity commodityByComId) {
-        this.commodityByComId = commodityByComId;
     }
 }

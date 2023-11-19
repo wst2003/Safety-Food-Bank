@@ -11,18 +11,18 @@ import java.util.Objects;
 public class FavoriteEntityPK implements Serializable {
     @Column(name = "COM_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long comId;
+      
+    private int comId;
     @Column(name = "CUS_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int cusId;
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 

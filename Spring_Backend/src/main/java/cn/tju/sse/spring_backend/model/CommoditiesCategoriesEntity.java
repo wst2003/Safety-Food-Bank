@@ -2,22 +2,15 @@ package cn.tju.sse.spring_backend.model;
 
 import jakarta.persistence.*;
 
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "COMMODITIES_CATEGORIES", schema = "food_bank", catalog = "")
 public class CommoditiesCategoriesEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "COM_CATEGORY")
     private String comCategory;
-    @OneToMany(mappedBy = "commoditiesCategoriesByComCategory")
-    private Collection<CommodityCategoriesEntity> commodityCategoriesByComCategory;
-    @OneToMany(mappedBy = "commoditiesCategoriesByComCategory")
-    private Collection<CustomerLoveEntity> customerLovesByComCategory;
-    @OneToMany(mappedBy = "commoditiesCategoriesByComCategory")
-    private Collection<StoreCategoriesEntity> storeCategoriesByComCategory;
 
     public String getComCategory() {
         return comCategory;
@@ -38,29 +31,5 @@ public class CommoditiesCategoriesEntity {
     @Override
     public int hashCode() {
         return Objects.hash(comCategory);
-    }
-
-    public Collection<CommodityCategoriesEntity> getCommodityCategoriesByComCategory() {
-        return commodityCategoriesByComCategory;
-    }
-
-    public void setCommodityCategoriesByComCategory(Collection<CommodityCategoriesEntity> commodityCategoriesByComCategory) {
-        this.commodityCategoriesByComCategory = commodityCategoriesByComCategory;
-    }
-
-    public Collection<CustomerLoveEntity> getCustomerLovesByComCategory() {
-        return customerLovesByComCategory;
-    }
-
-    public void setCustomerLovesByComCategory(Collection<CustomerLoveEntity> customerLovesByComCategory) {
-        this.customerLovesByComCategory = customerLovesByComCategory;
-    }
-
-    public Collection<StoreCategoriesEntity> getStoreCategoriesByComCategory() {
-        return storeCategoriesByComCategory;
-    }
-
-    public void setStoreCategoriesByComCategory(Collection<StoreCategoriesEntity> storeCategoriesByComCategory) {
-        this.storeCategoriesByComCategory = storeCategoriesByComCategory;
     }
 }

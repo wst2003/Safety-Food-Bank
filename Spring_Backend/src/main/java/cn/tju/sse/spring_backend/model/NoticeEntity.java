@@ -2,14 +2,13 @@ package cn.tju.sse.spring_backend.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
 import java.sql.Date;
 import java.util.Objects;
 
 @Entity
 @Table(name = "NOTICE", schema = "food_bank", catalog = "")
 public class NoticeEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "NTC_ID")
     private int ntcId;
@@ -21,13 +20,10 @@ public class NoticeEntity {
     private String ntcContent;
     @Basic
     @Column(name = "NTC_STATE")
-    private BigInteger ntcState;
+    private Integer ntcState;
     @Basic
     @Column(name = "STO_ID")
     private int stoId;
-    @ManyToOne
-    @JoinColumn(name = "STO_ID", referencedColumnName = "USER_ID", nullable = false)
-    private UsersEntity usersByStoId;
 
     public int getNtcId() {
         return ntcId;
@@ -53,11 +49,11 @@ public class NoticeEntity {
         this.ntcContent = ntcContent;
     }
 
-    public BigInteger getNtcState() {
+    public Integer getNtcState() {
         return ntcState;
     }
 
-    public void setNtcState(BigInteger ntcState) {
+    public void setNtcState(Integer ntcState) {
         this.ntcState = ntcState;
     }
 
@@ -80,13 +76,5 @@ public class NoticeEntity {
     @Override
     public int hashCode() {
         return Objects.hash(ntcId, ntcTime, ntcContent, ntcState, stoId);
-    }
-
-    public UsersEntity getUsersByStoId() {
-        return usersByStoId;
-    }
-
-    public void setUsersByStoId(UsersEntity usersByStoId) {
-        this.usersByStoId = usersByStoId;
     }
 }

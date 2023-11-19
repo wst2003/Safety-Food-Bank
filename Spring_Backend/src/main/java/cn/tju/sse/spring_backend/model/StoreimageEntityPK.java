@@ -11,11 +11,11 @@ import java.util.Objects;
 public class StoreimageEntityPK implements Serializable {
     @Column(name = "STO_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int stoId;
     @Column(name = "STO_IMAGE")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private String stoImage;
 
     public int getStoId() {

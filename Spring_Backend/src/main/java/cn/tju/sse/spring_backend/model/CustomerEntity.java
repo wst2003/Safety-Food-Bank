@@ -2,14 +2,12 @@ package cn.tju.sse.spring_backend.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "CUSTOMER", schema = "food_bank", catalog = "")
 public class CustomerEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "CUS_ID")
     private int cusId;
@@ -24,20 +22,7 @@ public class CustomerEntity {
     private String cusPaypassword;
     @Basic
     @Column(name = "CUS_STATE")
-    private BigInteger cusState;
-    @OneToMany(mappedBy = "customerByBrowserId")
-    private Collection<BrowseEntity> browsesByCusId;
-    @OneToMany(mappedBy = "customerByCusId")
-    private Collection<ChatEntity> chatsByCusId;
-    @OneToOne
-    @JoinColumn(name = "CUS_ID", referencedColumnName = "USER_ID", nullable = false)
-    private UsersEntity usersByCusId;
-    @OneToMany(mappedBy = "customerByCusId")
-    private Collection<CustomerLoveEntity> customerLovesByCusId;
-    @OneToMany(mappedBy = "customerByCusId")
-    private Collection<FavoriteEntity> favoritesByCusId;
-    @OneToMany(mappedBy = "customerByCusId")
-    private Collection<IndentEntity> indentsByCusId;
+    private int cusState;
 
     public int getCusId() {
         return cusId;
@@ -71,11 +56,11 @@ public class CustomerEntity {
         this.cusPaypassword = cusPaypassword;
     }
 
-    public BigInteger getCusState() {
+    public int getCusState() {
         return cusState;
     }
 
-    public void setCusState(BigInteger cusState) {
+    public void setCusState(int cusState) {
         this.cusState = cusState;
     }
 
@@ -84,59 +69,11 @@ public class CustomerEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CustomerEntity that = (CustomerEntity) o;
-        return cusId == that.cusId && Objects.equals(cusNickname, that.cusNickname) && Objects.equals(cusNotes, that.cusNotes) && Objects.equals(cusPaypassword, that.cusPaypassword) && Objects.equals(cusState, that.cusState);
+        return cusId == that.cusId && cusState == that.cusState && Objects.equals(cusNickname, that.cusNickname) && Objects.equals(cusNotes, that.cusNotes) && Objects.equals(cusPaypassword, that.cusPaypassword);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(cusId, cusNickname, cusNotes, cusPaypassword, cusState);
-    }
-
-    public Collection<BrowseEntity> getBrowsesByCusId() {
-        return browsesByCusId;
-    }
-
-    public void setBrowsesByCusId(Collection<BrowseEntity> browsesByCusId) {
-        this.browsesByCusId = browsesByCusId;
-    }
-
-    public Collection<ChatEntity> getChatsByCusId() {
-        return chatsByCusId;
-    }
-
-    public void setChatsByCusId(Collection<ChatEntity> chatsByCusId) {
-        this.chatsByCusId = chatsByCusId;
-    }
-
-    public UsersEntity getUsersByCusId() {
-        return usersByCusId;
-    }
-
-    public void setUsersByCusId(UsersEntity usersByCusId) {
-        this.usersByCusId = usersByCusId;
-    }
-
-    public Collection<CustomerLoveEntity> getCustomerLovesByCusId() {
-        return customerLovesByCusId;
-    }
-
-    public void setCustomerLovesByCusId(Collection<CustomerLoveEntity> customerLovesByCusId) {
-        this.customerLovesByCusId = customerLovesByCusId;
-    }
-
-    public Collection<FavoriteEntity> getFavoritesByCusId() {
-        return favoritesByCusId;
-    }
-
-    public void setFavoritesByCusId(Collection<FavoriteEntity> favoritesByCusId) {
-        this.favoritesByCusId = favoritesByCusId;
-    }
-
-    public Collection<IndentEntity> getIndentsByCusId() {
-        return indentsByCusId;
-    }
-
-    public void setIndentsByCusId(Collection<IndentEntity> indentsByCusId) {
-        this.indentsByCusId = indentsByCusId;
     }
 }

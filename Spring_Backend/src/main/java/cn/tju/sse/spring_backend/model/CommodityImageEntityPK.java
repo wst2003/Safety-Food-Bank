@@ -11,18 +11,18 @@ import java.util.Objects;
 public class CommodityImageEntityPK implements Serializable {
     @Column(name = "COM_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long comId;
+      
+    private int comId;
     @Column(name = "COM_IMAGE")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private String comImage;
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 

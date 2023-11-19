@@ -12,15 +12,15 @@ import java.util.Objects;
 public class ChatEntityPK implements Serializable {
     @Column(name = "CHAT_TIME")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private Timestamp chatTime;
     @Column(name = "CUS_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int cusId;
     @Column(name = "STORE_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int storeId;
 
     public Timestamp getChatTime() {

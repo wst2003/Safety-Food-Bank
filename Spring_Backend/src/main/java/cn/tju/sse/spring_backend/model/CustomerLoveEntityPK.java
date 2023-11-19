@@ -11,11 +11,11 @@ import java.util.Objects;
 public class CustomerLoveEntityPK implements Serializable {
     @Column(name = "CUS_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int cusId;
     @Column(name = "COM_CATEGORY")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private String comCategory;
 
     public int getCusId() {

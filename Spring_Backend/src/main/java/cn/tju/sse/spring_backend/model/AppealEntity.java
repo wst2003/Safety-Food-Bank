@@ -2,21 +2,19 @@ package cn.tju.sse.spring_backend.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
 import java.sql.Date;
-import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 @Table(name = "APPEAL", schema = "food_bank", catalog = "")
 public class AppealEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "APP_ID")
     private int appId;
     @Basic
     @Column(name = "APP_MATTERS")
-    private BigInteger appMatters;
+    private Integer appMatters;
     @Basic
     @Column(name = "APP_CONTENT")
     private String appContent;
@@ -25,7 +23,7 @@ public class AppealEntity {
     private Integer userId;
     @Basic
     @Column(name = "COM_ID")
-    private Long comId;
+    private Integer comId;
     @Basic
     @Column(name = "CMT_ID")
     private Integer cmtId;
@@ -35,17 +33,6 @@ public class AppealEntity {
     @Basic
     @Column(name = "APP_TIME")
     private Date appTime;
-    @ManyToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID")
-    private UsersEntity usersByUserId;
-    @ManyToOne
-    @JoinColumn(name = "COM_ID", referencedColumnName = "COM_ID")
-    private CommodityEntity commodityByComId;
-    @ManyToOne
-    @JoinColumn(name = "APP_USERID", referencedColumnName = "USER_ID")
-    private UsersEntity usersByAppUserid;
-    @OneToMany(mappedBy = "appealByAppId")
-    private Collection<ScreenshotEntity> screenshotsByAppId;
 
     public int getAppId() {
         return appId;
@@ -55,11 +42,11 @@ public class AppealEntity {
         this.appId = appId;
     }
 
-    public BigInteger getAppMatters() {
+    public Integer getAppMatters() {
         return appMatters;
     }
 
-    public void setAppMatters(BigInteger appMatters) {
+    public void setAppMatters(Integer appMatters) {
         this.appMatters = appMatters;
     }
 
@@ -79,11 +66,11 @@ public class AppealEntity {
         this.userId = userId;
     }
 
-    public Long getComId() {
+    public Integer getComId() {
         return comId;
     }
 
-    public void setComId(Long comId) {
+    public void setComId(Integer comId) {
         this.comId = comId;
     }
 
@@ -122,37 +109,5 @@ public class AppealEntity {
     @Override
     public int hashCode() {
         return Objects.hash(appId, appMatters, appContent, userId, comId, cmtId, appUserid, appTime);
-    }
-
-    public UsersEntity getUsersByUserId() {
-        return usersByUserId;
-    }
-
-    public void setUsersByUserId(UsersEntity usersByUserId) {
-        this.usersByUserId = usersByUserId;
-    }
-
-    public CommodityEntity getCommodityByComId() {
-        return commodityByComId;
-    }
-
-    public void setCommodityByComId(CommodityEntity commodityByComId) {
-        this.commodityByComId = commodityByComId;
-    }
-
-    public UsersEntity getUsersByAppUserid() {
-        return usersByAppUserid;
-    }
-
-    public void setUsersByAppUserid(UsersEntity usersByAppUserid) {
-        this.usersByAppUserid = usersByAppUserid;
-    }
-
-    public Collection<ScreenshotEntity> getScreenshotsByAppId() {
-        return screenshotsByAppId;
-    }
-
-    public void setScreenshotsByAppId(Collection<ScreenshotEntity> screenshotsByAppId) {
-        this.screenshotsByAppId = screenshotsByAppId;
     }
 }

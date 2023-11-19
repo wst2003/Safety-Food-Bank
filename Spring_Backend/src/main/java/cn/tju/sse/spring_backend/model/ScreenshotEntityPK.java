@@ -11,11 +11,11 @@ import java.util.Objects;
 public class ScreenshotEntityPK implements Serializable {
     @Column(name = "APP_ID")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private int appId;
     @Column(name = "SCT_IMAGE")
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     private String sctImage;
 
     public int getAppId() {

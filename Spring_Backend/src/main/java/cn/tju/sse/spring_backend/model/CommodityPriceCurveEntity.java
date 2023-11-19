@@ -10,20 +10,17 @@ import java.util.Objects;
 @Table(name = "COMMODITY_PRICE_CURVE", schema = "food_bank", catalog = "")
 @IdClass(CommodityPriceCurveEntityPK.class)
 public class CommodityPriceCurveEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "COM_PC_TIME")
     private Date comPcTime;
     @Basic
     @Column(name = "COM_PC_PRICE")
     private BigDecimal comPcPrice;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "COM_ID")
-    private long comId;
-    @ManyToOne
-    @JoinColumn(name = "COM_ID", referencedColumnName = "COM_ID", nullable = false)
-    private CommodityEntity commodityByComId;
+    private int comId;
 
     public Date getComPcTime() {
         return comPcTime;
@@ -41,11 +38,11 @@ public class CommodityPriceCurveEntity {
         this.comPcPrice = comPcPrice;
     }
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 
@@ -60,13 +57,5 @@ public class CommodityPriceCurveEntity {
     @Override
     public int hashCode() {
         return Objects.hash(comPcTime, comPcPrice, comId);
-    }
-
-    public CommodityEntity getCommodityByComId() {
-        return commodityByComId;
-    }
-
-    public void setCommodityByComId(CommodityEntity commodityByComId) {
-        this.commodityByComId = commodityByComId;
     }
 }

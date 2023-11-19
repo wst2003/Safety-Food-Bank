@@ -8,7 +8,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "COMMODITY_COMMENT", schema = "food_bank", catalog = "")
 public class CommodityCommentEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "CMT_ID")
     private int cmtId;
@@ -23,16 +23,10 @@ public class CommodityCommentEntity {
     private Date cmtTime;
     @Basic
     @Column(name = "COM_ID")
-    private long comId;
+    private int comId;
     @Basic
     @Column(name = "USER_ID")
     private int userId;
-    @ManyToOne
-    @JoinColumn(name = "COM_ID", referencedColumnName = "COM_ID", nullable = false)
-    private CommodityEntity commodityByComId;
-    @ManyToOne
-    @JoinColumn(name = "USER_ID", referencedColumnName = "USER_ID", nullable = false)
-    private UsersEntity usersByUserId;
 
     public int getCmtId() {
         return cmtId;
@@ -66,11 +60,11 @@ public class CommodityCommentEntity {
         this.cmtTime = cmtTime;
     }
 
-    public long getComId() {
+    public int getComId() {
         return comId;
     }
 
-    public void setComId(long comId) {
+    public void setComId(int comId) {
         this.comId = comId;
     }
 
@@ -93,21 +87,5 @@ public class CommodityCommentEntity {
     @Override
     public int hashCode() {
         return Objects.hash(cmtId, cmtFather, cmtContent, cmtTime, comId, userId);
-    }
-
-    public CommodityEntity getCommodityByComId() {
-        return commodityByComId;
-    }
-
-    public void setCommodityByComId(CommodityEntity commodityByComId) {
-        this.commodityByComId = commodityByComId;
-    }
-
-    public UsersEntity getUsersByUserId() {
-        return usersByUserId;
-    }
-
-    public void setUsersByUserId(UsersEntity usersByUserId) {
-        this.usersByUserId = usersByUserId;
     }
 }

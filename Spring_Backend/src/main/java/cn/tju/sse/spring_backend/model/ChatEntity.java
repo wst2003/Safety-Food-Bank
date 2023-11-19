@@ -2,7 +2,6 @@ package cn.tju.sse.spring_backend.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.Objects;
 
@@ -10,15 +9,15 @@ import java.util.Objects;
 @Table(name = "CHAT", schema = "food_bank", catalog = "")
 @IdClass(ChatEntityPK.class)
 public class ChatEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "CHAT_TIME")
     private Timestamp chatTime;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "CUS_ID")
     private int cusId;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "STORE_ID")
     private int storeId;
@@ -27,16 +26,10 @@ public class ChatEntity {
     private String chatContent;
     @Basic
     @Column(name = "CHAT_SENDER")
-    private BigInteger chatSender;
+    private Integer chatSender;
     @Basic
     @Column(name = "CHAT_TYPE")
     private Integer chatType;
-    @ManyToOne
-    @JoinColumn(name = "CUS_ID", referencedColumnName = "CUS_ID", nullable = false)
-    private CustomerEntity customerByCusId;
-    @ManyToOne
-    @JoinColumn(name = "STORE_ID", referencedColumnName = "STO_ID", nullable = false)
-    private StoreEntity storeByStoreId;
 
     public Timestamp getChatTime() {
         return chatTime;
@@ -70,11 +63,11 @@ public class ChatEntity {
         this.chatContent = chatContent;
     }
 
-    public BigInteger getChatSender() {
+    public Integer getChatSender() {
         return chatSender;
     }
 
-    public void setChatSender(BigInteger chatSender) {
+    public void setChatSender(Integer chatSender) {
         this.chatSender = chatSender;
     }
 
@@ -97,21 +90,5 @@ public class ChatEntity {
     @Override
     public int hashCode() {
         return Objects.hash(chatTime, cusId, storeId, chatContent, chatSender, chatType);
-    }
-
-    public CustomerEntity getCustomerByCusId() {
-        return customerByCusId;
-    }
-
-    public void setCustomerByCusId(CustomerEntity customerByCusId) {
-        this.customerByCusId = customerByCusId;
-    }
-
-    public StoreEntity getStoreByStoreId() {
-        return storeByStoreId;
-    }
-
-    public void setStoreByStoreId(StoreEntity storeByStoreId) {
-        this.storeByStoreId = storeByStoreId;
     }
 }

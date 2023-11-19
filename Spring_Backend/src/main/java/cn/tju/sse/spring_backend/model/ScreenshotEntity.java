@@ -8,17 +8,14 @@ import java.util.Objects;
 @Table(name = "SCREENSHOT", schema = "food_bank", catalog = "")
 @IdClass(ScreenshotEntityPK.class)
 public class ScreenshotEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "APP_ID")
     private int appId;
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+      
     @Id
     @Column(name = "SCT_IMAGE")
     private String sctImage;
-    @ManyToOne
-    @JoinColumn(name = "APP_ID", referencedColumnName = "APP_ID", nullable = false)
-    private AppealEntity appealByAppId;
 
     public int getAppId() {
         return appId;
@@ -47,13 +44,5 @@ public class ScreenshotEntity {
     @Override
     public int hashCode() {
         return Objects.hash(appId, sctImage);
-    }
-
-    public AppealEntity getAppealByAppId() {
-        return appealByAppId;
-    }
-
-    public void setAppealByAppId(AppealEntity appealByAppId) {
-        this.appealByAppId = appealByAppId;
     }
 }
