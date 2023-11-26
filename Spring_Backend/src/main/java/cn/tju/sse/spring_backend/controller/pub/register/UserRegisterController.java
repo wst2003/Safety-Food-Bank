@@ -1,4 +1,4 @@
-package cn.tju.sse.spring_backend.controller.pub;
+package cn.tju.sse.spring_backend.controller.pub.register;
 
 import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequest;
 import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationResponse;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/pub/register")
-public class register {
+public class UserRegisterController {
     @Autowired
     private UserRegisterService userRegisterService;
     @RequestMapping(value = "/user",method = RequestMethod.POST)
