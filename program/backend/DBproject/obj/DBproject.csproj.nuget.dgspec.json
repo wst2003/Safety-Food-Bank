@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj": {}
+    "D:\\学习\\git仓库\\Safety-Food-Bank\\program\\backend\\DBproject\\DBproject.csproj": {}
   },
   "projects": {
-    "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj": {
+    "D:\\学习\\git仓库\\Safety-Food-Bank\\program\\backend\\DBproject\\DBproject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj",
+        "projectUniqueName": "D:\\学习\\git仓库\\Safety-Food-Bank\\program\\backend\\DBproject\\DBproject.csproj",
         "projectName": "DBproject",
-        "projectPath": "D:\\FoodBank\\program\\backend\\DBproject\\DBproject.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\FoodBank\\program\\backend\\DBproject\\obj\\",
+        "projectPath": "D:\\学习\\git仓库\\Safety-Food-Bank\\program\\backend\\DBproject\\DBproject.csproj",
+        "packagesPath": "C:\\Users\\16597\\.nuget\\packages\\",
+        "outputPath": "D:\\学习\\git仓库\\Safety-Food-Bank\\program\\backend\\DBproject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\16597\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -71,7 +71,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -83,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.320\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

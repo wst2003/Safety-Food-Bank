@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-
+./backend
 # local env files
 .env.local
 .env.*.local
@@ -19,7 +19,6 @@ pnpm-debug.log*
 *.suo
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
 *.v2
 *.vsidx
