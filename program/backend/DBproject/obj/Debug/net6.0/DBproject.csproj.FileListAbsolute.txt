@@ -1920,3 +1920,4 @@ D:\学习\git仓库\Safety-Food-Bank\program\backend\DBproject\obj\Debug\net6.0\
 D:\学习\git仓库\Safety-Food-Bank\program\backend\DBproject\obj\Debug\net6.0\DBproject.pdb
 D:\学习\git仓库\Safety-Food-Bank\program\backend\DBproject\obj\Debug\net6.0\DBproject.genruntimeconfig.cache
 D:\学习\git仓库\Safety-Food-Bank\program\backend\DBproject\obj\Debug\net6.0\ref\DBproject.dll
+D:\学习\git仓库\Safety-Food-Bank\program\backend\DBproject\bin\Debug\net6.0\DBproject.staticwebassets.runtime.json

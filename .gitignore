@@ -1,3 +1,6 @@
-program/backend/DBproject/wwwroot\
-
-
+program/backend/DBproject/wwwroot/
+program/backend/.vs/
+program/backend/DBproject/.vs/
+program/backend/DBproject/bin/
+program/backend/DBproject/obj/
+program/backend/DBproject/log/
