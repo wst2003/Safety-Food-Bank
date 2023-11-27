@@ -1,6 +1,6 @@
 package cn.tju.sse.spring_backend;
 
-import cn.tju.sse.spring_backend.repository.dto.ObsOperationTool;
+import cn.tju.sse.spring_backend.repository.obs.ObsOperationTool;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

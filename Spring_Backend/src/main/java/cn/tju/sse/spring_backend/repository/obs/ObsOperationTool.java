@@ -1,11 +1,9 @@
-package cn.tju.sse.spring_backend.repository.dto;
+package cn.tju.sse.spring_backend.repository.obs;
 import com.obs.services.ObsClient;
-import com.obs.services.exception.ObsException;
 import com.obs.services.model.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
 
