@@ -52,6 +52,11 @@
             <artifactId>mapstruct-processor</artifactId>
             <version>1.4.2.Final</version>
         </dependency>
+        <dependency>
+            <groupId>com.huaweicloud</groupId>
+            <artifactId>esdk-obs-java-bundle</artifactId>
+            <version>3.23.5</version>
+        </dependency>
     </dependencies>
 
     <build>
