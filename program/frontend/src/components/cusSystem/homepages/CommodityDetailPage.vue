@@ -679,22 +679,23 @@ if (commodity.value) {
     });
 
     const calculateRefundAmount = (com_prices) => {
-    const today = new Date();
-    let previousPricePoint = com_prices[0];
-    for (let i = 1; i < com_prices.length; i++) {
-        const pricePoint = com_prices[i];
-        const pricePointDate = new Date(pricePoint.com_pc_time);
-        if (today < pricePointDate) {
-            break;
-        }
-        previousPricePoint = pricePoint;
+      const today = new Date();
+      let previousPricePoint = com_prices[0];
+      for (let i = 1; i < com_prices.length; i++) {
+          const pricePoint = com_prices[i];
+          const pricePointDate = new Date(pricePoint.com_pc_time);
+          if (today < pricePointDate) {
+              break;
+          }
+          previousPricePoint = pricePoint;
+      }
+      present_price.value = previousPricePoint.com_pc_price;
+    };
+    
+    // 一个帮助函数，将字符串转换为日期
+    function stringToDate(dateStr: string): Date {
+        return new Date(dateStr);
     }
-    present_price.value = previousPricePoint.com_pc_price;
-};
-// 一个帮助函数，将字符串转换为日期
-function stringToDate(dateStr: string): Date {
-    return new Date(dateStr);
-}
 
 // 一个帮助函数，将日期转换为字符串
 function dateToString(date: Date): string {

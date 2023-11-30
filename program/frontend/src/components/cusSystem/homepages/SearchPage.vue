@@ -396,13 +396,13 @@ function sortChange(value:number){
                     var dayDiff = Math.ceil(dateDiff / (24 * 3600 * 1000));//计算出相差天数，向上取整
                     if(dayDiff<1)
                         item.com_color="red";
-                        else if(dayDiff<3)
-                    item.com_color="#e67300";
-                else if(dayDiff<7)
-                    item.com_color="#b88230";
-                else
-                    item.com_color="green";
-                    //设置显示颜色
+                    else if(dayDiff<3)
+                        item.com_color="#e67300";
+                    else if(dayDiff<7)
+                        item.com_color="#b88230";
+                    else
+                        item.com_color="green";
+                        //设置显示颜色
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
@@ -435,98 +435,13 @@ function sortChange(value:number){
           }
         ).then(response => {
             console.log('列表为',response.data)
-            type Commodity = {
-                com_name: string;
-                com_firstImage: string;
-                com_price: number;
-                com_expirationDate: string;
-                com_status?: -1 | 0 | 1;  // ? 表示这是一个可选属性
-            };
-
-            type Store = {
-                sto_id: number;
-                sto_name: string;
-                sto_introduction: string;
-                com_categories: string[];
-                user_address: string;
-                sto_firstImage: string;
-                com_list: Commodity[];
-            };
-
-            type ResponseData = {
-                sto_list: Store[];
-                total: number;
-            };
-            let geoordered_sto_list = [];
-            //地理排序逻辑
-            // if (sortSelected.value === 1) {
-            //     console.log('地理位置排序');
-            //     const storeDistances: { store: Store; distance: number }[] = [];
-                
-            //     const myGeo = new BMapGL.Geocoder();
-            //     myGeo.getPoint(user_address.value, function(userPoint) {
-            //         if (userPoint) {
-            //             response.data.sto_list.forEach((store: Store) => {
-            //                 myGeo.getPoint(store.user_address, function(storePoint) {
-            //                     if (storePoint) {
-            //                         const distance = map.getDistance(userPoint, storePoint);
-            //                         storeDistances.push({ store, distance });
-            //                     } else {
-            //                         storeDistances.push({ store, distance: Infinity });
-            //                     }
-
-            //                     // 当所有商店都已处理
-            //                     if (storeDistances.length === response.data.sto_list.length) {
-            //                         storeDistances.sort((a, b) => a.distance - b.distance);
-                                    
-            //                         const sortedStores = storeDistances.map(result => result.store);
-            //                         const geoordered_sto_list: ResponseData = {
-            //                             sto_list: sortedStores,
-            //                             total: response.data.total
-            //                         };
-                                    
-            //                         console.log(geoordered_sto_list);
-            //                         queryInfo.pagenum=1;
-            //                         var len=List.length;
-            //                         List.splice(0,len+1, ...geoordered_sto_list.sto_list)
-
-            //                         List.forEach((item)=>{
-            //                             item.sto_firstImage=
-                                            
-            //                                 baseURL+"/"
-            //                                 +item.sto_firstImage;
-            //                             item.com_list.forEach((item)=>{
-            //                                 item.com_firstImage=
-                                            
-            //                                 baseURL+"/"
-            //                                 +item.com_firstImage;
-            //                             })
-            //                         })
-            //                     }
-            //                 });
-            //             });
-            //         }
-            //     });
-            // }
-            // else {
                 queryInfo.pagenum=1;
                 queryInfo.total = response.data.total;
                 var len=List.length;
                 List.splice(0,len+1, ...response.data.sto_list)
-
                 List.forEach((item)=>{
-                    item.sto_firstImage=
-                        
-                        baseURL+"/"
-                        +item.sto_firstImage;
-                    // item.com_list.forEach((item)=>{
-                    //     item.com_firstImage=
-                        
-                    //     baseURL+"/"
-                    //     +item.com_firstImage;
-                    // })
+                    item.sto_firstImage = baseURL+"/"+item.sto_firstImage;
                 })
-            //}
         })
         .catch(error => {
             console.error('排序失败', error);

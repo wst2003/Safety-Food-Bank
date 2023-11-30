@@ -149,7 +149,7 @@ const options = reactive({
 
 import { ref, reactive, onMounted,computed, watchEffect,onDeactivated, onActivated} from 'vue';
 import { Waterfall } from "vue-waterfall-plugin-next";
-import  baseURL  from "../../../../router/baseURL.js";
+import  {baseURL,baseURL_obs}  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import "vue-waterfall-plugin-next/dist/style.css";
 import axios from 'axios';

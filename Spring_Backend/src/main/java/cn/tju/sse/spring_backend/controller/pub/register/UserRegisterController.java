@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.controller.pub.register;
 
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequest;
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationResponse;
+import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationResponseDTO;
 import cn.tju.sse.spring_backend.service.pub.register.UserRegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,8 +17,8 @@ public class UserRegisterController {
     @Autowired
     private UserRegisterService userRegisterService;
     @RequestMapping(value = "/user",method = RequestMethod.POST)
-    public ResponseEntity<UserRegistrationResponse> userRegister(@RequestBody UserRegistrationRequest request){
-        UserRegistrationResponse response = userRegisterService.UserRegister(request);
+    public ResponseEntity<UserRegistrationResponseDTO> userRegister(@RequestBody UserRegistrationRequestDTO request){
+        UserRegistrationResponseDTO response = userRegisterService.UserRegister(request);
         return new ResponseEntity<>(response,HttpStatus.OK);
     }
 }

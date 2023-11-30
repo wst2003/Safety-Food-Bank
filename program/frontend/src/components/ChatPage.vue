@@ -194,7 +194,7 @@
     const receive_id=ref('')
     const my_name=ref('')
   
-    const address='http://localhost:5000/api/pub'
+    const address='http://localhost:5000/api/pub/'
   
     type Chat= {
         chatTime: string;

@@ -1,6 +1,6 @@
 package cn.tju.sse.spring_backend.dto.pub.register.mapper;
 
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequest;
+import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequestDTO;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -14,6 +14,6 @@ public interface UserRegistrationRequestMapper {
     @Mapping(target = "userPassword",source = "user_password")
     @Mapping(target = "userAddress",source = "user_address")
     @Mapping(target = "userType",expression = "java(Integer.parseInt(request.getUser_type()))")
-    UsersEntity requestToEntity(UserRegistrationRequest request);
+    UsersEntity requestToEntity(UserRegistrationRequestDTO request);
 
 }

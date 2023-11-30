@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.register;
 
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequest;
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationResponse;
+import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.register.mapper.UserRegistrationRequestMapper;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import cn.tju.sse.spring_backend.repository.SeqNextvalRepository;
@@ -19,10 +19,10 @@ public class UserRegisterService {
     @Autowired
     private SeqNextvalRepository seqNextvalRepository;
     private final UserRegistrationRequestMapper userRegistrationRequestMapper = UserRegistrationRequestMapper.INSTANCE;
-    public UserRegistrationResponse UserRegister(UserRegistrationRequest request){
+    public UserRegistrationResponseDTO UserRegister(UserRegistrationRequestDTO request){
         UsersEntity newUser = userRegistrationRequestMapper.requestToEntity(request);
 
-        UserRegistrationResponse response = new UserRegistrationResponse();
+        UserRegistrationResponseDTO response = new UserRegistrationResponseDTO();
         boolean existsPhoneNumber = userRegisterRepository.existsUsersEntityByUserPhone(request.getUser_phone());
         if(existsPhoneNumber){
             System.out.println("电话号码已经存在!");
