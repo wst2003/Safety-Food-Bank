@@ -154,7 +154,7 @@
     console.log("尊敬的用户"+user_ID.value)
     try {
       const response = await axios.get('/api/pub/getinformation/user', { params: {user_ID:user_ID.value } });
-      if (response.status === 200) {
+      if (response.status === 200) { 
         userInfo.value = response.data;
         console.log(userInfo.value);
       } else {
@@ -167,9 +167,9 @@
     
   });
 
-    const displayUserType = computed(() => {
+  const displayUserType = computed(() => {
     return userInfo.value.user_type === '0' ? '顾客' : '商户';
-    });
+  });
 
   const router = useRouter();
   

@@ -53,49 +53,50 @@ app.post('/api/payment', function (req, res, next) {
 });
 
 // 退款接口
-app.post('/api/refund', function (req, res, next) {
-    // 从请求中获取订单号和退款金额
-    let orderId = req.body.orderId;
-    let refundAmount = req.body.refundAmount;
+// app.post('/api/refund', function (req, res, next) {
+//     // 从请求中获取订单号和退款金额
+//     let orderId = req.body.orderId;
+//     let refundAmount = req.body.refundAmount;
 
-    // 调用支付宝SDK的退款功能
-    alipaySdk.exec(
-        'alipay.trade.refund',
-        {
-            bizContent: {
-                outTradeNo: orderId,
-                refundAmount: refundAmount
-            }
-        }
-    ).then((response) => {
-        // 根据支付宝的响应处理退款结果
-        console.log('Response:', response); // 添加此行以打印响应
-        if (response.code === '10000') {
-            res.send({
-                data: {
-                    code: 200,
-                    success: true,
-                    message: '退款成功'
-                }
-            });
-        } else {
-            res.send({
-                data: {
-                    code: 400,
-                    success: false,
-                    message: '退款失败'
-                }
-            });
-        }
-    }).catch((error) => {
-        // 处理退款请求错误
-        console.error(error);
-        res.status(500).send({
-            error: '退款请求失败'
-        });
-    });
-});
+//     // 调用支付宝SDK的退款功能
+//     alipaySdk.exec(
+//         'alipay.trade.refund',
+//         {
+//             bizContent: {
+//                 outTradeNo: orderId,
+//                 refundAmount: refundAmount
+//             }
+//         }
+//     ).then((response) => {
+//         // 根据支付宝的响应处理退款结果
+//         console.log('Response:', response); // 添加此行以打印响应
+//         if (response.code === '10000') {
+//             res.send({
+//                 data: {
+//                     code: 200,
+//                     success: true,
+//                     message: '退款成功'
+//                 }
+//             });
+//         } else {
+//             res.send({
+//                 data: {
+//                     code: 400,
+//                     success: false,
+//                     message: '退款失败'
+//                 }
+//             });
+//         }
+//     }).catch((error) => {
+//         // 处理退款请求错误
+//         console.error(error);
+//         res.status(500).send({
+//             error: '退款请求失败'
+//         });
+//     });
+// });
 
+// 提现接口
 app.post('/api/withdraw', function (req, res, next) {
 
     const {
@@ -129,7 +130,6 @@ app.post('/api/withdraw', function (req, res, next) {
         biz_content: bizContent // This wraps all the transfer details into a single JSON string
     }).then((response) => {
         console.log(response);
-
         if (response.code === '10000') {
             res.send({ success: true });
         } else {
@@ -140,13 +140,6 @@ app.post('/api/withdraw', function (req, res, next) {
         res.status(500).send({ success: false, errorMessage: '提现请求失败' });
     });
 });
-
-
-
-
-
-
-
 
 // 启动服务器
 const port = 3000;
