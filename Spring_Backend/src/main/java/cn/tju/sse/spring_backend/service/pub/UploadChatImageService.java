@@ -37,7 +37,7 @@ public class UploadChatImageService {
             boolean success=uploadInputStream("chat_image",image.getOriginalFilename(),image.getInputStream());
             if(success){
                 uploadChatImageResponseDTO.setMessage("上传成功");
-                uploadChatImageResponseDTO.setUrl("https://food-bank.obs.cn-east-3.myhuaweicloud.com\\chat_image\\"+image.getOriginalFilename());
+                uploadChatImageResponseDTO.setUrl("/chat_image/"+image.getOriginalFilename());
                 return uploadChatImageResponseDTO;
             }else{
                 uploadChatImageResponseDTO.setMessage("上传失败");
