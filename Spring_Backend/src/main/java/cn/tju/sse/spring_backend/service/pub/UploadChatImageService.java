@@ -19,12 +19,15 @@ public class UploadChatImageService {
      */
     public UploadChatImageResponseDTO uploadChatImage(MultipartFile image){
         UploadChatImageResponseDTO uploadChatImageResponseDTO=new UploadChatImageResponseDTO();
-        if(image.isEmpty()||image.getSize()==0){
+        if(image==null||image.isEmpty()||image.getSize()==0){
             uploadChatImageResponseDTO.setMessage("请选择要上传的图片");
             return uploadChatImageResponseDTO;
         }
+        
+
 //        判断一下拓展名
         String extension=image.getOriginalFilename().split("\\.")[1];
+        System.out.println("file extension is "+extension);
         if(!Objects.equals(extension, "jpg")&&!Objects.equals(extension, "png")&&!Objects.equals(extension, "gif")&&!Objects.equals(extension, "JPG")&&!Objects.equals(extension, "PNG")&&!Objects.equals(extension, "GIF")){
             uploadChatImageResponseDTO.setMessage("图片格式不正确");
             return uploadChatImageResponseDTO;
@@ -40,8 +43,10 @@ public class UploadChatImageService {
                 uploadChatImageResponseDTO.setMessage("上传失败");
                 return uploadChatImageResponseDTO;
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println(e);
+            uploadChatImageResponseDTO.setMessage("上传失败");
+            return uploadChatImageResponseDTO;
         }
 
     }
