@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <router-view></router-view>
 </template>
     
@@ -11,8 +11,8 @@ export default {
   }
 }
 </script>
- -->
- <template>
+
+ <!-- <template>
   <img :src="imageUrl1" alt="Image Description" />
   <img :src="imageUrl2" alt="Image Description" />
   <img :src="imageUrl3" alt="Image Description" />
@@ -30,4 +30,4 @@ export default {
     }
   }
 }
-</script>
+</script> -->

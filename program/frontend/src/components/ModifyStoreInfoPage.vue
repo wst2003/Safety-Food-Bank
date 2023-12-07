@@ -186,7 +186,6 @@ const categories = ref([]);
 const fileList = ref([]);
 const fileList1 = ref([]);
 const storedImages = ref([]);
-  /*           */
 //加入百度地图组件
 /* eslint-disable */
 let map: BMapGL.Map;
