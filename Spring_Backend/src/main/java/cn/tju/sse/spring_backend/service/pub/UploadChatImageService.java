@@ -23,7 +23,7 @@ public class UploadChatImageService {
             uploadChatImageResponseDTO.setMessage("请选择要上传的图片");
             return uploadChatImageResponseDTO;
         }
-        
+
 
 //        判断一下拓展名
         String extension=image.getOriginalFilename().split("\\.")[1];
