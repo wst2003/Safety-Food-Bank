@@ -27,10 +27,19 @@ public class UserModifyService {
             return response;
         }
 
-        UsersEntity user = userModifyRequestMapper.requestToEntity(request);
-        UsersEntity update = userModifyRepository.save(user);
+        if(request.getUser_phone().length() >= 20){
+            response.setMessage("phone is too long");
+            return response;
+        }
 
-        response.setMessage("error occurred in database");
+        UsersEntity user = userModifyRequestMapper.requestToEntity(request);
+        UsersEntity exists = userModifyRepository.findById(Integer.valueOf(request.getUser_ID())).orElseThrow();
+        exists.setUserPhone(user.getUserPhone());
+        exists.setUserPassword(user.getUserPassword());
+        exists.setUserAddress(user.getUserAddress());
+        UsersEntity update = userModifyRepository.save(exists);
+
+        response.setMessage("success");
         return response;
 
 
