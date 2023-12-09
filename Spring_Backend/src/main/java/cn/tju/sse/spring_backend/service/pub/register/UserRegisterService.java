@@ -39,7 +39,7 @@ public class UserRegisterService {
         UsersEntity insertUser =  userRegisterRepository.save(newUser);
         if(insertUser!=null){
             response.setUser_type(String.valueOf(insertUser.getUserType()));
-            response.setMessage("user已经注册成功");
+            response.setMessage("success");
             response.setUser_ID(String.valueOf(insertUser.getUserId()));
             return response;
         }

@@ -683,7 +683,7 @@
                 "requiredHint": "",
                 "customRule": "",
                 "customRuleHint": "",
-                "uploadURL": "http://localhost:5000/api/sto/uploadcommodity/imgs",
+                "uploadURL": "/api/sto/uploadcommodity/imgs",
                 "uploadTip": "",
                 "withCredentials": false,
                 "multipleSelect": false,
@@ -700,11 +700,11 @@
                 "labelIconPosition": "rear",
                 "labelTooltip": null,
                 "onCreated": "",
-                "onMounted": "var currentWidget = this;\nreturn new Promise((resolve, reject) => {\n  axios.get('http://localhost:5000/api/sto/uploadcommodity/imagekey').then(function(response) {\n    var IMAGE_KEY = response.data;\n    console.log(\"为了上传图片，获取到IMAGE_KEY：\"+IMAGE_KEY);\n    currentWidget.setUploadData('IMAGE_KEY', IMAGE_KEY);\n    //currentWidget.getWidgetRef('IMAGE_KEY').setValue(IMAGE_KEY);\n    localStorage.setItem('IMAGE_KEY',IMAGE_KEY);\n    resolve();  // 这将解析外部的 Promise\n  }).catch(function(error) {\n    //处理错误\n    console.log(error);\n    reject(error);  // 如果出现错误，这将拒绝外部的 Promise\n  });\n});\n",
+                "onMounted": "var currentWidget = this;\nreturn new Promise((resolve, reject) => {\n  axios.get('api/sto/uploadcommodity/imagekey').then(function(response) {\n    var IMAGE_KEY = response.data;\n    console.log(\"为了上传图片，获取到IMAGE_KEY：\"+IMAGE_KEY);\n    currentWidget.setUploadData('IMAGE_KEY', IMAGE_KEY);\n    //currentWidget.getWidgetRef('IMAGE_KEY').setValue(IMAGE_KEY);\n    localStorage.setItem('IMAGE_KEY',IMAGE_KEY);\n    resolve();  // 这将解析外部的 Promise\n  }).catch(function(error) {\n    //处理错误\n    console.log(error);\n    reject(error);  // 如果出现错误，这将拒绝外部的 Promise\n  });\n});\n",
                 "onBeforeUpload": "var currentWidget = this;\r\ncurrentWidget.setUploadData('IMAGE_KEY', localStorage.getItem('IMAGE_KEY'));\r\n",
                 "onUploadSuccess": "console.log(\"this is \"+result);\nfile.name = result",
                 "onUploadError": "",
-                "onFileRemove": "  IMAGE_KEY = localStorage.getItem('IMAGE_KEY');\n  axios.post(\"http://localhost:5000/api/sto/uploadcommodity/deltmpimg?IMAGE_KEY=\"+IMAGE_KEY+\"&fileName=\"+file.name)\n  .then(response=>{console.log(response.data)});",
+                "onFileRemove": "  IMAGE_KEY = localStorage.getItem('IMAGE_KEY');\n  axios.post(\"api/sto/uploadcommodity/deltmpimg?IMAGE_KEY=\"+IMAGE_KEY+\"&fileName=\"+file.name)\n  .then(response=>{console.log(response.data)});",
                 "onValidate": ""
               },
               "id": "pictureupload39872"

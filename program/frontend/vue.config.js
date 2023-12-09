@@ -1,5 +1,5 @@
 const { defineConfig } = require('@vue/cli-service')
-const baseURL = "http://localhost:5000";
+const baseURL = "http://localhost:8080";
 module.exports = defineConfig({
     transpileDependencies: true,
     chainWebpack: config => {

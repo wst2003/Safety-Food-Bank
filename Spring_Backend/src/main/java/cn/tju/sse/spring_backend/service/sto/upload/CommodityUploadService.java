@@ -7,13 +7,14 @@ import cn.tju.sse.spring_backend.model.CommodityImageEntity;
 import cn.tju.sse.spring_backend.model.CommodityPriceCurveEntity;
 import cn.tju.sse.spring_backend.repository.SeqNextvalRepository;
 import cn.tju.sse.spring_backend.repository.obs.ObsOperationTool;
-import cn.tju.sse.spring_backend.repository.sto.upload.CommodityCategoriesRepository;
-import cn.tju.sse.spring_backend.repository.sto.upload.CommodityImageRepository;
-import cn.tju.sse.spring_backend.repository.sto.upload.CommodityPriceCurveRepository;
-import cn.tju.sse.spring_backend.repository.sto.upload.CommodityRepository;
+import cn.tju.sse.spring_backend.repository.sto.commodity.CommodityCategoriesRepository;
+import cn.tju.sse.spring_backend.repository.sto.commodity.CommodityImageRepository;
+import cn.tju.sse.spring_backend.repository.sto.commodity.CommodityPriceCurveRepository;
+import cn.tju.sse.spring_backend.repository.sto.commodity.CommodityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,6 +25,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+
 
 /**
  * 上传商品
@@ -151,15 +153,16 @@ public class CommodityUploadService {
             commodityPriceCurveRepository.save(priceCurve);
 
             String srcPath = "commodity_tmp/"+request.getImage_key();
-            String dstPath = "commodity_image/"+COM_ID;
+            String dstPath = "commodity_img/"+COM_ID;
 
-            ObsOperationTool.createFolder("commodity_image",Integer.toString(COM_ID));
+            ObsOperationTool.createFolder("commodity_img",Integer.toString(COM_ID));
             ArrayList<String> files = ObsOperationTool.getObjectnamesInFolder(srcPath,false);
             if (files != null) {
                 files.forEach(fileName->{
                     if(!fileName.endsWith(".txt")){
+                        fileName = fileName.split("/")[fileName.split("/").length-1];
                         ObsOperationTool.deleteObject(dstPath,fileName,false);
-                        ObsOperationTool.uploadFile(dstPath,fileName,srcPath+"/"+fileName);
+                        ObsOperationTool.moveObject(srcPath+"/"+fileName,dstPath+"/"+fileName);
                         ObsOperationTool.deleteObject(srcPath,fileName,false);
 
                         CommodityImageEntity commodityImage = new CommodityImageEntity();

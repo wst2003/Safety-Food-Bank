@@ -208,5 +208,23 @@ public class ObsOperationTool {
         }
     }
 
+    public static boolean moveObject(String srcPath, String dstPath){
+        if(!isObjectPathExist(srcPath)){
+            System.out.println(srcPath);
+            System.out.println("文件本就不存在!");
+            return false;
+        }
+        if(isObjectPathExist(dstPath)){
+            System.out.println("文件已经存在!");
+            return false;
+        }
+        PutObjectResult result = obsClient.putObject("food-bank",dstPath,obsClient.getObject("food-bank",srcPath).getObjectContent());
+        if(result.getStatusCode()==200)
+            return true;
+        else{
+            System.out.println("文件移动失败！");
+            return false;
+        }
+    }
 }
 
