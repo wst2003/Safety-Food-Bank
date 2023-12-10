@@ -11,7 +11,7 @@ public interface UserRegistrationRequestMapper {
     UserRegistrationRequestMapper INSTANCE = Mappers.getMapper(UserRegistrationRequestMapper.class);
 
     @Mapping(target = "userPhone",source = "user_phone")
-    @Mapping(target = "userPassword",source = "user_password")
+    @Mapping(target = "userPassword",expression = "java(encodePassword(request.getUser_password()))")
     @Mapping(target = "userAddress",source = "user_address")
     @Mapping(target = "userType",expression = "java(Integer.parseInt(request.getUser_type()))")
     UsersEntity requestToEntity(UserRegistrationRequestDTO request);
