@@ -135,12 +135,13 @@ public class CommodityUpdateService {
         ArrayList<Integer> imageNum = new ArrayList<>();
         imageNames.forEach(imageName->{
             int startIndex = imageName.indexOf("com_image_")+10;
-            int endIndex = imageName.indexOf('.',8);
+            System.out.println(startIndex);
+            int endIndex = imageName.indexOf('.');
             int num = Integer.parseInt(imageName.substring(startIndex,endIndex));
             imageNum.add(num);
         });
 
-        String folderPath = "commodity_image/"+request.getCOM_ID();
+        String folderPath = "commodity_img/"+request.getCOM_ID();
         String fileName = String.format("com_image_%d.%s", Collections.max(imageNum) + 1,"jpg");
 
         InputStream inputStream = request.getFile().getInputStream();
@@ -157,7 +158,7 @@ public class CommodityUpdateService {
 
     public String postDeleteImage(int COM_ID, String COM_IMAGE){
         Path deleteFile = Paths.get(COM_IMAGE);
-        ObsOperationTool.deleteObject(deleteFile.getParent().toString(),deleteFile.getFileName().toString(),false);
+        ObsOperationTool.deleteObject(deleteFile.getParent().toString().replace('\\','/'),deleteFile.getFileName().toString().replace('\\','/'),false);
 
         commodityImageRepository.deleteCommodityImageEntityByComIdAndComImage(COM_ID,COM_IMAGE);
         return "成功！";
