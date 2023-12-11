@@ -9,7 +9,7 @@ import cn.tju.sse.spring_backend.model.StoreimageEntity;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import cn.tju.sse.spring_backend.repository.obs.ObsOperationTool;
 import cn.tju.sse.spring_backend.repository.pub.register.StoreCategoryRepository;
-import cn.tju.sse.spring_backend.repository.pub.register.StoreImgRepository;
+import cn.tju.sse.spring_backend.repository.pub.getinformation.StoreImgRepository;
 import cn.tju.sse.spring_backend.repository.pub.register.StoreRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
