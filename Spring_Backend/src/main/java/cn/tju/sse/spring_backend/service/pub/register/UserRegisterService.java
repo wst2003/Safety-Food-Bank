@@ -6,6 +6,7 @@ import cn.tju.sse.spring_backend.dto.pub.register.mapper.UserRegistrationRequest
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import cn.tju.sse.spring_backend.repository.SeqNextvalRepository;
 import cn.tju.sse.spring_backend.repository.pub.register.UserRegisterRepository;
+import cn.tju.sse.spring_backend.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,7 @@ public class UserRegisterService {
         UsersEntity newUser = userRegistrationRequestMapper.requestToEntity(request);
 
         UserRegistrationResponseDTO response = new UserRegistrationResponseDTO();
+
         boolean existsPhoneNumber = userRegisterRepository.existsUsersEntityByUserPhone(request.getUser_phone());
         if(existsPhoneNumber){
             System.out.println("电话号码已经存在!");
@@ -35,7 +37,7 @@ public class UserRegisterService {
         newUser.setUserState(0);
         newUser.setUserBalance(BigDecimal.ZERO);
         newUser.setUserRegtime(new Date(System.currentTimeMillis()));
-
+        newUser.setUserPassword(SecurityUtils.encodePassword(request.getUser_password()));
         UsersEntity insertUser =  userRegisterRepository.save(newUser);
         if(insertUser!=null){
             response.setUser_type(String.valueOf(insertUser.getUserType()));

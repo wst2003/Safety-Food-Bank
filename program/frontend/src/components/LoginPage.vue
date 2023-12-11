@@ -26,8 +26,8 @@
     <div class="container">
       <div class="tab">
         <el-radio-group v-model="label_default" size="large">
-          <el-radio-button @click="selectTab(0)" label="ID登录"/>
-          <el-radio-button @click="selectTab(1)" label="手机号码登录"/>
+          <el-radio-button @click="selectTab(0)" label="手机验证码登录"/>
+          <el-radio-button @click="selectTab(1)" label="密码登录"/>
         </el-radio-group>
       </div>
 
@@ -48,7 +48,7 @@
 
 import {ref,shallowRef} from 'vue';
 import { useRouter } from 'vue-router';
-import IDlogin from '../components/IDLoginPage.vue'
+import codelogin from '../components/CodeLoginPage.vue'
 import phonelogin from '../components/PhoneLoginPage.vue'
 
 const dialogVisible=ref(false);
@@ -56,10 +56,10 @@ const text=ref('');
   const router=useRouter()
   const label_default=ref('ID登录')
   const tabs=[
-        { name: 'ID登录', component: IDlogin },
+        { name: 'ID登录', component: codelogin },
         { name: '电话号码登录', component: phonelogin },
   ]
-  const selectedTab=shallowRef(IDlogin)
+  const selectedTab=shallowRef(codelogin)
   
   const selectTab=(index:number)=> {
       console.log(index)

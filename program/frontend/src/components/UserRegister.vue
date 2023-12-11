@@ -203,7 +203,7 @@ const register = async () => {
       const data = response.data;
       if (data.message === 'success') {
         localStorage.setItem('user_ID', data.user_ID); // 保存 user_ID 到 localStorage
-        if (data.user_type === '0') {
+        if (data.user_type == '0') {
           ElMessage({  // 使用 ElMessage
             message: '注册成功，正在跳转登录页面...',
             type: 'success',
@@ -211,7 +211,7 @@ const register = async () => {
           sessionStorage.removeItem('id');
           sessionStorage.setItem('id',data.user_ID)
           router.push({name:'customerregister'});
-        } else if (data.user_type === '1') {
+        } else if (data.user_type == '1') {
           ElMessage({  // 使用 ElMessage
             message: '注册成功，正在跳转商户注册页面...',
             type: 'success',

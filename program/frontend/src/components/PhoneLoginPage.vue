@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1 class="header">通过您的电话号码登录</h1>
+    <h1 class="header">通过密码登录</h1>
     <div id="hiddenContainer" style="display:none;"></div> <!-- 隐藏的地图容器 -->
     <div>
     <el-form label-width="100px" style="max-width: 460px;position: relative;margin: auto;">
@@ -73,40 +73,40 @@ const login_id=async ()=> {
               console.log('Login submitted successfully.');
               console.log(response.data);
               
-              if(response.data.message==='该用户已经被封禁') {
+              if(response.data.data.message==='该用户已经被封禁') {
                 console.log('blocked.');
-                sessionStorage.setItem("user_id",response.data.user_ID );
+                sessionStorage.setItem("user_id",response.data.data.user_ID );
                 router.push({
                       path:'/BlockUserPage',
                   });
               } 
-              else if(response.data.message==='success'){
+              else if(response.data.data.message==='success'){
                 /*------------------------*/
                 /*登录成功后编辑此处跳转界面*/
                 /*------------------------*/
-                localStorage.setItem("user_id",response.data.user_ID );
-                if (response.data.user_type=='1'){
+                localStorage.setItem("user_id",response.data.data.user_ID );
+                if (response.data.data.user_type=='1'){
                   sessionStorage.removeItem("sto_id");
                   sessionStorage.removeItem("cus_id");
                   sessionStorage.removeItem("user_type");
-                  sessionStorage.setItem("sto_id", response.data.user_ID);
-                  sessionStorage.setItem("user_type", response.data.user_type);
+                  sessionStorage.setItem("sto_id", response.data.data.user_ID);
+                  sessionStorage.setItem("user_type", response.data.data.user_type);
                     router.push({
                       path:'/store',
                   });
                 }
-                else if (response.data.user_type=='0'){
+                else if (response.data.data.user_type=='0'){
                   sessionStorage.removeItem("sto_id");
                   sessionStorage.removeItem("cus_id");
                   sessionStorage.removeItem("user_type");
-                  sessionStorage.setItem("cus_id", response.data.user_ID);
-                  sessionStorage.setItem("user_type", response.data.user_type);
-                  console.log("loginUsername.value:"+response.data.user_ID);
+                  sessionStorage.setItem("cus_id", response.data.data.user_ID);
+                  sessionStorage.setItem("user_type", response.data.data.user_type);
+                  console.log("loginUsername.value:"+response.data.data.user_ID);
                   /*获取用户账号*/
-                  user_id.value = response.data.user_ID;
+                  user_id.value = response.data.data.user_ID;
                   
                   /*获取用户位置*/
-                  axios.get('/api/pub/getinformation/user', { params: {user_ID: response.data.user_ID } })
+                  axios.get('/api/pub/getinformation/user', { params: {user_ID: response.data.data.user_ID } })
                   .then((res) => {
                       user_address.value = res.data.user_address;
                       console.log(user_address.value);
@@ -129,7 +129,7 @@ const login_id=async ()=> {
                 //router.push({name:'MiddleTest',query:{id:response.data.user_ID}})
               }
               else {
-                ElMessageBox.alert(response.data.message, '登录失败', {
+                ElMessageBox.alert(response.data.data.message, '登录失败', {
                   confirmButtonText: 'OK',
                   callback: (action: Action) => {
                     ElMessage({

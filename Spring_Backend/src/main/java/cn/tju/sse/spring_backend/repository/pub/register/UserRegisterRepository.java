@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface UserRegisterRepository extends JpaRepository<UsersEntity,Integer> {
     public boolean existsUsersEntityByUserPhone(String user_phone);
 
+    public UsersEntity findUsersEntitiesByUserPhone(String user_phone);
+
 }

@@ -128,7 +128,7 @@
   import{ref,onMounted}from 'vue';
   import { useRouter,useRoute } from 'vue-router';
   import { ArrowLeft } from '@element-plus/icons-vue'
-  import { ElMessage, ElMessageBox,ElNotification } from 'element-plus'
+  import { Action, ElMessage, ElMessageBox,ElNotification } from 'element-plus'
   import axios from 'axios';
   const goodsList=ref([]);
   const router=useRouter();
@@ -199,6 +199,26 @@
   const logout=()=>{
     // router.push('/test');
     // getContent.value='录入商品'
+    axios.post('/api/pub/login/quit',  JSON.stringify({ 
+            user_ID:sessionStorage.getItem('sto_id') as string
+          }), {
+          headers: {
+              'Content-Type': 'application/json'
+          }
+          })
+          .then(response=>{
+            console.log(response.data.msg)
+            const message=response.data.msg==="success"?"退出登录成功":"退出登录失败"
+            ElMessageBox.alert(response.data.message, message, {
+                  confirmButtonText: 'OK',
+                  callback: (action: Action) => {
+                    ElMessage({
+                      type: 'info',
+                      message: `action: ${action}`,
+                    })
+                  },
+                })
+          })
     router.push('/login');
     console.log('success jump');
   }

@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * 按条件搜索商品的响应的数据传输对象（DTO）
+ */
 @Getter
 @Setter
 public class SearchCommodityResponseDTO {
