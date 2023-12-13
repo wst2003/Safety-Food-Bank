@@ -64,10 +64,10 @@ public class StoreModifyService {
     }
 
     private ObsOperationTool obs;
-    private String endpoint = "";
-    private String IMAGE_PATH =  endpoint + "store_image";
+    private final String endpoint = "";
+    private final String IMAGE_PATH =  endpoint + "store_image";
 
-    private String LICENSE_PATH = endpoint +  "licenses";
+    private final String LICENSE_PATH = endpoint +  "licenses";
 
     public StoreModifyResponse storeModify(StoreModifyRequest request){
         StoreModifyResponse response = new StoreModifyResponse();
