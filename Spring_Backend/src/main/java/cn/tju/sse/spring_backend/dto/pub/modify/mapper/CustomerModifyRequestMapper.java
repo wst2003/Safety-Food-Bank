@@ -18,6 +18,7 @@ public interface CustomerModifyRequestMapper {
     @Mapping(target = "cusNickname", source = "cus_nickname")
     @Mapping(target = "cusNotes", source = "cus_notes")
     @Mapping(target = "cusPaypassword", source = "cus_payPassword")
+    @Mapping(target = "cusState", ignore = true)
     CustomerEntity requestToEntity(CustomerModifyRequest request);
 
     default CustomerLoveEntity[] requestToLoveEntities(CustomerModifyRequest request) {

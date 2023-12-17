@@ -15,5 +15,9 @@ public interface UserModifyRequestMapper {
     @Mapping(source = "user_phone", target = "userPhone")
     @Mapping(source = "user_password", target = "userPassword")
     @Mapping(source = "user_address", target = "userAddress")
+    @Mapping(target = "userState", ignore = true)
+    @Mapping(target = "userRegtime", ignore = true)
+    @Mapping(target = "userType", ignore = true)
+    @Mapping(target = "userBalance", ignore = true)
     UsersEntity requestToEntity(UserModifyRequest request);
 }

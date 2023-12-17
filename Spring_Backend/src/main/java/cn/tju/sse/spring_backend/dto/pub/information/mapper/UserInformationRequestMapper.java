@@ -19,5 +19,12 @@ public interface UserInformationRequestMapper {
     // target: UsersEntity  int userId
     // String to int: need to be decorated by "Integer.parseInt" seen in service class
     @Mapping(target = "userId", expression = "java(Integer.parseInt(request.getUser_ID()))")
+    @Mapping(target = "userPhone", ignore = true)
+    @Mapping(target = "userPassword", ignore = true)
+    @Mapping(target = "userAddress", ignore = true)
+    @Mapping(target = "userState", ignore = true)
+    @Mapping(target = "userRegtime", ignore = true)
+    @Mapping(target = "userType", ignore = true)
+    @Mapping(target = "userBalance", ignore = true)
     UsersEntity requestToEntity(UserInformationRequest request);
 }
