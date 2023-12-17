@@ -50,7 +50,6 @@ public class CommodityVerifyService {
      */
     public boolean verifyIndent(String indentVerificationCode) {
         int rowsAffected = commodityVerifyRepository.verifyIndent(indentVerificationCode);
-        commodityVerifyRepository.setComRating(indentVerificationCode);
         return rowsAffected > 0;
     }
 }

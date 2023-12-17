@@ -27,22 +27,6 @@ public interface CommodityVerifyRepository extends JpaRepository<IndentEntity, I
     List<Object[]> getIndentToVerify(@Param("indentVerificationCode") String indentVerificationCode);
 
     /**
-     * 更新商品评分。
-     *
-     * @param indentVerificationCode 订单验证码
-     */
-    @Modifying
-    @Query(value = "UPDATE COMMODITY " +
-            "SET COM_RATING = (" +
-            "   SELECT AVG(INDENT.IND_RATING) " +
-            "   FROM INDENT" +
-            "   WHERE INDENT.COM_ID = COMMODITY.COM_ID AND INDENT.IND_VERIFICATIONCODE = :indentVerificationCode AND COMMODITY.COM_STATUS != -1" +
-            "   GROUP BY INDENT.COM_ID" +
-            ") ",
-            nativeQuery = true)
-    void setComRating(@Param("indentVerificationCode") String indentVerificationCode);
-
-    /**
      * 核销订单。
      *
      * @param indentVerificationCode 订单验证码
