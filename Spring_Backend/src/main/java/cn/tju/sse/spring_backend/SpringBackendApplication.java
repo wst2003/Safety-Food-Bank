@@ -1,5 +1,6 @@
 package cn.tju.sse.spring_backend;
 
+import cn.tju.sse.spring_backend.utils.ItemCFRecommendation;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
