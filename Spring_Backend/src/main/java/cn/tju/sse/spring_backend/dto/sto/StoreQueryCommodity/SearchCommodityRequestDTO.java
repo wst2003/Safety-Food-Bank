@@ -6,6 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+/**
+ * 按条件搜索商品的请求的数据传输对象（DTO）
+ */
 @Getter
 @Setter
 public class SearchCommodityRequestDTO {

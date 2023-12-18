@@ -66,6 +66,8 @@
       Present
     } from '@element-plus/icons-vue'
     import {store}from '../../../router/store'
+import axios from 'axios';
+import { ElMessageBox, Action, ElMessage } from 'element-plus';
     const router=useRouter()
  
     
@@ -95,6 +97,25 @@
     })
     
     function quit(){
+      axios.post('/api/pub/login/quit',  JSON.stringify({ 
+            user_ID:sessionStorage.getItem('cus_id') as string
+          }), {
+          headers: {
+              'Content-Type': 'application/json'
+          }
+          })
+          .then(response=>{
+            const message=response.data.message==="success"?"success":"退出登录失败"
+            ElMessageBox.alert(response.data.message, message, {
+                  confirmButtonText: 'OK',
+                  callback: (action: Action) => {
+                    ElMessage({
+                      type: 'info',
+                      message: `action: ${action}`,
+                    })
+                  },
+                })
+          })
       router.push({
         path:'/login'
       })

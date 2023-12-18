@@ -12,5 +12,9 @@ public interface StoreGetinformationRequestMapper {
             Mappers.getMapper(StoreGetinformationRequestMapper.class);
 
     @Mapping(source = "sto_ID", target = "stoId")
+    @Mapping(target = "stoName", ignore = true)
+    @Mapping(target = "stoIntroduction", ignore = true)
+    @Mapping(target = "stoLicenseimg", ignore = true)
+    @Mapping(target = "stoState", ignore = true)
     StoreEntity requestToEntity(StoreGetinformationRequest request);
 }

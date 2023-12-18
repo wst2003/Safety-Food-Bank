@@ -20,6 +20,7 @@ public interface StoreGetinformationResponseMapper {
     @Mapping(target = "sto_licenseImg", source = "store.stoLicenseimg")
     @Mapping(target = "sto_state", source = "store.stoState")
     @Mapping(target = "categories", expression = "java(mapStoreCategories(storeCategoriesEntities))")
+    @Mapping(target = "message", ignore = true)
     StoreGetinformationResponse entityToResponse(StoreEntity store, StoreCategoriesEntity[] storeCategoriesEntities);
 
     default String[] mapStoreCategories(StoreCategoriesEntity[] storeCategoriesEntities) {

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * 处理商品详细信息请求的控制器类
+ * 查询商品信息的控制器类
  */
 @RestController
 @RequestMapping("/api/sto/StoreQueryCommodity")
@@ -41,6 +41,15 @@ public class StoreQueryCommodityController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    /**
+     * 搜索商品列表。
+     *
+     * @param STO_ID     商店ID。
+     * @param com_begin_n 商品起始位置。
+     * @param com_end_n   商品结束位置。
+     * @param request    搜索商品请求体。
+     * @return 包含搜索结果的响应实体。
+     */
     @PostMapping("/list")
     public ResponseEntity<List<SearchCommodityResponseDTO>> searchCommodity(@RequestParam(value = "STO_ID") int STO_ID,
                                                                             @RequestParam(value = "com_begin_n") int com_begin_n,
@@ -50,18 +59,28 @@ public class StoreQueryCommodityController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-
+    /**
+     * 获取商品总数量。
+     *
+     * @param STO_ID     商店ID。
+     * @param COM_STATUS 商品状态。
+     * @return 商品总数量。
+     */
     @GetMapping("/totalnum")
     public ResponseEntity<Integer> getCommodityTotalNum(@RequestParam int STO_ID, @RequestParam int COM_STATUS) {
         int response = commodityTotalNumService.getCommodityTotalNum(STO_ID, COM_STATUS);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
+    /**
+     * 获取商品图片路径列表。
+     *
+     * @param COM_ID 商品ID。
+     * @return 商品图片路径列表。
+     */
     @GetMapping("/imgpath")
     public ResponseEntity<List<String>> getImagePath(@RequestParam int COM_ID) {
         List<String> response = imagePathService.getImagePath(COM_ID);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
-
 }

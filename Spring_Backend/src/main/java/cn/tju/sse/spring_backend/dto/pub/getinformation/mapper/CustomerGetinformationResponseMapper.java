@@ -20,6 +20,7 @@ public interface CustomerGetinformationResponseMapper {
     @Mapping(source = "customer.cusPaypassword", target = "cus_payPassword")
     @Mapping(source = "customer.cusState", target = "cus_state")
     @Mapping(expression = "java(mapCustomerCategories(loves))", target = "cus_loves")
+    @Mapping(target = "message", ignore = true)
     CustomerGetinformationResponse entityToResponse(CustomerEntity customer, CustomerLoveEntity[] loves);
 
     default String[] mapCustomerCategories(CustomerLoveEntity[] loves) {

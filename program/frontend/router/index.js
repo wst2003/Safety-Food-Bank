@@ -13,7 +13,7 @@ import StoreIndentPage from '@/components/AdministratorSystem/StoreIndentPage.vu
 import IndentDetailPage from '@/components/AdministratorSystem/IndentDetailPage.vue';
 import AppealPage from '@/components/AdministratorSystem/AppealPage.vue';
 import LoginPage from '../src/components/LoginPage.vue';
-import IDLoginPage from '../src/components/IDLoginPage.vue'
+import CodeLoginPage from '../src/components/CodeLoginPage.vue'
 import PhoneLoginPage from '../src/components/PhoneLoginPage.vue'
 import FindPasswordPage from '../src/components/FindPasswordPage.vue'
 import StoreRegister from '@/components/StoreRegister.vue';
@@ -180,9 +180,9 @@ const router = createRouter({
             component: LoginPage
         },
         {
-            path: '/IDLogin',
-            name: 'IDlogin',
-            component: IDLoginPage
+            path: '/codeLogin',
+            name: 'codelogin',
+            component: CodeLoginPage
         },
         {
             path: '/phonelogin',

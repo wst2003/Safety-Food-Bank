@@ -22,5 +22,6 @@ public interface UserInformationResponseMapper {
     @Mapping(target = "user_balance", source = "userBalance")
     @Mapping(target = "user_regTime", source = "userRegtime")
     @Mapping(target = "user_type", source = "userType")
+    @Mapping(target = "message", ignore = true)
     UserInformationResponse entityToResponse(UsersEntity user);
 }

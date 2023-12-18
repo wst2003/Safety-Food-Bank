@@ -12,5 +12,9 @@ public interface CustomerGetinformationRequestMapper {
             Mappers.getMapper(CustomerGetinformationRequestMapper.class);
 
     @Mapping(source = "cus_ID", target = "cusId")
+    @Mapping(target = "cusNickname", ignore = true)
+    @Mapping(target = "cusNotes", ignore = true)
+    @Mapping(target = "cusPaypassword", ignore = true)
+    @Mapping(target = "cusState", ignore = true)
     CustomerEntity requestToEntity (CustomerGetinformationRequest request);
 }
