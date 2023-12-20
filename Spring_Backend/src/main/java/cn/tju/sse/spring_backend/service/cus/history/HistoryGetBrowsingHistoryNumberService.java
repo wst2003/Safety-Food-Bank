@@ -1,9 +1,7 @@
 package cn.tju.sse.spring_backend.service.cus.history;
 
 import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryNumberResponse;
-import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryResponse;
 import cn.tju.sse.spring_backend.repository.cus.history.HistoryGetBrowsingHistoryNumberRepository;
-import cn.tju.sse.spring_backend.repository.cus.history.HistoryGetBrowsingHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

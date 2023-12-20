@@ -2,11 +2,7 @@ package cn.tju.sse.spring_backend.controller.cus.history;
 
 import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryNumberRequest;
 import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryNumberResponse;
-import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryRequest;
-import cn.tju.sse.spring_backend.dto.cus.history.HistoryGetBrowsingHistoryResponse;
-import cn.tju.sse.spring_backend.repository.cus.history.HistoryGetBrowsingHistoryNumberRepository;
 import cn.tju.sse.spring_backend.service.cus.history.HistoryGetBrowsingHistoryNumberService;
-import cn.tju.sse.spring_backend.service.cus.history.HistoryGetBrowsingHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +22,7 @@ public class HistoryGetBrowsingHistoryNumberController {
 
     /**
      * 拉取用户浏览记录数量
-     * 疑似路径有误！！！！！！！！！！！！！                                                                                                                      
+     * 疑似路径有误！！！！！！！！！！！！！
      * @param historyGetBrowsingHistoryNumberRequest
      * @return
      */
