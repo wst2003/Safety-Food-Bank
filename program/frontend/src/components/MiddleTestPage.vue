@@ -28,7 +28,7 @@ const user_type=ref("")
 onMounted(async () => {
   user_ID.value=route.query.id
   try {
-    const response = await axios.get('/api/pub/getinformation/user?user_ID='+user_ID.value);
+    const response = await axios.get('/api/pub/information/user?user_ID='+user_ID.value);
     if (response.status === 200) {
       user_type.value = response.data.user_type;
       console.log(response.data)

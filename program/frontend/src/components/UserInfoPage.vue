@@ -428,7 +428,7 @@ onMounted(async () => {
   console.log("这是ID"+user_ID.value);
   try {
     console.log(userInfo.value.cus_notes);
-    const response = await axios.get('/api/pub/getinformation/user', { params: {user_ID:user_ID.value } });
+    const response = await axios.get('/api/pub/information/user', { params: {user_ID:user_ID.value } });
     if (response.status === 200) {
       userInfo.value = response.data;
 

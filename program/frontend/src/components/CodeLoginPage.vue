@@ -126,7 +126,7 @@ import { useRouter } from 'vue-router';
                   
                   
                   /*获取用户位置*/
-                  axios.get('/api/pub/getinformation/user', { params: {user_ID: response.data.data.user_ID } })
+                  axios.get('/api/pub/information/user', { params: {user_ID: response.data.data.user_ID } })
                   .then((res) => {
                       user_address.value = res.data.user_address;
                       console.log(user_address.value);

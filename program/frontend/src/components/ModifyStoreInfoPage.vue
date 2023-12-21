@@ -196,7 +196,7 @@ const flag=route.query.flag;
 onMounted(async () => {
   //const sto_ID = route.query.id;
   const sto_ID = flag==null? sessionStorage.getItem('sto_id'):route.query.id;
-  const basic_response = await axios.get('/api/pub/getinformation/user', { params: { user_ID:sto_ID } });
+  const basic_response = await axios.get('/api/pub/information/user', { params: { user_ID:sto_ID } });
   if (basic_response.status === 200) {
     basicInfo.value = basic_response.data;
     console.log(basicInfo.value);

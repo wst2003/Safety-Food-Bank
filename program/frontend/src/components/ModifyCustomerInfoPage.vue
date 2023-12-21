@@ -142,7 +142,7 @@
     const user_ID = flag==null? sessionStorage.getItem('cus_id') as string:route.query.id;
     const cus_ID=user_ID;
     console.log(sessionStorage.getItem('cus_id'))
-    const response = await axios.get('/api/pub/getinformation/user', { params: { user_ID:user_ID } });
+    const response = await axios.get('/api/pub/information/user', { params: { user_ID:user_ID } });
     if (response.status === 200) {
       userInfo.value = response.data;
     } else {

@@ -52,7 +52,6 @@
   import axios from 'axios';
   import { useRouter, useRoute } from 'vue-router';
   import { ElMessage } from 'element-plus';
-  
   const router = useRouter();
   const route = useRoute();
   const form = reactive({
