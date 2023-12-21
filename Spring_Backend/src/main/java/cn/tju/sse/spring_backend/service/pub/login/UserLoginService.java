@@ -74,6 +74,7 @@ public class UserLoginService {
         String StoredPassword=usersEntity.getUserPassword();
         int id = usersEntity.getUserId();
         int userType=usersEntity.getUserType();
+        System.out.println("usertype: "+userType);
         if(matchesPassword(password,StoredPassword) || isCode){
             if(userType==0){
                 Optional<CustomerEntity> customer =customerRepository.findById(id);
@@ -111,6 +112,7 @@ public class UserLoginService {
             userLoginResponseDTO.setUser_ID("");
             return userLoginResponseDTO;
         }
+        System.out.println("userlogin: "+userLoginResponseDTO.getMessage());
         return userLoginResponseDTO;
     }
 }

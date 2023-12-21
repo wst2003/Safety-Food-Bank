@@ -142,7 +142,7 @@ onActivated(()=>{
         {
             params: {
                 cus_id: user_id.value
-                //用户ID，暂时写死
+                //用户ID
             }
         }).then(res=>{
             favorList.favorList=res.data.favor_list;

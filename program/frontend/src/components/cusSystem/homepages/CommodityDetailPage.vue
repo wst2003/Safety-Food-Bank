@@ -294,7 +294,8 @@
 <el-dialog
   title="提交投诉"
   v-model="isComplaintDialogVisible"
-  :before-close="handleClose">
+  :before-close="handleClose"
+  >
   <div>
     <el-select v-model="appMatters" placeholder="（必填）请选择投诉事项">
     <div v-if="complainState===0">
@@ -335,7 +336,7 @@
   <template #footer>
     <el-button @click="isComplaintDialogVisible = false">取消</el-button>
     <el-button @click="submitForm">提交</el-button>
-    </template>
+  </template>
 </el-dialog>
 
 

@@ -29,7 +29,7 @@ public class UserLoginController {
             return SaResult.ok("success").setData(response);
 
         }
-        return SaResult.error("登录失败");
+        return SaResult.error(response.getMessage());
     }
     @RequestMapping(value="/quit",method = RequestMethod.POST)
     public SaResult userQuit(@RequestBody UserQuitRequestDTO request){
