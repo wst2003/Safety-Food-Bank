@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author raoji
  * @date 2023/12/15
- * @Description
+ * @Description 控制类，返回购物车内容
  */
 @RestController
 @RequestMapping("/api/cus/commodity")
@@ -22,6 +22,12 @@ public class CommodityShoppingCartController {
     @Autowired
     private CommodityShoppingCartService commodityShoppingCartService;
 
+    /**
+     * @param requestDTO - 顾客的购物车中的商品
+     * @see CommodityShoppingCartRequestDTO
+     * @return 购物车中商品的详细信息
+     * @see CommodityShoppingCartResponseDTO
+     */
     @RequestMapping("/shoppingCart")
     public ResponseEntity<CommodityShoppingCartResponseDTO> shoppingCart
             (@RequestBody CommodityShoppingCartRequestDTO requestDTO){

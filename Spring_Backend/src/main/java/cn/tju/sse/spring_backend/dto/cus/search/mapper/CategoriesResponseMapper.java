@@ -8,13 +8,21 @@ import org.mapstruct.factory.Mappers;
 import java.util.Arrays;
 
 /**
+ * @ClassName CategoriesResponseMapper
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 将查询到的类别实体转化为发送给前端的消息
  */
 @Mapper
 public interface CategoriesResponseMapper {
     CategoriesResponseMapper INSTANCE = Mappers.getMapper(CategoriesResponseMapper.class);
+
+    /**
+     * @param entities 查询到的商品类别实体
+     * @return 发送给前端的实体数组
+     * @see SearchCategoriesResponseDTO
+     * @see CommoditiesCategoriesEntity
+     */
     default SearchCategoriesResponseDTO entitiesToResponse(CommoditiesCategoriesEntity[] entities){
         if(entities == null){
             return new SearchCategoriesResponseDTO();

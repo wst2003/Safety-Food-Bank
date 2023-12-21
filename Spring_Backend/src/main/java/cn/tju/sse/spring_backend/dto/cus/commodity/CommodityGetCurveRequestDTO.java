@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * @ClassName CommodityGetCurveRequestDTO
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 用于接收前端发来的商品id
  */
 @Getter
 @Setter

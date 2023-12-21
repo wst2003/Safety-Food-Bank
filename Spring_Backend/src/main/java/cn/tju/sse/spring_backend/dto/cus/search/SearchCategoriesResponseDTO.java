@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * @ClassName SearchCategoriesResponseDTO
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 发送给前端的所有类别的数组
  */
 @Getter
 @Setter

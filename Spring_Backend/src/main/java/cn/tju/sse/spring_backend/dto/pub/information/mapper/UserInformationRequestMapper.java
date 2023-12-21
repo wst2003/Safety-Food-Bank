@@ -1,19 +1,27 @@
 package cn.tju.sse.spring_backend.dto.pub.information.mapper;
 
-import cn.tju.sse.spring_backend.dto.pub.information.UserInformationRequest;
-import cn.tju.sse.spring_backend.dto.pub.information.UserInformationResponse;
-import cn.tju.sse.spring_backend.dto.pub.register.UserRegistrationRequest;
+import cn.tju.sse.spring_backend.dto.pub.information.UserInformationRequestDTO;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
+/**
+ * @ClassName UserInformationRequestMapper
+ * @Author RaoJi
+ * @Description 用于将前端接收数据转化为model
+ */
 @Mapper
 public interface UserInformationRequestMapper {
     // generate a mapper instance
     UserInformationRequestMapper INSTANCE =
             Mappers.getMapper(UserInformationRequestMapper.class);
 
+    /**
+     * @param request 前端发来的request
+     * @return User表映射
+     * @see UsersEntity
+     */
     // transfer request to model
     // source: UserInformationRequest  String user_ID
     // target: UsersEntity  int userId
@@ -26,5 +34,5 @@ public interface UserInformationRequestMapper {
     @Mapping(target = "userRegtime", ignore = true)
     @Mapping(target = "userType", ignore = true)
     @Mapping(target = "userBalance", ignore = true)
-    UsersEntity requestToEntity(UserInformationRequest request);
+    UsersEntity requestToEntity(UserInformationRequestDTO request);
 }

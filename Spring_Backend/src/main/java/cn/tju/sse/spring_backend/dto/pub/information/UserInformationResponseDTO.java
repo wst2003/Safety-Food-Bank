@@ -3,9 +3,14 @@ package cn.tju.sse.spring_backend.dto.pub.information;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * @ClassName UserInformationResponseDTO
+ * @Author RaoJI
+ * @Description 用于返回给前端的用户数据
+ */
 @Setter
 @Getter
-public class UserInformationResponse {
+public class UserInformationResponseDTO {
     // same in the api fox response
     private String message;
     private String user_ID;

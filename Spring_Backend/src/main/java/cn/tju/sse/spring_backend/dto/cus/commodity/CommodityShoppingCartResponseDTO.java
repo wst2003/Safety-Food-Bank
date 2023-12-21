@@ -7,9 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * @ClassName CommodityShoppingCartResponseDTO
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 用于发送给前端的购物车中商品详细信息
  */
 @Getter
 @Setter

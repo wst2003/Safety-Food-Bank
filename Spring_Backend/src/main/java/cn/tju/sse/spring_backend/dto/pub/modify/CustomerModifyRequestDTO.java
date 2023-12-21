@@ -4,14 +4,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * @ClassName CustomerModifyRequestDTO
  * @author raoji
  * @date 2023/12/9
- * @Description
+ * @Description 用于接收前端发来的待修改的顾客信息
  */
 
 @Getter
 @Setter
-public class CustomerModifyRequest {
+public class CustomerModifyRequestDTO {
     private String cus_ID;
     private String cus_nickname;
     private String cus_notes;

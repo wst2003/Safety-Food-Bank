@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.getinformation;
 
-import cn.tju.sse.spring_backend.dto.pub.getinformation.StoreGetinformationRequest;
-import cn.tju.sse.spring_backend.dto.pub.getinformation.StoreGetinformationResponse;
+import cn.tju.sse.spring_backend.dto.pub.getinformation.StoreGetinformationRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.getinformation.StoreGetinformationResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.getinformation.mapper.StoreGetinformationRequestMapper;
 import cn.tju.sse.spring_backend.dto.pub.getinformation.mapper.StoreGetinformationResponseMapper;
 import cn.tju.sse.spring_backend.model.StoreCategoriesEntity;
@@ -13,6 +13,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * @ClassName StoreGetinformationService
+ * @Author RaoJi
+ * @Description 查询商家基本信息的业务逻辑
+ */
 @Service
 public class StoreGetinformationService {
     @Autowired
@@ -26,8 +31,14 @@ public class StoreGetinformationService {
     private final StoreGetinformationRequestMapper storeGetinformationRequestMapper
             = StoreGetinformationRequestMapper.INSTANCE;
 
-    public StoreGetinformationResponse StoreGetinformation(StoreGetinformationRequest request){
-        StoreGetinformationResponse response = new StoreGetinformationResponse();
+    /**
+     * @param request 前端发来的消息
+     * @return 回复给前端的消息
+     * @see StoreGetinformationResponseDTO
+     * @see StoreGetinformationRequestDTO
+     */
+    public StoreGetinformationResponseDTO StoreGetinformation(StoreGetinformationRequestDTO request){
+        StoreGetinformationResponseDTO response = new StoreGetinformationResponseDTO();
 
         boolean existsStore = storeGetinformationRepository.
                 existsByStoId(Integer.valueOf(request.getSto_ID()));

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 控制类，返回商品的价格曲线
  */
 @RestController
 @RequestMapping("/api/cus/commodity")
@@ -22,6 +22,11 @@ public class CommodityGetCurveController {
     @Autowired
     private CommodityGetCurveService commodityGetCurveService;
 
+    /**
+     * @param com_id - 商品的id
+     * @return 商品的价格变动曲线数组
+     * @see CommodityGetCurveResponseDTO
+     */
     @RequestMapping(value = "/getCurve", method = RequestMethod.GET)
     public ResponseEntity<CommodityGetCurveResponseDTO> getCurve
             (@RequestParam int com_id){

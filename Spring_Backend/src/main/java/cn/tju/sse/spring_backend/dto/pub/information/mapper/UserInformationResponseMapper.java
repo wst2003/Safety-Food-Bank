@@ -1,6 +1,6 @@
 package cn.tju.sse.spring_backend.dto.pub.information.mapper;
 
-import cn.tju.sse.spring_backend.dto.pub.information.UserInformationResponse;
+import cn.tju.sse.spring_backend.dto.pub.information.UserInformationResponseDTO;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -23,5 +23,5 @@ public interface UserInformationResponseMapper {
     @Mapping(target = "user_regTime", source = "userRegtime")
     @Mapping(target = "user_type", source = "userType")
     @Mapping(target = "message", ignore = true)
-    UserInformationResponse entityToResponse(UsersEntity user);
+    UserInformationResponseDTO entityToResponse(UsersEntity user);
 }

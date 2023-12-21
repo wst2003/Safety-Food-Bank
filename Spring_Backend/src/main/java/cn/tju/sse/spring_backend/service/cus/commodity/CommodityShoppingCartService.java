@@ -13,9 +13,10 @@ import java.math.BigDecimal;
 import java.util.*;
 
 /**
+ * @ClassName CommodityShoppingCartService
  * @author raoji
  * @date 2023/12/15
- * @Description
+ * @Description 查询购物车消息的业务逻辑
  */
 @Service
 public class CommodityShoppingCartService {
@@ -35,6 +36,12 @@ public class CommodityShoppingCartService {
     private final CommodityShoppingCartResponseMapper commodityShoppingCartResponseMapper
             = CommodityShoppingCartResponseMapper.INSTANCE;
 
+    /**
+     * @param requestDTO 前端发来的购物车商品消息和顾客id
+     * @return 购物车中商品的详细消息
+     * @see CommodityShoppingCartResponseDTO
+     * @see CommodityShoppingCartRequestDTO
+     */
     public CommodityShoppingCartResponseDTO shoppingCart(CommodityShoppingCartRequestDTO requestDTO){
         int cusId = requestDTO.getCus_id();
         Integer[] com_id_arr = requestDTO.getCom_id_arr();

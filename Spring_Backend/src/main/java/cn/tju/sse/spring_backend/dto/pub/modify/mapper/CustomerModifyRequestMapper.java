@@ -1,6 +1,6 @@
 package cn.tju.sse.spring_backend.dto.pub.modify.mapper;
 
-import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyRequest;
+import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyRequestDTO;
 import cn.tju.sse.spring_backend.model.CustomerEntity;
 import cn.tju.sse.spring_backend.model.CustomerLoveEntity;
 import org.mapstruct.Mapper;
@@ -9,19 +9,36 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.Arrays;
 
+/**
+ * @ClassName CustomerModifyRequestMapper
+ * @Author RaoJi
+ * @Description 用于将前端发来的顾客信息转化为model
+ */
 @Mapper
 public interface CustomerModifyRequestMapper {
     CustomerModifyRequestMapper INSTANCE =
             Mappers.getMapper(CustomerModifyRequestMapper.class);
 
+    /**
+     * @param request 前端发来的消息
+     * @return Customer表映射
+     * @see CustomerEntity
+     * @see CustomerModifyRequestDTO
+     */
     @Mapping(target = "cusId", source = "cus_ID")
     @Mapping(target = "cusNickname", source = "cus_nickname")
     @Mapping(target = "cusNotes", source = "cus_notes")
     @Mapping(target = "cusPaypassword", source = "cus_payPassword")
     @Mapping(target = "cusState", ignore = true)
-    CustomerEntity requestToEntity(CustomerModifyRequest request);
+    CustomerEntity requestToEntity(CustomerModifyRequestDTO request);
 
-    default CustomerLoveEntity[] requestToLoveEntities(CustomerModifyRequest request) {
+    /**
+     * @param request 前端发来的消息
+     * @return CustomerLove表映射的多个实体
+     * @see CustomerLoveEntity
+     * @see CustomerModifyRequestDTO
+     */
+    default CustomerLoveEntity[] requestToLoveEntities(CustomerModifyRequestDTO request) {
         if (request.getCus_category() == null || request.getCus_category().length == 0) {
             return new CustomerLoveEntity[0];
         }

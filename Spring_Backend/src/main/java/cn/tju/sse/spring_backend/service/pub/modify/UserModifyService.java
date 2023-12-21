@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.modify;
 
-import cn.tju.sse.spring_backend.dto.pub.modify.UserModifyRequest;
-import cn.tju.sse.spring_backend.dto.pub.modify.UserModifyResponse;
+import cn.tju.sse.spring_backend.dto.pub.modify.UserModifyRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.modify.UserModifyResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.modify.mapper.UserModifyRequestMapper;
 import cn.tju.sse.spring_backend.model.UsersEntity;
 import cn.tju.sse.spring_backend.repository.pub.modify.UserModifyRepository;
@@ -16,8 +16,8 @@ public class UserModifyService {
     private final UserModifyRequestMapper userModifyRequestMapper
             = UserModifyRequestMapper.INSTANCE;
 
-    public UserModifyResponse UserModify(UserModifyRequest request){
-        UserModifyResponse response = new UserModifyResponse();
+    public UserModifyResponseDTO UserModify(UserModifyRequestDTO request){
+        UserModifyResponseDTO response = new UserModifyResponseDTO();
 
         boolean existsUser = userModifyRepository.
                 existsByUserId(Integer.parseInt(request.getUser_ID()));

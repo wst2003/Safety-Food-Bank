@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * @ClassName CommodityGetCurveService
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 查询商品价格曲线的业务逻辑
  */
 @Service
 public class CommodityGetCurveService {
@@ -23,6 +24,12 @@ public class CommodityGetCurveService {
     private final CommodityGetCurveResponseMapper commodityGetCurveResponseMapper
             = CommodityGetCurveResponseMapper.INSTANCE;
 
+    /**
+     * @param requestDTO 前端发送来的商品id消息
+     * @return 发送给前端的商品价格曲线消息
+     * @see CommodityGetCurveResponseDTO
+     * @see CommodityGetCurveRequestDTO
+     */
     public CommodityGetCurveResponseDTO getCurve(CommodityGetCurveRequestDTO requestDTO){
         List<CommodityPriceCurveEntity> entities = commodityGetCurveRepository.
                 findAllByComId(requestDTO.getCom_id());

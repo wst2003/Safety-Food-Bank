@@ -9,9 +9,10 @@ import org.mapstruct.factory.Mappers;
 import java.util.Arrays;
 
 /**
+ * @ClassName CommodityShoppingCartResponseMapper
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 将查询到的商家实体、顾客实体、类别实体、商家照片实体等转化为发送给前端的消息
  */
 @Mapper
 public interface CommodityShoppingCartResponseMapper {
@@ -31,6 +32,21 @@ public interface CommodityShoppingCartResponseMapper {
 //    @Mapping(source = "commodityImageEntity.comImage", target = "com_firstImage")
 //    @Mapping(source = "storeEntity.stoName", target = "sto_name")
 //    @Mapping(source = "commodityEntity.expirationDate", target = "com_expirationDate")
+
+    /**
+     * @param commodityEntity 查询到的商品实体
+     * @param commodityImageEntity 查询到的商品照片实体
+     * @param commodityCategoriesEntities 查询到的商品所属类别实体
+     * @param storeEntity 查询到的商家实体
+     * @param favoriteEntities 查询到的用户收藏实体
+     * @return 发送给前端的用户消息对
+     * @see CommodityEntity
+     * @see CommodityImageEntity
+     * @see CommodityCategoriesEntity
+     * @see StoreEntity
+     * @see FavoriteEntity
+     * @see CommodityShoppingCartResponseDTO.ComListItem
+     */
     default CommodityShoppingCartResponseDTO.ComListItem entitiesToComListItem
             (CommodityEntity commodityEntity,
              CommodityImageEntity commodityImageEntity,

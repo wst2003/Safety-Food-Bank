@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.modify;
 
-import cn.tju.sse.spring_backend.dto.pub.modify.StoreModifyRequest;
-import cn.tju.sse.spring_backend.dto.pub.modify.StoreModifyResponse;
+import cn.tju.sse.spring_backend.dto.pub.modify.StoreModifyRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.modify.StoreModifyResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.modify.mapper.StoreModifyRequestMapper;
 import cn.tju.sse.spring_backend.model.CommoditiesCategoriesEntity;
 import cn.tju.sse.spring_backend.model.StoreCategoriesEntity;
@@ -14,16 +14,17 @@ import cn.tju.sse.spring_backend.repository.pub.modify.StoreImageModifyRepositor
 import cn.tju.sse.spring_backend.repository.pub.modify.StoreModifyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
+/**
+ * @ClassName StoreModifyService
+ * @Author RaoJi
+ * @Description 修改商家信息的业务逻辑
+ */
 @Service
 public class StoreModifyService {
     @Autowired
@@ -39,6 +40,9 @@ public class StoreModifyService {
     @Autowired
     private CommoditiesCategoriesRepository commoditiesCategoriesRepository;
 
+    /**
+     * @return 所有商品类别属性的集合
+     */
     private String[] getAllCategories(){
         List<CommoditiesCategoriesEntity> categoriesEntities = commoditiesCategoriesRepository.findAll();
 
@@ -47,6 +51,11 @@ public class StoreModifyService {
                 .toArray(String[]::new);
     }
 
+    /**
+     * @param categories 前端消息转为的StoreCategories表的映射实体集合
+     * @return 映射实体是否符合所有商品类别属性
+     * @see StoreCategoriesEntity
+     */
     private boolean checkCategories(Iterable<StoreCategoriesEntity> categories){
         String[] allCategories = getAllCategories();
 
@@ -69,8 +78,14 @@ public class StoreModifyService {
 
     private final String LICENSE_PATH = endpoint +  "licenses";
 
-    public StoreModifyResponse storeModify(StoreModifyRequest request){
-        StoreModifyResponse response = new StoreModifyResponse();
+    /**
+     * @param request 前端发送来的消息
+     * @return 返回给前端的信息
+     * @see StoreModifyRequestDTO
+     * @see StoreModifyResponseDTO
+     */
+    public StoreModifyResponseDTO storeModify(StoreModifyRequestDTO request){
+        StoreModifyResponseDTO response = new StoreModifyResponseDTO();
 
         boolean existsStore = storeModifyRepository.existsById(Integer.valueOf(request.getSto_ID()));
 

@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * @ClassName CommodityShoppingCartRequestDTO
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 用于接收前端发来的购物车的商品id数组和顾客id
  */
 @Getter
 @Setter

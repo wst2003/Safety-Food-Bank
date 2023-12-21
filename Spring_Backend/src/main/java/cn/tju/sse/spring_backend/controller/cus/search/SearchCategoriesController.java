@@ -12,13 +12,19 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 查询平台上所有涉及的商品种类
+ * @ClassName SearchCategoriesController
  */
 @RestController
 @RequestMapping("/api/cus/search")
 public class SearchCategoriesController {
     @Autowired
     private SearchCategoriesService searchCategoriesService;
+
+    /**
+     * @return 所有商品种类组成的数组
+     * @see SearchCategoriesResponseDTO
+     */
     @RequestMapping(value = "/categories", method = RequestMethod.GET)
     public ResponseEntity<SearchCategoriesResponseDTO> categories(){
         SearchCategoriesResponseDTO responseDTO = searchCategoriesService.categories();

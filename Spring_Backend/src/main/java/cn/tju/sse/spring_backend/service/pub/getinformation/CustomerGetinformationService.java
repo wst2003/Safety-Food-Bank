@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.getinformation;
 
-import cn.tju.sse.spring_backend.dto.pub.getinformation.CustomerGetinformationRequest;
-import cn.tju.sse.spring_backend.dto.pub.getinformation.CustomerGetinformationResponse;
+import cn.tju.sse.spring_backend.dto.pub.getinformation.CustomerGetinformationRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.getinformation.CustomerGetinformationResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.getinformation.mapper.CustomerGetinformationRequestMapper;
 import cn.tju.sse.spring_backend.dto.pub.getinformation.mapper.CustomerGetinformationResponseMapper;
 import cn.tju.sse.spring_backend.model.CustomerEntity;
@@ -26,8 +26,8 @@ public class CustomerGetinformationService {
     private final CustomerGetinformationRequestMapper customerGetinformationRequestMapper
             = CustomerGetinformationRequestMapper.INSTANCE;
 
-    public CustomerGetinformationResponse CustomerGetinformation(CustomerGetinformationRequest request){
-        CustomerGetinformationResponse response = new CustomerGetinformationResponse();
+    public CustomerGetinformationResponseDTO CustomerGetinformation(CustomerGetinformationRequestDTO request){
+        CustomerGetinformationResponseDTO response = new CustomerGetinformationResponseDTO();
 
         boolean existsCustomer = customerGetinformationRepository.
                 existsByCusId(Integer.parseInt(request.getCus_ID()));

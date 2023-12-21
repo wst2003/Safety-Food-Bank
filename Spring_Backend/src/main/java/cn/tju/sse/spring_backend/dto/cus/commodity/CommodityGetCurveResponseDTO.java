@@ -4,9 +4,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
+ * @ClassName CommodityGetCurveResponseDTO
  * @author raoji
  * @date 2023/12/13
- * @Description
+ * @Description 用于返回商品对应的价格-时间数组
  */
 @Getter
 @Setter

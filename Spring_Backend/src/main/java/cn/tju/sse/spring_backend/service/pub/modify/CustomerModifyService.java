@@ -1,7 +1,7 @@
 package cn.tju.sse.spring_backend.service.pub.modify;
 
-import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyRequest;
-import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyResponse;
+import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyRequestDTO;
+import cn.tju.sse.spring_backend.dto.pub.modify.CustomerModifyResponseDTO;
 import cn.tju.sse.spring_backend.dto.pub.modify.mapper.CustomerModifyRequestMapper;
 import cn.tju.sse.spring_backend.model.CommoditiesCategoriesEntity;
 import cn.tju.sse.spring_backend.model.CustomerEntity;
@@ -15,6 +15,11 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @ClassName CustomerModifyService
+ * @Author RaoJi
+ * @Description 返回顾客基本信息的业务逻辑
+ */
 @Service
 public class CustomerModifyService {
     @Autowired
@@ -26,6 +31,9 @@ public class CustomerModifyService {
     @Autowired
     private CommoditiesCategoriesRepository commoditiesCategoriesRepository;
 
+    /**
+     * @return 所有商品类别属性的集合
+     */
     private String[] getAllCategories(){
         List<CommoditiesCategoriesEntity> categoriesEntities = commoditiesCategoriesRepository.findAll();
 
@@ -34,6 +42,11 @@ public class CustomerModifyService {
                 .toArray(String[]::new);
     }
 
+    /**
+     * @param loves 前端发来的消息转为的CustomerLove表实体集合
+     * @return 判断是否符合商品类别属性
+     * @see CustomerLoveEntity
+     */
     private boolean checkCategories(Iterable<CustomerLoveEntity> loves){
         String[] allCategories = getAllCategories();
 
@@ -52,8 +65,14 @@ public class CustomerModifyService {
     private final CustomerModifyRequestMapper customerModifyRequestMapper
             = CustomerModifyRequestMapper.INSTANCE;
 
-    public CustomerModifyResponse customerModify(CustomerModifyRequest request){
-        CustomerModifyResponse response = new CustomerModifyResponse();
+    /**
+     * @param request 前端发来的消息
+     * @return 回复给前端的顾客信息
+     * @see CustomerModifyRequestDTO
+     * @see CustomerModifyResponseDTO
+     */
+    public CustomerModifyResponseDTO customerModify(CustomerModifyRequestDTO request){
+        CustomerModifyResponseDTO response = new CustomerModifyResponseDTO();
 
         boolean existsCustomer = customerModifyRepository.
                 existsById(Integer.valueOf(request.getCus_ID()));
