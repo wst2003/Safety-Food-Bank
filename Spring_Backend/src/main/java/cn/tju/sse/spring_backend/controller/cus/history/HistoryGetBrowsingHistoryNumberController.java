@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/api/cus/history")
+@RequestMapping("/api/history")
 public class HistoryGetBrowsingHistoryNumberController {
 
     @Autowired
@@ -22,7 +22,6 @@ public class HistoryGetBrowsingHistoryNumberController {
 
     /**
      * 拉取用户浏览记录数量
-     * 疑似路径有误！！！！！！！！！！！！！
      * @param historyGetBrowsingHistoryNumberRequest
      * @return
      */
