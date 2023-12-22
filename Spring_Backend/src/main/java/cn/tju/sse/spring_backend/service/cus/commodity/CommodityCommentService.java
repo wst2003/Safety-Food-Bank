@@ -61,9 +61,7 @@ public class CommodityCommentService {
 
         CommodityCommentEntity commodityCommentEntity=new CommodityCommentEntity();
         commodityCommentEntity.setUserId(user_id);
-//        过滤敏感词用
-//        commodityCommentEntity.setCmtContent(contentFilter(cmt_content));
-        commodityCommentEntity.setCmtContent(cmt_content);
+        commodityCommentEntity.setCmtContent(contentFilter(cmt_content));
         commodityCommentEntity.setCmtFather(cmt_father);
         commodityCommentEntity.setComId(com_id);
 
