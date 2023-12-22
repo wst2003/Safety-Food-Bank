@@ -9,24 +9,26 @@ import cn.tju.sse.spring_backend.model.CommodityCommentEntity;
 import cn.tju.sse.spring_backend.model.CommodityEntity;
 import cn.tju.sse.spring_backend.model.CommodityPriceCurveEntity;
 import cn.tju.sse.spring_backend.model.IndentEntity;
-import cn.tju.sse.spring_backend.repository.cus.indent.IndentCommentRepository;
-import cn.tju.sse.spring_backend.repository.cus.indent.IndentCommodityPriceCurveRepository;
-import cn.tju.sse.spring_backend.repository.cus.indent.IndentCommodityRepository;
-import cn.tju.sse.spring_backend.repository.cus.indent.IndentRepository;
+import cn.tju.sse.spring_backend.repository.cus.indent.*;
 import cn.tju.sse.spring_backend.repository.SeqNextvalRepository;
 import cn.tju.sse.spring_backend.utils.ContentFilter;
+import cn.tju.sse.spring_backend.utils.StorageFileReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+
+import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author lhx
@@ -52,6 +54,9 @@ public class IndentService {
 
     @Autowired
     IndentCommentRepository indentCommentRepository;
+
+    @Autowired
+    IndentCommodityImageRepository indentCommodityImageRepository;
 
     /**
      * @author lhx
@@ -205,23 +210,19 @@ public class IndentService {
         BigDecimal result = BigDecimal.valueOf(-1);
         Date currentDate = new Date(millis);
 //        System.out.println("当前时间："+currentDate);
-        Collections.sort(list, Comparator.comparing(CommodityPriceCurveEntity::getComPcTime));
-        BigDecimal last_item_price= BigDecimal.valueOf(-1);
+        Collections.sort(list, Comparator.comparing(CommodityPriceCurveEntity::getComPcTime).reversed());
         for (CommodityPriceCurveEntity item : list){
-
-            if(item.getComPcTime().compareTo(currentDate)>=0){
-                result=last_item_price;
-//                System.out.println("商品当前价格："+result);
+            if(item.getComPcTime().compareTo(currentDate)<=0){
+                result=item.getComPcPrice();
+                System.out.println("商品当前价格："+result);
                 break;
             }
-            last_item_price=item.getComPcPrice();
         }
         if(result == BigDecimal.valueOf(-1))
             // 价格曲线数据出现问题，没有当前时间前的节点
             throw new RuntimeException();
         return result;
     }
-
     /**
      * @author lhx
      * @date 2023/12/21
@@ -282,6 +283,146 @@ public class IndentService {
      * @Description 订单获取
      */
     public GetIndentListResponseDTO getIndentList(GetIndentListRequestDTO request) {
-        return new GetIndentListResponseDTO();
+        List<GetIndentListResponseDTO.IndentDTO>indList=new ArrayList<>();
+        List<GetIndentListResponseDTO.IndentElementDTO>eleList=new ArrayList<>();
+        Integer state = request.getInd_state();
+        if(state==3)state=0;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        long millis = System.currentTimeMillis();
+        Date currentDate = new Date(millis);// 当前日期
+        System.out.println("搜索字符串"+request.getSearch_str());
+        List<Object[]> list=indentRepository.getIndentList(request.getCus_id(),state,request.getSearch_str());
+        for(Object[] item:list){
+            GetIndentListResponseDTO.IndentDTO indentDTO=new GetIndentListResponseDTO.IndentDTO();
+            indentDTO.setInd_ID((Integer) item[0]);
+            indentDTO.setInd_quantity((Integer) item[1]);
+            indentDTO.setInd_money((BigDecimal) item[2]);
+            indentDTO.setInd_rating((BigDecimal)  item[7]);
+            if(indentDTO.getInd_rating()==null){
+                indentDTO.setInd_rating(BigDecimal.valueOf(5));
+            }
+            indentDTO.setCom_ID((Integer) item[9]);
+            Date ind_rtime=(Date) item[10];
+            // 将java.sql.Date转换为"yyyy-MM-dd HH:mm:ss"格式字符串
+            if(ind_rtime==null)
+                indentDTO.setInd_rtime("");
+            else {
+                LocalDateTime localDateTime = ind_rtime.toLocalDate().atStartOfDay();
+                String formattedDate = localDateTime.format(formatter);
+                indentDTO.setInd_rtime(formattedDate);
+            }
+            indentDTO.setInd_notes((String) item[5]);
+            if(indentDTO.getInd_notes()==null){
+                indentDTO.setInd_notes("");
+            }
+            indentDTO.setInd_rnotes((String) item[11]);
+            if(indentDTO.getInd_rnotes()==null){
+                indentDTO.setInd_rnotes("");
+            }
+            indentDTO.setInd_rmoney((BigDecimal)  item[12]);
+            if(indentDTO.getInd_rmoney()==null){
+                indentDTO.setInd_rmoney(BigDecimal.valueOf(5));
+            }
+            indentDTO.setCom_name((String) item[13]);
+            Date ind_creationTime=(Date) item[3];
+            // 将java.sql.Date转换为"yyyy-MM-dd HH:mm:ss"格式字符串
+            LocalDateTime localDateTime = ind_creationTime.toLocalDate().atStartOfDay();
+            String formattedDate = localDateTime.format(formatter);
+            indentDTO.setInd_creationTime( formattedDate);
+            indentDTO.setInd_verificationCode((String) item[4]);
+            indentDTO.setSto_id((Integer) item[16]);
+            indentDTO.setSto_name((String) item[15]);
+            Date com_expirationDate=(Date) item[14];
+
+
+            List<Object[]> imgs= indentCommodityImageRepository.getReferenceByComID(indentDTO.getCom_ID());
+            if(imgs.size()>0)
+                indentDTO.setCom_firstImg((String) imgs.get(0)[1]);
+            else
+                indentDTO.setCom_firstImg("");
+
+            if(request.getInd_state()==3){
+                if(com_expirationDate.compareTo(currentDate)<0)
+                    indList.add(indentDTO);
+            }
+            else if(request.getInd_state()==0){
+                if(com_expirationDate.compareTo(currentDate)>=0)
+                    indList.add(indentDTO);
+            }
+            else
+                indList.add(indentDTO);
+        }
+        // 根据ind_verificationCode字段进行分组
+        Map<String, List<GetIndentListResponseDTO.IndentDTO>> groupedByCode = indList.stream()
+                .collect(Collectors.groupingBy(GetIndentListResponseDTO.IndentDTO::getInd_verificationCode));
+
+        // 现在groupedByCode包含了按ind_verificationCode分组的结果
+        // 遍历分组
+        for (Map.Entry<String, List<GetIndentListResponseDTO.IndentDTO>> entry : groupedByCode.entrySet()) {
+            GetIndentListResponseDTO.IndentElementDTO item = new GetIndentListResponseDTO.IndentElementDTO();
+            item.setIndent_arr(new ArrayList<>());
+            for (GetIndentListResponseDTO.IndentDTO i : entry.getValue()) {
+
+                item.getIndent_arr().add(i);
+
+                item.setInd_notes(i.getInd_notes());
+                item.setInd_creationTime(i.getInd_creationTime());
+                item.setInd_verificationCode(i.getInd_verificationCode());
+                item.setSto_id(i.getSto_id());
+                item.setSto_name(i.getSto_name());
+            }
+            eleList.add(item);
+        }
+
+        // eleList现在包含了处理后的数据
+
+        if (request.getSort_order()==0){
+            // 按时间先后排序
+            // 定义一个SimpleDateFormat用于解析日期字符串
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Collections.sort(eleList, new Comparator<GetIndentListResponseDTO.IndentElementDTO>() {
+                @Override
+                public int compare(GetIndentListResponseDTO.IndentElementDTO x, GetIndentListResponseDTO.IndentElementDTO y) {
+                    try {
+                        java.util.Date dateX = sdf.parse(x.getInd_creationTime());
+                        java.util.Date dateY = sdf.parse(y.getInd_creationTime());
+                        return dateY.compareTo(dateX);
+                    } catch (ParseException e) {
+                        throw new IllegalArgumentException("Invalid date format", e);
+                    }
+                }
+            });
+        }
+        else if(request.getSort_order()==1){
+            // 按地理位置排序
+            String folderPath = ".\\NearbySto";
+            String filePath = folderPath + File.separator + "nearbysto"+request.getCus_id() + ".txt";
+            List<Integer> sequence = StorageFileReader.getStorage(filePath);
+
+            Collections.sort(eleList, new Comparator<GetIndentListResponseDTO.IndentElementDTO>() {
+                @Override
+                public int compare(GetIndentListResponseDTO.IndentElementDTO x, GetIndentListResponseDTO.IndentElementDTO y) {
+                    return Integer.compare(sequence.indexOf(x.getSto_id()), sequence.indexOf(y.getSto_id()));
+                }
+            });
+
+        }
+        GetIndentListResponseDTO getIndentListResponseDTO=new GetIndentListResponseDTO();
+
+
+        // 裁切
+        int len;
+        if(eleList.size()>request.getEnd_pos()){
+            len=request.getEnd_pos()-request.getBegin_pos();
+        }
+        else
+            len=eleList.size()- request.getBegin_pos();
+        int beginPos=Math.max(0,Math.min(request.getBegin_pos(),eleList.size()));
+        int toIndex=Math.min(eleList.size(),beginPos+len);
+        getIndentListResponseDTO.setElement_arr(eleList.subList(beginPos,toIndex));
+        getIndentListResponseDTO.setTotal(toIndex-beginPos);
+
+        return getIndentListResponseDTO;
     }
 }

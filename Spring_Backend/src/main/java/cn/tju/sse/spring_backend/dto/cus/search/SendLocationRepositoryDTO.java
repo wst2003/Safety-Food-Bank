@@ -5,7 +5,7 @@ import lombok.Setter;
 /**
  * @author lhx
  * @date 2023/12/20
- * @Description 用于SendLocationResponseDTO
+ * @Description 用于获取地理位置远近排序的接口
  */
 @Getter
 @Setter

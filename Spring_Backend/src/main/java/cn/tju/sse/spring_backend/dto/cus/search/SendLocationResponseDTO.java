@@ -9,9 +9,9 @@ import lombok.Setter;
 import java.util.List;
 
 /**
- * @author 李恒鑫
+ * @author lhx
  * @date 2023/12/20
- * @Description 接口返回DTO
+ * @Description 用于获取地理位置远近排序的接口
  */
 @Getter
 @Setter

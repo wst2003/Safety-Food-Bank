@@ -28,12 +28,18 @@ public class GetIndentListResponseDTO {
         Integer ind_ID;
         Integer ind_quantity;
         BigDecimal ind_money;
-        double ind_rating;
+        BigDecimal ind_rating;
         Integer com_ID;
         String ind_rtime;
-        String ind_rmoney;
+        BigDecimal ind_rmoney;
         String com_firstImg;
         String com_name;
+        String ind_creationTime;
+        String ind_verificationCode;
+        String ind_rnotes;
+        String ind_notes;
+        Integer sto_id;
+        String sto_name;
     }
 
 }

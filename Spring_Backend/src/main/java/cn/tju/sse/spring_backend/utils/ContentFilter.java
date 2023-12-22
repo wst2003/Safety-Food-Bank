@@ -11,7 +11,7 @@ public class ContentFilter {
     static String filterPath="敏感词.txt";
     public static String contentFilter(String content) throws IOException {
         List<String> sensitiveWords = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader("敏感词.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filterPath))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 sensitiveWords.add(line.trim());
