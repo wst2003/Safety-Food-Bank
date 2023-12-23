@@ -58,7 +58,7 @@
           <el-card class="box-card" >
               <!-- 商品图片，您可能需要根据实际数据结构进行修改 -->
               <!-- <img :src="baseURL + `/${indent.com_firstImg}`" alt="商品图片" class="commodity-img"> -->
-              <img :src="baseURL + `/${indent.com_firstImg}`" alt="商品图片" class="commodity-img" @click="jumptoCom(indent.com_ID)">
+              <img :src="baseURL_obs + `${indent.com_firstImg}`" alt="商品图片" class="commodity-img" @click="jumptoCom(indent.com_ID)">
 
               <div class="commodity-details">
                   <el-link class="commodity-name" @click="jumptoCom(indent.com_ID)" >{{ indent.com_name }}</el-link>
@@ -224,6 +224,7 @@ v-model="isComplaintDialogVisible"
 import {reactive,ref,onActivated} from 'vue';
 import {useRouter,useRoute} from 'vue-router'
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import axios from 'axios';
 import { ElMessage } from 'element-plus';

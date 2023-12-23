@@ -15,7 +15,7 @@
 <div style="width: 800px display: flex; justify-content: center; align-items: center;">
                 <el-carousel height="400px" width="800px">
                   <el-carousel-item v-for="(image, index) in commodity.com_images" :key="index" style="display: flex; justify-content: center; align-items: center;">
-                    <img :src="baseURL + `/${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
+                    <img :src="baseURL_obs + `${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
                   </el-carousel-item>
                 </el-carousel>
               </div>
@@ -350,6 +350,7 @@ import { defineComponent, onMounted, ref, watchEffect, onBeforeUnmount, watch} f
 import { useRoute, useRouter } from 'vue-router'
 import axios from 'axios'
 import baseURL from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import Cookies from 'js-cookie';
 import {store}from '../../../../router/store'
 import { computed } from 'vue';
@@ -1268,6 +1269,7 @@ const isExpired = computed(() => {
       complain_cmt,
       comment,
       baseURL,
+      baseURL_obs,
       colors: ['#99A9BF', '#F7BA2A', '#FF9900'],
       activeNames,  // 新增：返回当前展开的评论的数组
       topComments,  // 新增：返回顶级评论的数组

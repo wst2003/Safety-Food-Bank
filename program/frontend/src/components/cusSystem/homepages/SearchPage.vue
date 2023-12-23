@@ -214,6 +214,7 @@ import { TabsPaneContext } from 'element-plus/es/components/tabs/src/constants';
 import { ref, reactive, onMounted,watch, onActivated} from 'vue';
 import { Waterfall } from "vue-waterfall-plugin-next";
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import "vue-waterfall-plugin-next/dist/style.css";
 import axios from 'axios';
@@ -406,7 +407,7 @@ function sortChange(value:number){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage=baseURL_obs+item.com_firstImage;
                     //设置图片相对路径
                 })
                 
@@ -440,7 +441,7 @@ function sortChange(value:number){
                 var len=List.length;
                 List.splice(0,len+1, ...response.data.sto_list)
                 List.forEach((item)=>{
-                    item.sto_firstImage = baseURL+"/"+item.sto_firstImage;
+                    item.sto_firstImage = baseURL_obs+item.sto_firstImage;
                 })
         })
         .catch(error => {
@@ -500,7 +501,7 @@ function handleCurrentChange(){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage=baseURL_obs+item.com_firstImage;
                     //设置图片相对路径
                 })
             }).catch(error => {
@@ -534,7 +535,7 @@ function handleCurrentChange(){
             List.forEach((item)=>{
                 item.sto_firstImage=
                     
-                    baseURL+"/"
+                baseURL_obs
                     +item.sto_firstImage;
                 // item.com_list.forEach((item)=>{
                 //     item.com_firstImage=
@@ -665,7 +666,7 @@ function onSearchCom(){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage=baseURL_obs+item.com_firstImage;
                     //设置图片相对路径
                 })
             }
@@ -767,7 +768,7 @@ function onSearchSto(){
 
                 List.forEach((item)=>{
                     item.sto_firstImage=
-                        baseURL+"/"
+                    baseURL_obs
                         +item.sto_firstImage;
                     // item.com_list.forEach((item)=>{
                     //     item.com_firstImage=
