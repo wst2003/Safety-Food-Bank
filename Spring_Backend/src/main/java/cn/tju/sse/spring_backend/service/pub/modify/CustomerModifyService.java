@@ -9,6 +9,7 @@ import cn.tju.sse.spring_backend.model.CustomerLoveEntity;
 import cn.tju.sse.spring_backend.repository.pub.modify.CommoditiesCategoriesRepository;
 import cn.tju.sse.spring_backend.repository.pub.modify.CustomerLoveModifyRepository;
 import cn.tju.sse.spring_backend.repository.pub.modify.CustomerModifyRepository;
+import cn.tju.sse.spring_backend.utils.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -104,7 +105,7 @@ public class CustomerModifyService {
         CustomerEntity exists = customerModifyRepository.
                 findById(Integer.valueOf(request.getCus_ID())).orElseThrow();
 
-        exists.setCusPaypassword(customer.getCusPaypassword());
+        exists.setCusPaypassword(SecurityUtils.encodePassword(customer.getCusPaypassword()));  // encode
         exists.setCusNickname(customer.getCusNickname());
         exists.setCusNotes(customer.getCusNotes());
 
