@@ -246,7 +246,7 @@ import { id } from 'element-plus/es/locale';
     ]);
   const url = 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg';
   const getUrl=(index:number)=>{
-    // console.log(change([goodsList.value[index].STO_IMAGE]));
+    console.log([goodsList.value[index].STO_IMAGE]);
     return goodsList.value[index].STO_IMAGE;
   }
 

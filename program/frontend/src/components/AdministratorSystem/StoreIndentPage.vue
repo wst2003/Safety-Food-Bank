@@ -404,23 +404,24 @@ const verificate=()=>{
 }
 
 function change(strr :string[]){
-  var arr=[''];
-    for(var i=0;i<strr.length;i++)
-      arr.push(strr[i]);
-    for(i=1;i<arr.length;i++){
-      var str=arr[i].split('\\');
-      arr[i]='/';
-      for(var j=2;j<str.length;j++){
-        arr[i]+=str[j];
-        if(j!=str.length-1)
-          arr[i]+='/'
-      }
-      // console.log(arr[i]);
-    }
-
-    // srcList.value=arr;
-    // console.log(arr.length)
-    return arr[1];
+    return strr;
+  // var arr=[''];
+  //   for(var i=0;i<strr.length;i++)
+  //     arr.push(strr[i]);
+  //   for(i=1;i<arr.length;i++){
+  //     var str=arr[i].split('\\');
+  //     arr[i]='/';
+  //     for(var j=2;j<str.length;j++){
+  //       arr[i]+=str[j];
+  //       if(j!=str.length-1)
+  //         arr[i]+='/'
+  //     }
+  //     // console.log(arr[i]);
+  //   }
+  //
+  //   // srcList.value=arr;
+  //   // console.log(arr.length)
+  //   return arr[1];
 }
 
 
