@@ -53,7 +53,7 @@ public class StoreRegisterService {
         }
 
         String licenseName= newStore.getStoId() + "_license." + fileExtension;
-        String licenseURL=ImgPath+uploadPath+"/"+licenseName;
+        String licenseURL=uploadPath+"/"+licenseName;
         newStore.setStoLicenseimg(licenseURL);
         boolean ifSuccess=ObsOperationTool.uploadInputStream(uploadPath,licenseName,request.getSto_licenseImage().getInputStream());
         if(!ifSuccess){
@@ -83,7 +83,7 @@ public class StoreRegisterService {
 
             //添加商家图片到OBS
             String newStoImgName= request.getSto_ID().toString()+"_picture_"+generatedUUID+"."+StoImgExtension;
-            String StoImgURL=ImgPath+uploadPath1+"/"+newStoImgName;
+            String StoImgURL=uploadPath1+"/"+newStoImgName;
             fileURLs.add(StoImgURL);
             boolean ifSuccess1=ObsOperationTool.uploadInputStream(uploadPath1,newStoImgName,pictureFile.getInputStream());
             if(!ifSuccess1){
