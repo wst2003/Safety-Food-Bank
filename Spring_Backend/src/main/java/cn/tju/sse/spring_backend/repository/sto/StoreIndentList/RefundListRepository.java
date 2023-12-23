@@ -31,7 +31,7 @@ public interface RefundListRepository extends JpaRepository<IndentEntity, Intege
             "FROM INDENT " +
             "JOIN COMMODITY_WITH_IMAGE ON INDENT.COM_ID = COMMODITY_WITH_IMAGE.COM_ID " +
             "JOIN USERS ON INDENT.CUS_ID = USERS.USER_ID " +
-            "WHERE STO_ID = :stoId AND IND_STATE = 2 AND USERS.USER_PHONE like CONCAT('%', :userPhone, '%') " +
+            "WHERE STO_ID = :stoId AND IND_STATE = 2 AND USERS.USER_PHONE like :userPhone " +
             "ORDER BY INDENT.IND_CREATIONTIME ASC " +
             "LIMIT :beginNumber, :pageSize",
             nativeQuery = true)
@@ -58,7 +58,7 @@ public interface RefundListRepository extends JpaRepository<IndentEntity, Intege
             "FROM INDENT " +
             "JOIN COMMODITY_WITH_IMAGE ON INDENT.COM_ID = COMMODITY_WITH_IMAGE.COM_ID " +
             "JOIN USERS ON INDENT.CUS_ID = USERS.USER_ID " +
-            "WHERE STO_ID = :stoId AND IND_STATE = 2 AND USERS.USER_PHONE like CONCAT('%', :userPhone, '%') " +
+            "WHERE STO_ID = :stoId AND IND_STATE = 2 AND USERS.USER_PHONE like :userPhone " +
             "ORDER BY INDENT.IND_CREATIONTIME DESC " +
             "LIMIT :beginNumber, :pageSize",
             nativeQuery = true)

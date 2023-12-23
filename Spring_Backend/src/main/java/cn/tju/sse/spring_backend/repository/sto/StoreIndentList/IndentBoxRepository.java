@@ -47,7 +47,7 @@ public interface IndentBoxRepository extends JpaRepository<IndentEntity, Integer
             "        JOIN CUSTOMER ON INDENT.CUS_ID = CUSTOMER.CUS_ID " +
             "        JOIN USERS ON INDENT.CUS_ID = USERS.USER_ID " +
             "        WHERE COMMODITY_WITH_IMAGE.STO_ID = :stoId " +
-            "            AND USERS.USER_PHONE LIKE CONCAT('%', :userPhone, '%') " +
+            "            AND USERS.USER_PHONE LIKE :userPhone " +
             "            AND INDENT.IND_STATE = :indState " +
             "            AND ((:indStateOrigin = -1 AND COMMODITY_WITH_IMAGE.COM_STATUS = -1) OR (:indStateOrigin = 0 AND COMMODITY_WITH_IMAGE.COM_STATUS != -1) OR :indStateOrigin = 1) " +
             "        ORDER BY INDENT.IND_CREATIONTIME ASC, INDENT.IND_VERIFICATIONCODE " +
@@ -105,7 +105,7 @@ public interface IndentBoxRepository extends JpaRepository<IndentEntity, Integer
             "        JOIN CUSTOMER ON INDENT.CUS_ID = CUSTOMER.CUS_ID " +
             "        JOIN USERS ON INDENT.CUS_ID = USERS.USER_ID " +
             "        WHERE COMMODITY_WITH_IMAGE.STO_ID = :stoId " +
-            "            AND USERS.USER_PHONE LIKE CONCAT('%', :userPhone, '%') " +
+            "            AND USERS.USER_PHONE LIKE :userPhone " +
             "            AND INDENT.IND_STATE = :indState " +
             "            AND ((:indStateOrigin = -1 AND COMMODITY_WITH_IMAGE.COM_STATUS = -1) OR (:indStateOrigin = 0 AND COMMODITY_WITH_IMAGE.COM_STATUS != -1) OR :indStateOrigin = 1) " +
             "        ORDER BY INDENT.IND_CREATIONTIME DESC, INDENT.IND_VERIFICATIONCODE " +
