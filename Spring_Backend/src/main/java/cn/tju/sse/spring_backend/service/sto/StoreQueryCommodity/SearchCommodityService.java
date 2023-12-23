@@ -56,9 +56,9 @@ public class SearchCommodityService {
         }
         String uploadDate = request.getCOM_UPLOADDATE();
         String expirationDate = request.getCOM_EXPIRATIONDATE();
-        if (uploadDate.length() > 0)
+        if (uploadDate != null && uploadDate.length() > 0)
             comIds.removeIf(element -> searchCommodityRepository.uploadDateLike(element, uploadDate) == 0);
-        if (expirationDate.length() > 0)
+        if (expirationDate != null && expirationDate.length() > 0)
             comIds.removeIf(element -> searchCommodityRepository.expirationDateLike(element, expirationDate) == 0);
 
         for (int comId : comIds) {
