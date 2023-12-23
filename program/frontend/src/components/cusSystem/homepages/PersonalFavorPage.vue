@@ -139,7 +139,7 @@ onActivated(()=>{
     store.activePath='/home/personalFavor'
     loading.value=true;
     axios.get(
-        baseURL+`/api/cus/favorite/getFavor`,
+        `/api/cus/favorite/getFavor`,
         {
             params: {
                 cus_id: user_id.value
@@ -243,7 +243,7 @@ function favorClick(com_id){
         favorListAfterPick.favorListAfterPick[pick_index].favor_state=1;
     favorList.favorList[ori_index].favor_state=favorListAfterPick.favorListAfterPick[pick_index].favor_state;
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:com_id,
             cus_id:user_id.value,

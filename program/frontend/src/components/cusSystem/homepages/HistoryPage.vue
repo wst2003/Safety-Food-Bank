@@ -133,7 +133,7 @@ onActivated(()=>{
     loading.value=true;
 
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistoryNumber`,
+        `/api/cus/history/getBrowsingHistoryNumber`,
         {
             cus_id: user_id.value,
         }
@@ -141,7 +141,7 @@ onActivated(()=>{
         console.log('拉取浏览记录总数成功',res.data.bro_num)
         queryInfo.total=res.data.bro_num
         return  axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:queryInfo.pagesize * (queryInfo.pagenum - 1),
@@ -172,7 +172,7 @@ function handleCurrentChange(){
     console.log('当前页数',queryInfo.pagenum)
     loading.value=true;
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:queryInfo.pagesize * (queryInfo.pagenum - 1),
@@ -203,7 +203,7 @@ function queryHistory(){
     console.log(queryInfo.query);
     //在表中显示满足搜索条件的商品或商家
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:0,
@@ -235,7 +235,7 @@ function queryClearReset(){
     console.log("重置搜索内容");
     //重新显示所有记录
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:0,
@@ -311,7 +311,7 @@ function favorClick(com_id){
     // historyList.historyList[ori_index].favor_state=historyList.historyList[ori_index].favor_state==1?0:1;
 
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:com_id,
             cus_id:user_id.value,

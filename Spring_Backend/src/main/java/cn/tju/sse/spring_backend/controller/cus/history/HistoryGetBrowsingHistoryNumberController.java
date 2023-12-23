@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
-@RequestMapping("/api/history")
+@RequestMapping("/api/cus/history")
 public class HistoryGetBrowsingHistoryNumberController {
 
     @Autowired
