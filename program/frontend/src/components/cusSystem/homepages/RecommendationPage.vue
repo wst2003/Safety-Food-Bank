@@ -229,7 +229,7 @@ onMounted(()=>{
                 type: 0,
                 commdation: ''
             };
-            carousel_item.image=baseURL_obs+new_sto.sto_firstImage;
+            carousel_item.image="/"+new_sto.sto_firstImage;
             carousel_item.id=new_sto.sto_id;
             carousel_item.type=1;
             carousel_item.commdation="最新开业："+new_sto.sto_name;
@@ -263,7 +263,7 @@ onMounted(()=>{
                 type: 0,
                 commdation: ''
             };
-            carousel_item.image=baseURL_obs+new_sto.sto_firstImage;
+            carousel_item.image="/"+new_sto.sto_firstImage;
             carousel_item.id=new_sto.sto_id;
             carousel_item.type=1;
             carousel_item.commdation="最热门商家："+new_sto.sto_name;
@@ -297,7 +297,7 @@ onMounted(()=>{
             type: 0,
             commdation: ''
         };
-        carousel_item.image=baseURL_obs+new_com.com_firstImage;
+        carousel_item.image="/"+new_com.com_firstImage;
         carousel_item.id=new_com.com_id;
         carousel_item.type=0;
         carousel_item.commdation="最受好评商品："+new_com.com_name;
@@ -364,7 +364,7 @@ onMounted(()=>{
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL_obs+item.com_firstImage;
+                    item.com_firstImage="/"+item.com_firstImage;
                     //设置图片相对路径
                 })
             }
@@ -469,7 +469,7 @@ function onSearchCom(){
             
                 item.dayDiff=dayDiff
                 //设置距离过期相差天数
-                item.com_firstImage=baseURL_obs+item.com_firstImage;
+                item.com_firstImage="/"+item.com_firstImage;
                 //设置图片相对路径
             })
         }
@@ -577,7 +577,7 @@ function handleCurrentChange(){
         
             item.dayDiff=dayDiff
             //设置距离过期相差天数
-            item.com_firstImage=baseURL_obs+item.com_firstImage;
+            item.com_firstImage="/"+item.com_firstImage;
             //设置图片相对路径
         })
     }).catch(error => {

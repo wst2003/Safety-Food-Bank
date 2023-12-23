@@ -149,7 +149,7 @@ onActivated(()=>{
             favorList.favorList=res.data.favor_list;
             //这里可能需要对图片的相对路径进行处理
             favorList.favorList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             console.log('收藏列表拉取成功',favorList.favorList)
             //这里可能需要对筛选条件进行处理

@@ -99,7 +99,8 @@ public class CommodityCommentService {
                     commoditySendCommentDTO.setCmt_name(commodityCommentRepository.findCusName(commentEntity.getUserId()));
                     commoditySendCommentDTO.setUser_type(0);
                     Integer buying_times=commodityCommentRepository.findBuyingTimes(commoditySendCommentDTO.getUser_id(), commoditySendCommentDTO.getCom_id());
-                    commoditySendCommentDTO.setBuying_times(buying_times);
+
+                    commoditySendCommentDTO.setBuying_times(buying_times==null?0:buying_times);
                 }
                 commodityCommentResponseDTO.setComment(commoditySendCommentDTO);
                 return commodityCommentResponseDTO;

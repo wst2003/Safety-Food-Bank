@@ -53,7 +53,7 @@
                 <div v-if="commodity.com_status === 0" class="sold-out-overlay">
     <span>已售罄</span>
   </div>
-                <img :src="`${baseURL_obs}${commodity.com_firstImage}`" alt="商品图片" class="commodity-img"
+                <img :src="`/${commodity.com_firstImage}`" alt="商品图片" class="commodity-img"
                   @click="jumptoCom(commodity.com_id,cus_id)">
                 <div class="commodity-details" @click="jumptoCom(commodity.com_id,cus_id)">
                   <div class="commodity-name">{{ commodity.com_name }}</div>
@@ -95,7 +95,7 @@
             <div style="width: 1000px">
               <el-carousel height="400px" width="400px">
                 <el-carousel-item v-for="(image, index) in store.sto_imageList" :key="index">
-                  <img :src="baseURL_obs + `${image}`" alt="商家图片" style="width: 100%; height: 100%;">
+                  <img :src=" `/${image}`" alt="商家图片" style="width: 100%; height: 100%;">
               
                   <!-- <img :src="testURL + `/${image}`" alt="商家图片" style="width: 100%; height: 100%;"> -->
 
@@ -130,7 +130,7 @@
             <!-- <el-button type="primary" @click="goToCertificate">查看证书</el-button> -->
             <!-- 新增的对话框代码 -->
             <el-dialog v-model="dialogVisible" title="经营许可证" width="50%" :before-close="handleClose">
-              <img :src="baseURL_obs + `${store.sto_licenseImg}`" alt="经营许可证" style="width: 100%;">
+              <img :src=" `/${store.sto_licenseImg}`" alt="经营许可证" style="width: 100%;">
               <template #footer>
                 <span class="dialog-footer">
                   <el-button @click="dialogVisible = false">Cancel</el-button>

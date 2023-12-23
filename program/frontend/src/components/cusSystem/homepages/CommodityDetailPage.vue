@@ -15,7 +15,7 @@
 <div style="width: 800px display: flex; justify-content: center; align-items: center;">
                 <el-carousel height="400px" width="800px">
                   <el-carousel-item v-for="(image, index) in commodity.com_images" :key="index" style="display: flex; justify-content: center; align-items: center;">
-                    <img :src="baseURL_obs + `${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
+                    <img :src=" `/${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
                   </el-carousel-item>
                 </el-carousel>
               </div>

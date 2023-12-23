@@ -254,7 +254,7 @@ onActivated(()=>{
             comList.comList=res.data.com_list;
             //这里可能需要对图片的相对路径进行处理
             comList.comList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
                 item.quantity=cart[ item.com_id.toString()]
             })
             console.log('购物车数据拉取成功',comList.comList)

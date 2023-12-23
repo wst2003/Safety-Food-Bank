@@ -153,7 +153,7 @@ onActivated(()=>{
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             console.log('浏览记录拉取成功',historyList.historyList)
@@ -182,7 +182,7 @@ function handleCurrentChange(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             loading.value=false;
@@ -214,7 +214,7 @@ function queryHistory(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             loading.value=false;
@@ -248,7 +248,7 @@ function queryClearReset(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL_obs+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             console.log('浏览记录拉取成功',historyList.historyList)
