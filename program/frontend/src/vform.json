@@ -147,52 +147,32 @@
                 "multipleLimit": 6,
                 "optionItems": [
                   {
-                    "value": "蔬菜",
-                    "label": "蔬菜"
+                    "value": "奶制品",
+                    "label": "奶制品"
                   },
                   {
-                    "value": "果品",
-                    "label": "果品"
+                    "value": "生鲜",
+                    "label": "生鲜"
                   },
                   {
-                    "value": "饮料",
-                    "label": "饮料"
+                    "value": "速食品",
+                    "label": "速食品"
                   },
                   {
                     "value": "零食",
                     "label": "零食"
                   },
                   {
-                    "value": "蛋奶",
-                    "label": "蛋奶"
-                  },
-                  {
-                    "value": "肉制品",
-                    "label": "肉制品"
+                    "value": "面点",
+                    "label": "面点"
                   },
                   {
                     "value": "预制菜",
                     "label": "预制菜"
                   },
                   {
-                    "value": "熟食",
-                    "label": "熟食"
-                  },
-                  {
-                    "value": "面点",
-                    "label": "面点"
-                  },
-                  {
-                    "value": "保健品",
-                    "label": "保健品"
-                  },
-                  {
-                    "value": "调味品",
-                    "label": "调味品"
-                  },
-                  {
-                    "value": "其他",
-                    "label": "其他"
+                    "value": "饮料",
+                    "label": "饮料"
                   }
                 ],
                 "required": true,

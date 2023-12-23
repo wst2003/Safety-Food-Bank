@@ -6,65 +6,29 @@
   
   
   <el-col :span="7">
-      <!-- <el-select v-model="selectedState" @change="fetchIndents" placeholder="选择订单状态">
-          <el-option label="待核销" value='0'></el-option>
-          <el-option label="已完成" value='1'></el-option>
-          <el-option label="已退款" value='2'></el-option>
-          <el-option label="过期未核销" value="3"></el-option>
-      </el-select> -->
      <div class="button-container">
       <el-button  type="danger" plain :class="{ 'active-sort-button': selectedState === '0' }" round @click="changeState('0')">待核销</el-button>
       <el-button type="danger" plain  :class="{ 'active-sort-button': selectedState === '1' }" round @click="changeState('1')">已完成</el-button>
       <el-button type="danger" plain  :class="{ 'active-sort-button': selectedState === '2' }" round @click="changeState('2')">已退款</el-button>
       <el-button type="danger" plain :class="{ 'active-sort-button': selectedState === '3' }" round @click="changeState('3')">过期未核销</el-button>
-      </div>
-        <!-- <el-tabs type="border-card">
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label" @click="changeState('0')">
-                <span>待核销</span>
-              </span>
-            </template>
-          </el-tab-pane>
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label" @click="changeState('1')">
-                <span>已完成</span>
-              </span>
-            </template>
-          </el-tab-pane>
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label" @click="changeState('2')">
-                <span>已退款</span>
-              </span>
-            </template>
-          </el-tab-pane>
-          <el-tab-pane>
-            <template #label>
-              <span class="custom-tabs-label" @click="changeState('3')">
-                <span>过期未核销</span>
-              </span>
-            </template>
-          </el-tab-pane>
-        </el-tabs> -->
+    </div>
   </el-col>
+
   <el-col :span="6">
       <el-input v-model="searchString" placeholder="搜索订单..."></el-input>
   </el-col>
+
   <el-col :span="2">
       <el-button color="red" @click="search" :icon="Search"></el-button>
   </el-col>
+
   <el-col :span="6">
     <div class="button-container">
       <el-button type="danger" plain  :class="{ 'active-sort-button': sortOrder === 0 }" round @click="changeState_2(0)">按地理位置排序</el-button>
       <el-button type="danger" plain  :class="{ 'active-sort-button': sortOrder === 1 }" round @click="changeState_2(1)">按创建时间排序</el-button>
     </div>
-      <!-- <el-select v-model="sortOrder" placeholder="选择排序方式">
-          <el-option label="按地理位置排序" value="0"></el-option>
-          <el-option label="按订单创建时间排序" value="1"></el-option>
-      </el-select> -->
   </el-col>
+
 </el-row>
   
 <div v-if="queryInfo.total===0" height="400px">
@@ -89,29 +53,18 @@
     
 
     <el-card body-style="background-color: #fef0f0;">
-      <!-- <template v-slot:header>
-                  <div style="text-align: center; background-color: #fef0f0;">
-                    <p  style="font-family:'KaiTi'; font-size: 40px; font-weight: bold; color:#aa0d0d" >订单商品预览</p> 
-                  </div>
-
-              </template> -->
-
-
-
-              <el-row :gutter="20">
-      <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4" v-for="(indent, index) in element.indent_arr" :key="index">
+      <el-row :gutter="20">
+        <el-col :xs="24" :sm="12" :md="8" :lg="6" :xl="4" v-for="(indent, index) in element.indent_arr" :key="index">
           <el-card class="box-card" >
               <!-- 商品图片，您可能需要根据实际数据结构进行修改 -->
               <!-- <img :src="baseURL + `/${indent.com_firstImg}`" alt="商品图片" class="commodity-img"> -->
-              <img :src="baseURL + `/${indent.com_firstImg}`" alt="商品图片" class="commodity-img" @click="jumptoCom(indent.com_ID)">
+              <img :src="`/${indent.com_firstImg}`" alt="商品图片" class="commodity-img" @click="jumptoCom(indent.com_ID)">
 
               <div class="commodity-details">
                   <el-link class="commodity-name" @click="jumptoCom(indent.com_ID)" >{{ indent.com_name }}</el-link>
-                  
                   <div class="commodity-price">已支付￥{{ indent.ind_money.toFixed(2) }}</div>
               </div>
               <el-button type="text" class="commodity-purchaseTime">购买于{{ element.ind_creationTime }}</el-button>
-      
               <div v-if="selectedState === '0'" class="refund-button">
                   <el-button v-if="!indent.isRefunded" @click="showRefundDialog(indent.ind_ID,indent.com_ID)" color="red" plain round size="small">退 款</el-button>
                   <el-button v-else disabled type="text" size="small">已退款</el-button>
@@ -119,13 +72,10 @@
               <div v-if="selectedState === '1'" class="refund-button">
                 <el-button color="orange" plain round @click="showEvaluation(indent)">评分</el-button>
                 <el-button color="red" round plain @click="complain(indent)">投 诉</el-button>
-   
               </div>
           </el-card>
-      </el-col>
-  </el-row>
-
-      
+        </el-col>
+      </el-row>
     </el-card>
     <el-collapse>
       <el-collapse-item title="点击查看订单详情">
@@ -274,6 +224,7 @@ v-model="isComplaintDialogVisible"
 import {reactive,ref,onActivated} from 'vue';
 import {useRouter,useRoute} from 'vue-router'
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
@@ -340,7 +291,7 @@ const showRefundDialog = (ind_ID,com_ID) => {
   selectedIndentID.value = ind_ID;
   selectedComID.value = com_ID;
   console.log(selectedComID.value)
-  axios.get(baseURL + "/api/cus/commodity/getCurve", {
+  axios.get( "/api/cus/commodity/getCurve", {
       params: {
           com_id: selectedComID.value
       }
@@ -382,7 +333,7 @@ const requestData = {
   ind_rnotes: ind_rnotes.value,
 };
 
-axios.post(baseURL+'/api/cus/indent/refund', requestData,{
+axios.post('/api/cus/indent/refund', requestData,{
           headers: {
               'Content-Type': 'application/json'
           }
@@ -419,7 +370,7 @@ const fetchIndents = () => {
   const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获取用户 ID
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
-  axios.post(baseURL + "/api/cus/indent/getIndentList", {
+  axios.post("/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state,
       search_str: queryInfo.query,
@@ -451,7 +402,7 @@ onActivated(() => {
 const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获取用户 ID
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
-  axios.post(baseURL + "/api/cus/indent/getIndentList", {
+  axios.post("/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state,
       search_str: '',
@@ -480,7 +431,7 @@ const user_id = sessionStorage.getItem("cus_id");  // 从 sessionStorage 中获�
   console.log("selectedState.value:"+selectedState.value);
   console.log("sortOrder.value:"+sortOrder.value);
   console.log("queryInfo:"+2*(queryInfo.pagenum-1)+2*queryInfo.pagenum)
-  axios.post(baseURL + "/api/cus/indent/getIndentList", {
+  axios.post( "/api/cus/indent/getIndentList", {
       cus_id: user_id,
       ind_state: queryInfo.ind_state, 
       search_str: queryInfo.query,
@@ -534,7 +485,7 @@ const resetEvaluation = () => {
 
 const confirmEvaluation = async () => {
   try {
-      await axios.post(baseURL+'/api/cus/indent/evaluation', {
+      await axios.post('/api/cus/indent/evaluation', {
         ind_id: currentIndentForEvaluation.value?.ind_ID,
         cmt_content: evaluation.value.comment,
         ind_rating: evaluation.value.score
@@ -605,7 +556,7 @@ const appMatters = ref<number | null>(null);
       try {
         console.log("base64数组："+sctImages.value);
        
-          const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
+          const response = await axios.post( `/api/cus/appeal/createAppeal`, {
             app_matters: appMatters.value,
             app_content: complaintText.value,
             sct_images: sctImages.value,

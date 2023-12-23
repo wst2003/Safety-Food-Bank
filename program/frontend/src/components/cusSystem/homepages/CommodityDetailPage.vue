@@ -15,7 +15,7 @@
 <div style="width: 800px display: flex; justify-content: center; align-items: center;">
                 <el-carousel height="400px" width="800px">
                   <el-carousel-item v-for="(image, index) in commodity.com_images" :key="index" style="display: flex; justify-content: center; align-items: center;">
-                    <img :src="baseURL + `/${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
+                    <img :src=" `/${image}`" alt="商品图片" style="object-fit: contain ;justify-content: center; align-items: center;">
                   </el-carousel-item>
                 </el-carousel>
               </div>
@@ -294,7 +294,8 @@
 <el-dialog
   title="提交投诉"
   v-model="isComplaintDialogVisible"
-  :before-close="handleClose">
+  :before-close="handleClose"
+  >
   <div>
     <el-select v-model="appMatters" placeholder="（必填）请选择投诉事项">
     <div v-if="complainState===0">
@@ -335,7 +336,7 @@
   <template #footer>
     <el-button @click="isComplaintDialogVisible = false">取消</el-button>
     <el-button @click="submitForm">提交</el-button>
-    </template>
+  </template>
 </el-dialog>
 
 
@@ -349,6 +350,7 @@ import { defineComponent, onMounted, ref, watchEffect, onBeforeUnmount, watch} f
 import { useRoute, useRouter } from 'vue-router'
 import axios from 'axios'
 import baseURL from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import Cookies from 'js-cookie';
 import {store}from '../../../../router/store'
 import { computed } from 'vue';
@@ -448,7 +450,7 @@ watch(isComplaintDialogVisible, (newValue, oldValue) => {
   });
 
   async function openPurchaseDialog() {
-    const response = await axios.get(baseURL + `/api/cus/balance/getBalance`, {
+    const response = await axios.get( `/api/cus/balance/getBalance`, {
           params: {
             cus_id: sessionStorage.getItem("cus_id")
           }
@@ -494,7 +496,7 @@ async function handlePurchase() {
 
 
     if((quantity.value)*(present_price.value)<=balance.value){
-        const response = await axios.post(baseURL + `/api/cus/indent/generateIndent`, requestData);
+        const response = await axios.post( `/api/cus/indent/generateIndent`, requestData);
         // Handle the response here
         console.log(response.data);
         purchaseDialogVisible.value = false; // close the dialog after successful purchase
@@ -567,7 +569,7 @@ async function handlePurchase() {
         console.log("已经接收到com_id=" + com_id)
         console.log("已经接收到cus_id" + cus_id.value)
 
-        const response = await axios.get(baseURL + `/api/cus/commodity/detail`, {
+        const response = await axios.get(`/api/cus/commodity/detail`, {
           params: {
             com_id: com_id,
             cus_id: cus_id.value
@@ -644,7 +646,7 @@ if (commodity.value) {
         }
 
 
-        axios.get(baseURL + "/api/cus/commodity/getCurve", {
+        axios.get("/api/cus/commodity/getCurve", {
             params: {
                 com_id: commodity.value?.com_id
             }
@@ -773,7 +775,7 @@ function processComPrices(comPrices: { com_pc_time: string; com_pc_price: number
       try {
         console.log("data:", data.bro_time_start, data.bro_time_end, data.browser_id, data.com_id)
         // const response = await axios.post(baseURL + '/api/cus/history/setBrowsingHistory', data, {
-        const response = await axios.post(baseURL + '/api/cus/history/setBrowsingHistory', data, {
+        const response = await axios.post( '/api/cus/history/setBrowsingHistory', data, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -817,7 +819,7 @@ const sortComments = () => {
       try {
         console.log("当前的父评论id是："+currentComment.value?.cmt_id)
 
-        const response = await axios.post(baseURL + '/api/cus/commodity/comment', {
+        const response = await axios.post( '/api/cus/commodity/comment', {
           // const response = await axios.post('http://127.0.0.1:4523/m1/3026709-0-default/api/cus/commodity/comment', {
           user_id: cus_id.value,  // 这里使用固定的用户ID，你可以按需修改
           cmt_content: replyContent.value,
@@ -844,7 +846,7 @@ const sortComments = () => {
           console.log("已经接收到com_id=" + com_id)
           console.log("已经接收到cus_id" + cus_id.value)
 
-          const response = await axios.get(baseURL + `/api/cus/commodity/detail`, {
+          const response = await axios.get(`/api/cus/commodity/detail`, {
             params: {
               com_id: com_id,
               cus_id: cus_id.value
@@ -1127,7 +1129,7 @@ const isExpired = computed(() => {
 
       // 发送 POST 请求到后端
       try {
-        const response = await axios.post(baseURL + '/api/cus/favorite/setFavorState', {
+        const response = await axios.post('/api/cus/favorite/setFavorState', {
           com_id: commodity.com_id,
           cus_id: cus_id.value,/* 这里后续需要修改 */
           favor_state: commodity.favor_state
@@ -1202,7 +1204,7 @@ const isExpired = computed(() => {
         try {
           console.log("base64数组："+sctImages.value);
           if (appMatters.value!=4) {
-            const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
+            const response = await axios.post( `/api/cus/appeal/createAppeal`, {
               app_matters: appMatters.value,
               app_content: complaintText.value,
               sct_images: sctImages.value,
@@ -1220,7 +1222,7 @@ const isExpired = computed(() => {
           }
           else{
 
-            const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
+            const response = await axios.post(`/api/cus/appeal/createAppeal`, {
               app_matters: appMatters.value,
               app_content: complaintText.value,
               sct_images: sctImages.value,
@@ -1267,6 +1269,7 @@ const isExpired = computed(() => {
       complain_cmt,
       comment,
       baseURL,
+      baseURL_obs,
       colors: ['#99A9BF', '#F7BA2A', '#FF9900'],
       activeNames,  // 新增：返回当前展开的评论的数组
       topComments,  // 新增：返回顶级评论的数组

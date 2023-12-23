@@ -53,7 +53,7 @@
                 <div v-if="commodity.com_status === 0" class="sold-out-overlay">
     <span>已售罄</span>
   </div>
-                <img :src="`${baseURL}/${commodity.com_firstImage}`" alt="商品图片" class="commodity-img"
+                <img :src="`/${commodity.com_firstImage}`" alt="商品图片" class="commodity-img"
                   @click="jumptoCom(commodity.com_id,cus_id)">
                 <div class="commodity-details" @click="jumptoCom(commodity.com_id,cus_id)">
                   <div class="commodity-name">{{ commodity.com_name }}</div>
@@ -95,7 +95,7 @@
             <div style="width: 1000px">
               <el-carousel height="400px" width="400px">
                 <el-carousel-item v-for="(image, index) in store.sto_imageList" :key="index">
-                  <img :src="baseURL + `/${image}`" alt="商家图片" style="width: 100%; height: 100%;">
+                  <img :src=" `/${image}`" alt="商家图片" style="width: 100%; height: 100%;">
               
                   <!-- <img :src="testURL + `/${image}`" alt="商家图片" style="width: 100%; height: 100%;"> -->
 
@@ -130,7 +130,7 @@
             <!-- <el-button type="primary" @click="goToCertificate">查看证书</el-button> -->
             <!-- 新增的对话框代码 -->
             <el-dialog v-model="dialogVisible" title="经营许可证" width="50%" :before-close="handleClose">
-              <img :src="baseURL + `/${store.sto_licenseImg}`" alt="经营许可证" style="width: 100%;">
+              <img :src=" `/${store.sto_licenseImg}`" alt="经营许可证" style="width: 100%;">
               <template #footer>
                 <span class="dialog-footer">
                   <el-button @click="dialogVisible = false">Cancel</el-button>
@@ -198,6 +198,7 @@ import { defineComponent, onMounted, ref, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElIcon, ElTooltip,ElMessage } from 'element-plus'
 import  baseURL  from "../../../router/baseURL.js";
+import  baseURL_obs  from "../../../router/baseURL.js";
 
 
 
@@ -281,7 +282,7 @@ export default defineComponent({
         // cus_id.value = Number(route.query.cus_id);
         cus_id.value=Number(sessionStorage.getItem("cus_id"))
         console.log("cus_id.value:"+cus_id.value)
-        const response = await axios.get(baseURL + `/api/cus/store/detail`, {
+        const response = await axios.get(`/api/cus/store/detail`, {
           params: {
             sto_id: sto_id,
             cus_id:cus_id.value
@@ -382,7 +383,7 @@ export default defineComponent({
 
       // 发送 POST 请求到后端
       try {
-        const response = await axios.post(baseURL + '/api/cus/favorite/setFavorState', {
+        const response = await axios.post( '/api/cus/favorite/setFavorState', {
           com_id: commodity.com_id,
           cus_id: sessionStorage.getItem('cus_id'),
           favor_state: commodity.favor_state
@@ -472,7 +473,7 @@ export default defineComponent({
         try {
           console.log("base64数组："+sctImages.value);
           
-            const response = await axios.post(baseURL + `/api/cus/appeal/createAppeal`, {
+            const response = await axios.post( `/api/cus/appeal/createAppeal`, {
               app_matters: appMatters.value,
               app_content: complaintText.value,
               sct_images: sctImages.value,
@@ -518,6 +519,7 @@ export default defineComponent({
       dialogVisible,
       complain,
       baseURL,
+      baseURL_obs,
       commodities,
       sto_id,
       sto_name,

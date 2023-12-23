@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * 退款订单服务类
@@ -34,8 +35,10 @@ public class RefundListService {
 
         beginNum = beginNum - 1;
         int pageSize = endNum - beginNum;
-        if (userPhone == null)
-            userPhone = "";
+        if (Objects.equals(userPhone, "null"))
+            userPhone = "%";
+        else
+            userPhone = "%" + userPhone + "%";
 
         List<Object[]> refundList;
         if (timeOrder == 0)

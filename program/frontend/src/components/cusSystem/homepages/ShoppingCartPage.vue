@@ -155,6 +155,7 @@
 import {reactive,ref, computed,onActivated,onMounted} from 'vue';
 import {useRouter} from 'vue-router'
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import axios from 'axios';
 import {
   Star, 
@@ -240,7 +241,7 @@ onActivated(()=>{
         let cart = JSON.parse(cookie);
         let com_id_arr = Object.keys(cart).map(Number);
         axios.post(
-        baseURL+`/api/cus/commodity/shoppingCart`,
+        `/api/cus/commodity/shoppingCart`,
         {
             com_id_arr: com_id_arr,
             cus_id: user_id.value
@@ -253,7 +254,7 @@ onActivated(()=>{
             comList.comList=res.data.com_list;
             //这里可能需要对图片的相对路径进行处理
             comList.comList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
                 item.quantity=cart[ item.com_id.toString()]
             })
             console.log('购物车数据拉取成功',comList.comList)
@@ -268,7 +269,7 @@ onActivated(()=>{
             })
         });
         axios.get(
-            baseURL+`/api/cus/balance/getBalance`,
+            `/api/cus/balance/getBalance`,
             {
                 params:{
                     cus_id:user_id.value
@@ -405,7 +406,7 @@ function createIndent(){
     }
     
     //创建订单
-    axios.post(baseURL+'/api/cus/indent/generateIndent',JSON.stringify({
+    axios.post('/api/cus/indent/generateIndent',JSON.stringify({
         cus_id:user_id.value,
         indent_arr:indent_arr.value
     }), {
@@ -520,7 +521,7 @@ function favorClick(com_id){
         comListAfterPick.comListAfterPick[pick_index].favor_state=1;
     comList.comList[ori_index].favor_state=comListAfterPick.comListAfterPick[pick_index].favor_state;
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:com_id,
             cus_id:user_id.value,

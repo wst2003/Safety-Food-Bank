@@ -22,7 +22,6 @@ public class HistoryGetBrowsingHistoryNumberController {
 
     /**
      * 拉取用户浏览记录数量
-     * 疑似路径有误！！！！！！！！！！！！！
      * @param historyGetBrowsingHistoryNumberRequest
      * @return
      */

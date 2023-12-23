@@ -539,23 +539,24 @@ import { tr } from 'element-plus/es/locale';
 
 
 function change(strr :string[]){
- var arr :string[]=[];
-   for(var i=0;i<strr.length;i++)
-     arr.push(strr[i]);
-   for(i=0;i<arr.length;i++){
-     var str=arr[i].split('\\');
-     arr[i]='/';
-     for(var j=2;j<str.length;j++){
-       arr[i]+=str[j];
-       if(j!=str.length-1)
-         arr[i]+='/'
-     }
+    return strr;
+ // var arr :string[]=[];
+ //   for(var i=0;i<strr.length;i++)
+ //     arr.push(strr[i]);
+ //   for(i=0;i<arr.length;i++){
+ //     var str=arr[i].split('\\');
+ //     arr[i]='/';
+ //     for(var j=2;j<str.length;j++){
+ //       arr[i]+=str[j];
+ //       if(j!=str.length-1)
+ //         arr[i]+='/'
+ //     }
      // console.log(arr[i]);
-   }
-
-   // srcList.value=arr;
-   // console.log(arr.length)
-   return arr;
+   // }
+   //
+   // // srcList.value=arr;
+   // // console.log(arr.length)
+   // return arr;
 }
 
 const url =ref('');

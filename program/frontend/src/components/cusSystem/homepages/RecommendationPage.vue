@@ -149,7 +149,9 @@ const options = reactive({
 
 import { ref, reactive, onMounted,computed, watchEffect,onDeactivated, onActivated} from 'vue';
 import { Waterfall } from "vue-waterfall-plugin-next";
-import  {baseURL,baseURL_obs}  from "../../../../router/baseURL.js";
+import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
+
 import {store}from '../../../../router/store'
 import "vue-waterfall-plugin-next/dist/style.css";
 import axios from 'axios';
@@ -206,7 +208,7 @@ onMounted(()=>{
     // 最新开业商家
     
     axios.post(
-            baseURL+'/api/cus/search/storeList',
+            '/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str:"",
@@ -227,7 +229,7 @@ onMounted(()=>{
                 type: 0,
                 commdation: ''
             };
-            carousel_item.image=baseURL+"/"+new_sto.sto_firstImage;
+            carousel_item.image="/"+new_sto.sto_firstImage;
             carousel_item.id=new_sto.sto_id;
             carousel_item.type=1;
             carousel_item.commdation="最新开业："+new_sto.sto_name;
@@ -240,7 +242,7 @@ onMounted(()=>{
 
     // 最热门商家
     axios.post(
-            baseURL+'/api/cus/search/storeList',
+            '/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str:"",
@@ -261,7 +263,7 @@ onMounted(()=>{
                 type: 0,
                 commdation: ''
             };
-            carousel_item.image=baseURL+"/"+new_sto.sto_firstImage;
+            carousel_item.image="/"+new_sto.sto_firstImage;
             carousel_item.id=new_sto.sto_id;
             carousel_item.type=1;
             carousel_item.commdation="最热门商家："+new_sto.sto_name;
@@ -274,7 +276,7 @@ onMounted(()=>{
 
     // 最受好评商品
     axios.post(
-        baseURL+'/api/cus/search/commodityList',
+        '/api/cus/search/commodityList',
             JSON.stringify({
             cus_id: user_id.value,
             search_str:"",
@@ -295,7 +297,7 @@ onMounted(()=>{
             type: 0,
             commdation: ''
         };
-        carousel_item.image=baseURL+"/"+new_com.com_firstImage;
+        carousel_item.image="/"+new_com.com_firstImage;
         carousel_item.id=new_com.com_id;
         carousel_item.type=0;
         carousel_item.commdation="最受好评商品："+new_com.com_name;
@@ -310,7 +312,7 @@ onMounted(()=>{
 
     //无筛推荐列表
     loading.value=true;
-    axios.post( baseURL+'/api/cus/search/commodityList',
+    axios.post( '/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: '',
@@ -362,7 +364,7 @@ onMounted(()=>{
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage="/"+item.com_firstImage;
                     //设置图片相对路径
                 })
             }
@@ -375,7 +377,7 @@ onMounted(()=>{
 
 
     // 全部标签
-    axios.get(baseURL+'/api/cus/search/categories')
+    axios.get('/api/cus/search/categories')
     .then((res)=>{
         for(let item of res.data.com_categories as Array<string> ){
             TagArr.value.push({
@@ -413,7 +415,7 @@ function onSearchCom(){
     console.log(TagSelected.value)
     loading.value=true;
     axios.post(
-        baseURL+'/api/cus/search/commodityList',
+        '/api/cus/search/commodityList',
         JSON.stringify({
             cus_id: user_id.value,
             search_str: "",
@@ -467,7 +469,7 @@ function onSearchCom(){
             
                 item.dayDiff=dayDiff
                 //设置距离过期相差天数
-                item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                item.com_firstImage="/"+item.com_firstImage;
                 //设置图片相对路径
             })
         }
@@ -512,7 +514,7 @@ function favorClick(item:Commodity_tab){
     console.log("点击收藏按钮") 
     item.favor_state==1?item.favor_state=0:item.favor_state=1
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:item.com_id,
             cus_id:user_id.value,
@@ -541,7 +543,7 @@ function handleCurrentChange(){
     loading.value=true;
     //触发axios
     axios.post(
-    baseURL+'/api/cus/search/commodityList',
+    '/api/cus/search/commodityList',
     JSON.stringify({
         cus_id: user_id.value,
         search_str: "",
@@ -575,7 +577,7 @@ function handleCurrentChange(){
         
             item.dayDiff=dayDiff
             //设置距离过期相差天数
-            item.com_firstImage=baseURL+'/'+item.com_firstImage;
+            item.com_firstImage="/"+item.com_firstImage;
             //设置图片相对路径
         })
     }).catch(error => {

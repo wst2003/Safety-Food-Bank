@@ -214,6 +214,7 @@ import { TabsPaneContext } from 'element-plus/es/components/tabs/src/constants';
 import { ref, reactive, onMounted,watch, onActivated} from 'vue';
 import { Waterfall } from "vue-waterfall-plugin-next";
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import "vue-waterfall-plugin-next/dist/style.css";
 import axios from 'axios';
@@ -322,7 +323,7 @@ onMounted(()=>{
     console.log("user_id.value:"+user_id.value);
     sortList.value=sortCom;
 
-    axios.get(baseURL+'/api/pub/information/user', { params: {user_ID: String(user_id.value) } })
+    axios.get('/api/pub/information/user', { params: {user_ID: String(user_id.value) } })
     .then((res) => {
         user_address.value = res.data.user_address;
         console.log(user_address.value);
@@ -347,7 +348,7 @@ onMounted(()=>{
         console.log('用户地址请求失败')
     });
 
-    axios.get(baseURL+'/api/cus/search/categories')
+    axios.get('/api/cus/search/categories')
     .then((res)=>{
         TagArr.value= res.data.com_categories as Array<string>
         console.log(TagArr.value)
@@ -369,7 +370,7 @@ function sortChange(value:number){
         //当前列表中有内容时，触发axios
         if(queryInfo.type=="商品"){
             axios.post(
-            baseURL+'/api/cus/search/commodityList',
+            '/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: queryInfo.query,
@@ -406,7 +407,7 @@ function sortChange(value:number){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage="/"+item.com_firstImage;
                     //设置图片相对路径
                 })
                 
@@ -420,7 +421,7 @@ function sortChange(value:number){
         }
         else{
             axios.post(
-            baseURL+'/api/cus/search/storeList',
+            '/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: queryInfo.query,
@@ -440,7 +441,7 @@ function sortChange(value:number){
                 var len=List.length;
                 List.splice(0,len+1, ...response.data.sto_list)
                 List.forEach((item)=>{
-                    item.sto_firstImage = baseURL+"/"+item.sto_firstImage;
+                    item.sto_firstImage = "/"+item.sto_firstImage;
                 })
         })
         .catch(error => {
@@ -466,7 +467,7 @@ function handleCurrentChange(){
     //触发axios
     if(queryInfo.type=="商品"){
             axios.post(
-            baseURL+'/api/cus/search/commodityList',
+            '/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: queryInfo.query,
@@ -500,7 +501,7 @@ function handleCurrentChange(){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage="/"+item.com_firstImage;
                     //设置图片相对路径
                 })
             }).catch(error => {
@@ -513,7 +514,7 @@ function handleCurrentChange(){
         }
         else{
             axios.post(
-            baseURL+'/api/cus/search/storeList',
+            '/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: queryInfo.query,
@@ -534,8 +535,7 @@ function handleCurrentChange(){
             List.forEach((item)=>{
                 item.sto_firstImage=
                     
-                    baseURL+"/"
-                    +item.sto_firstImage;
+                "/"+item.sto_firstImage;
                 // item.com_list.forEach((item)=>{
                 //     item.com_firstImage=
                     
@@ -579,7 +579,7 @@ function favorClick(item:Commodity_tab){
     
     item.favor_state==1?item.favor_state=0:item.favor_state=1
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
        
         JSON.stringify({
             com_id:item.com_id,
@@ -608,7 +608,7 @@ function onSearchCom(){
         listIsCom.value=true;
         loading.value=true;
         axios.post(
-            baseURL+'/api/cus/search/commodityList',
+            '/api/cus/search/commodityList',
             JSON.stringify({
                 cus_id: user_id.value,
                 search_str: search_str.value,
@@ -665,7 +665,7 @@ function onSearchCom(){
                 
                     item.dayDiff=dayDiff
                     //设置距离过期相差天数
-                    item.com_firstImage=baseURL+'/'+item.com_firstImage;
+                    item.com_firstImage="/"+item.com_firstImage;
                     //设置图片相对路径
                 })
             }
@@ -724,7 +724,7 @@ function onSearchSto(){
         loading.value=true;
         listIsCom.value=false;
         axios.post(
-            baseURL+'/api/cus/search/storeList',
+            '/api/cus/search/storeList',
               JSON.stringify({
                 cus_id:user_id.value,
                 search_str: search_str.value,
@@ -767,8 +767,7 @@ function onSearchSto(){
 
                 List.forEach((item)=>{
                     item.sto_firstImage=
-                        baseURL+"/"
-                        +item.sto_firstImage;
+                    "/"+item.sto_firstImage;
                     // item.com_list.forEach((item)=>{
                     //     item.com_firstImage=
                       

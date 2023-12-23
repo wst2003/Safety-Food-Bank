@@ -13,6 +13,17 @@ import org.springframework.stereotype.Service;
 public class HistorySetBrowsingHistoryService {
     @Autowired
     private HistorySetBrowsingHistoryRepository historySetBrowsingHistoryRepository;
+
+
+    /**
+     * 插入浏览记录
+     * @param bro_time_start-开始时间
+     * @param bro_time_end-结束时间
+     * @param browser_id-浏览者ID
+     * @param com_id-商品ID
+     * @param whether_buy-是否购买
+     * @return
+     */
     public HistorySetBrowsingHistoryResponse setBrowsingHistory(String bro_time_start,
                                                                 String bro_time_end,
                                                                 int browser_id,

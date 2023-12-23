@@ -79,6 +79,7 @@
 import {reactive,onActivated,onMounted, ref} from 'vue';
 import {useRouter} from 'vue-router'
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import axios from 'axios';
 import {
@@ -132,7 +133,7 @@ onActivated(()=>{
     loading.value=true;
 
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistoryNumber`,
+        `/api/cus/history/getBrowsingHistoryNumber`,
         {
             cus_id: user_id.value,
         }
@@ -140,7 +141,7 @@ onActivated(()=>{
         console.log('拉取浏览记录总数成功',res.data.bro_num)
         queryInfo.total=res.data.bro_num
         return  axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:queryInfo.pagesize * (queryInfo.pagenum - 1),
@@ -152,7 +153,7 @@ onActivated(()=>{
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             console.log('浏览记录拉取成功',historyList.historyList)
@@ -171,7 +172,7 @@ function handleCurrentChange(){
     console.log('当前页数',queryInfo.pagenum)
     loading.value=true;
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:queryInfo.pagesize * (queryInfo.pagenum - 1),
@@ -181,7 +182,7 @@ function handleCurrentChange(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             loading.value=false;
@@ -202,7 +203,7 @@ function queryHistory(){
     console.log(queryInfo.query);
     //在表中显示满足搜索条件的商品或商家
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:0,
@@ -213,7 +214,7 @@ function queryHistory(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             loading.value=false;
@@ -234,7 +235,7 @@ function queryClearReset(){
     console.log("重置搜索内容");
     //重新显示所有记录
     axios.post(
-        baseURL+`/api/cus/history/getBrowsingHistory`,
+        `/api/cus/history/getBrowsingHistory`,
         {
             cus_id: user_id.value,
             begin_pos:0,
@@ -247,7 +248,7 @@ function queryClearReset(){
             historyList.historyList=res.data.com_list;
             //这里对图片的相对路径进行处理
             historyList.historyList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             //queryInfo.total=res.data.total
             console.log('浏览记录拉取成功',historyList.historyList)
@@ -310,7 +311,7 @@ function favorClick(com_id){
     // historyList.historyList[ori_index].favor_state=historyList.historyList[ori_index].favor_state==1?0:1;
 
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:com_id,
             cus_id:user_id.value,

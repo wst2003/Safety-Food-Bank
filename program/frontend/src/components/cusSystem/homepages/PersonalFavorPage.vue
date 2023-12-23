@@ -85,6 +85,7 @@
 import {reactive,onMounted, computed,ref,onActivated} from 'vue';
 import {useRouter} from 'vue-router'
 import  baseURL  from "../../../../router/baseURL.js";
+import  baseURL_obs  from "../../../../router/baseURL.js";
 import {store}from '../../../../router/store'
 import axios from 'axios';
 import {
@@ -138,17 +139,17 @@ onActivated(()=>{
     store.activePath='/home/personalFavor'
     loading.value=true;
     axios.get(
-        baseURL+`/api/cus/favorite/getFavor`,
+        `/api/cus/favorite/getFavor`,
         {
             params: {
                 cus_id: user_id.value
-                //用户ID，暂时写死
+                //用户ID
             }
         }).then(res=>{
             favorList.favorList=res.data.favor_list;
             //这里可能需要对图片的相对路径进行处理
             favorList.favorList.forEach((item)=>{
-                item.com_firstImage=baseURL+'/'+item.com_firstImage
+                item.com_firstImage="/"+item.com_firstImage
             })
             console.log('收藏列表拉取成功',favorList.favorList)
             //这里可能需要对筛选条件进行处理
@@ -242,7 +243,7 @@ function favorClick(com_id){
         favorListAfterPick.favorListAfterPick[pick_index].favor_state=1;
     favorList.favorList[ori_index].favor_state=favorListAfterPick.favorListAfterPick[pick_index].favor_state;
     axios.post(
-        baseURL+'/api/cus/favorite/setFavorState',
+        '/api/cus/favorite/setFavorState',
         JSON.stringify({
             com_id:com_id,
             cus_id:user_id.value,

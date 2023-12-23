@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vue/cli-service')
 const baseURL = "http://localhost:5000";
+const imageURL = "https://food-bank.obs.cn-east-3.myhuaweicloud.com/"
 module.exports = defineConfig({
     transpileDependencies: true,
     chainWebpack: config => {
@@ -25,7 +26,13 @@ module.exports = defineConfig({
             '/commodity_image': {
                 //target: baseURL,
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
-                target: baseURL,
+                target: imageURL,
+                changeOrigin: true
+            },
+            '/commodity_img': {
+                //target: baseURL,
+                //target: "http://127.0.0.1:4523/m1/3026709-0-default",
+                target: imageURL,
                 changeOrigin: true
             },
             '/commodity_form_data': {
@@ -37,25 +44,31 @@ module.exports = defineConfig({
             '/commodityImage': {
                 //target: baseURL,
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
-                target: baseURL,
+                target: imageURL,
                 changeOrigin: true
             },
             '/store_image': {
                 //target: baseURL,
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
-                target: baseURL,
+                target: imageURL,
                 changeOrigin: true
             },
             '/appeal': {
                 //target: baseURL,
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
-                target: baseURL,
+                target: imageURL,
                 changeOrigin: true
             },
             '/appeal_image': {
                 //target: baseURL,
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
-                target: baseURL,
+                target: imageURL,
+                changeOrigin: true
+            },
+            '/licenses': {
+                //target: baseURL,
+                //target: "http://127.0.0.1:4523/m1/3026709-0-default",
+                target: imageURL,
                 changeOrigin: true
             }
         }

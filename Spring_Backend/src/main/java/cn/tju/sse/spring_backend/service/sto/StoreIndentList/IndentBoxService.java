@@ -35,8 +35,10 @@ public class IndentBoxService {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         int indStateOrigin = indState;
-        if (userPhone == null)
-            userPhone = "";
+        if (Objects.equals(userPhone, "null"))
+            userPhone = "%";
+        else
+            userPhone = "%" + userPhone + "%";
         if (indState != 1)
             indState = 0;
         if (boxBegin == 1)
@@ -49,7 +51,9 @@ public class IndentBoxService {
             indentList = indentBoxRepository.getIndentWithBoxDesc(stoId, userPhone, indState, indStateOrigin, boxBegin, boxEnd);
         else
             indentList = indentBoxRepository.getIndentWithBoxAsc(stoId, userPhone, indState, indStateOrigin, boxBegin, boxEnd);
-
+        System.out.println("indState: " + indState);
+        System.out.println("indStateOrigin: " + indStateOrigin);
+        System.out.println("找到：" + indentList.size());
         for (Object[] row : indentList) {
             BigDecimal tmp = (BigDecimal) row[13];
             if (!Objects.equals(tmp, groupNumber)) {

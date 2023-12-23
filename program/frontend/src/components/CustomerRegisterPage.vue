@@ -105,7 +105,7 @@
         const data = response.data;
         if (data.message === 'success') {
 
-          axios.post('/api/pub/recommendation',
+          axios.post('/api/cus/recommendation',
           {
               user_id:cus_ID.value
           }).then(res=>{
