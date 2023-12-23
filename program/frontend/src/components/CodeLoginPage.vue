@@ -271,7 +271,12 @@ import { useRouter } from 'vue-router';
           content.value='您的验证码是：'+randNumber.value.toString()+'。请不要把验证码泄露给其他人。'
           //这里是发送短信的接口，无需更改
           axios.get('http://106.ihuyi.com/webservice/sms.php?method=Submit&account='+APIID+'&password='+APIKEY
-          +'&mobile='+phoneNumber.value+'&content='+content.value)
+          +'&mobile='+phoneNumber.value+'&content='+content.value,{
+        headers: {
+              'Content-Type': 'application/json', 
+              "Access-Control-Allow-Origin": "*",
+          }
+          })
           .then(response => {
               console.log(response.data);
           })
