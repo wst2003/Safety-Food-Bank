@@ -64,6 +64,12 @@ module.exports = defineConfig({
                 //target: "http://127.0.0.1:4523/m1/3026709-0-default",
                 target: imageURL,
                 changeOrigin: true
+            },
+            '/licenses': {
+                //target: baseURL,
+                //target: "http://127.0.0.1:4523/m1/3026709-0-default",
+                target: imageURL,
+                changeOrigin: true
             }
         }
     }
