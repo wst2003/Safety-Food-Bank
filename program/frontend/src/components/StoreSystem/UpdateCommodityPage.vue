@@ -89,7 +89,7 @@ console.log(sto_ID.value);
 axios.get('/api/sto/StoreQueryCommodity/imgpath?COM_ID='+com_id.value)
   .then(response =>{
     response.data.forEach(path => {
-      var urlPath = path.substr(10);
+      var urlPath = path;
       console.log(urlPath);
       console.log(path+'ssssssssss');
       fileList.value.push(
@@ -154,6 +154,7 @@ axios.post('/api/sto/updatecommodity/delimg?COM_ID='+com_id.value+"&COM_IMAGE="+
 }
 
 const handlePictureCardPreview: UploadProps['onPreview'] = (uploadFile) => {
+    console.log(uploadFile)
 dialogImageUrl.value = uploadFile.url!
 dialogVisible.value = true
 }

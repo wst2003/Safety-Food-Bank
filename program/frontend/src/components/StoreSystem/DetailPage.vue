@@ -401,7 +401,7 @@ const viewUpdate=(index: number)=>{
   )
     .then(() => {
 
-      axios.post('api/sto/UpdateCommodity/delcommodity?COM_ID='+goodsList.value[index].com_id)
+      axios.post('api/sto/updatecommodity/delcommodity?COM_ID='+goodsList.value[index].com_id)
         .then(response=>{
           console.log(response);
           ElNotification.success({
@@ -463,7 +463,7 @@ const viewUpdate=(index: number)=>{
       console.log(arr[i]);
     }
 
-    srcList.value=arr;
+    srcList.value=goodsList.value[index].com_image;
     // url.value=srcList.value[0];
   }
 
