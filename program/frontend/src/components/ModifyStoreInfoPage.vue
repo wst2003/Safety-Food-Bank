@@ -355,7 +355,7 @@ const modifyUser = async () => {
 
     formData.append('sto_picture',emptyBlob)
     fileList1.value.forEach((file) => {
-        formData.set('sto_picture', emptyBlob); // 将文件添加到FormData中
+        formData.append('sto_picture', file.raw); // 将文件添加到FormData中
     });
 
 

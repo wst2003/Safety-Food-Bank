@@ -452,7 +452,7 @@ onMounted(async () => {
       if (storeResponse.status === 200) {
           Object.assign(userInfo.value, storeResponse.data);
           const storePicResponse = await axios.get('/api/pub/getinformation/storeimg', { params: { sto_ID: user_ID.value } });
-          console.log("picAddress"+storePicResponse.data[0].imgURL)
+          console.log(storePicResponse.data.length)
           storePictures.value = storePicResponse.data.map(pic => 'https://food-bank.obs.cn-east-3.myhuaweicloud.com\\' + pic.imgURL);
       } else {
           console.log("获取图片错误")

@@ -88,10 +88,10 @@ public class CustomerModifyService {
             return response;
         }
 
-        if(request.getCus_payPassword().length() >= 20){
-            response.setMessage("pay password is too long");
-            return response;
-        }
+//        if(request.getCus_payPassword().length() >= 20){
+//            response.setMessage("pay password is too long");
+//            return response;
+//        }
 
         CustomerEntity customer = customerModifyRequestMapper.requestToEntity(request);
         Iterable<CustomerLoveEntity> loves = List.of(customerModifyRequestMapper.

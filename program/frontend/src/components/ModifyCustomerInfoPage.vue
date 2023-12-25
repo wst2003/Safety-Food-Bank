@@ -262,6 +262,8 @@
         router.push({ name: 'UserInfoPage',query:{id:userInfo.value.user_ID,flag:1}});
       } else {
         alert('修改失败');
+        console.log(userResponse.data.message)
+        console.log(customerResponse.data.message)
       }
     } catch (error) {
       console.error(error);

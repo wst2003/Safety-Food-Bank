@@ -47,8 +47,8 @@ import { useRouter } from 'vue-router';
   const user_address = ref('');
   const ori_sto_list = ref([]); // 用于存储原始的商家地理位置数据，包含sto_id及sto_address
   const new_sto_list = ref([]);  // 用于存储排好序的商家地理位置数据，仅含sto_id
-  const APIKEY='CoWVVBFzlMuhQ2j'//这两个参数需要修改
-  const APIID='mms2982896'
+  const APIKEY='834382f7fd1731ec9c2d14e261f35f2c'//这两个参数需要修改
+  const APIID='C00606013'
 
   //引入百度地图
   /* eslint-disable */
