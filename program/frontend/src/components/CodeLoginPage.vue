@@ -273,7 +273,7 @@ import { useRouter } from 'vue-router';
           axios.get('http://106.ihuyi.com/webservice/sms.php?method=Submit&account='+APIID+'&password='+APIKEY
           +'&mobile='+phoneNumber.value+'&content='+content.value,{
         headers: {
-              'Content-Type': 'application/json', 
+              // 'Content-Type': 'application/json', 
               "Access-Control-Allow-Origin": "*",
           }
           })

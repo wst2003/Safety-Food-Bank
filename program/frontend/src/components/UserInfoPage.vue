@@ -448,12 +448,14 @@ onMounted(async () => {
       }
     } else if (userInfo.value.user_type === '1') {
       const storeResponse = await axios.get('/api/pub/getinformation/store', { params: { sto_ID: user_ID.value } });
-      image.value='http://localhost:5000\\'+storeResponse.data.sto_licenseImg;
+      image.value='https://food-bank.obs.cn-east-3.myhuaweicloud.com\\'+storeResponse.data.sto_licenseImg;
       if (storeResponse.status === 200) {
           Object.assign(userInfo.value, storeResponse.data);
           const storePicResponse = await axios.get('/api/pub/getinformation/storeimg', { params: { sto_ID: user_ID.value } });
-          storePictures.value = storePicResponse.data.imageURL.map(pic => 'http://localhost:5000\\' + pic);
+          console.log("picAddress"+storePicResponse.data[0].imgURL)
+          storePictures.value = storePicResponse.data.map(pic => 'https://food-bank.obs.cn-east-3.myhuaweicloud.com\\' + pic.imgURL);
       } else {
+          console.log("获取图片错误")
           console.error(`Error: HTTP status code ${storeResponse.status}`);
       }
     }
