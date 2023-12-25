@@ -39,7 +39,7 @@ public class StoreModifyController {
             @RequestParam("sto_name") String sto_name,
             @RequestParam("categories") String[] categories,
             @RequestParam("sto_licenseImg") MultipartFile sto_licenseImg,
-            @RequestParam("sto_picture") MultipartFile sto_picture) {
+            @RequestParam("sto_picture") MultipartFile[] sto_picture) {
         StoreModifyRequestDTO request = new StoreModifyRequestDTO();
         request.setCategories(categories);
         request.setSto_ID(sto_ID);
@@ -49,7 +49,7 @@ public class StoreModifyController {
         request.setStoPicture(sto_picture);
 
         System.out.println(request.getStoLicenseImg().getSize());
-        System.out.println(request.getStoPicture().getSize());
+        System.out.println(request.getStoPicture().length);
         StoreModifyResponseDTO response = service.storeModify(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }

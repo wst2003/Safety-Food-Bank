@@ -104,10 +104,12 @@ public class CustomerModifyService {
 
         CustomerEntity exists = customerModifyRepository.
                 findById(Integer.valueOf(request.getCus_ID())).orElseThrow();
-
-        exists.setCusPaypassword(SecurityUtils.encodePassword(customer.getCusPaypassword()));  // encode
-        exists.setCusNickname(customer.getCusNickname());
-        exists.setCusNotes(customer.getCusNotes());
+        if(!customer.getCusPaypassword().isEmpty())
+            exists.setCusPaypassword(SecurityUtils.encodePassword(customer.getCusPaypassword()));  // encode
+        if(!customer.getCusNickname().isEmpty())
+            exists.setCusNickname(customer.getCusNickname());
+        if(!customer.getCusNotes().isEmpty())
+            exists.setCusNotes(customer.getCusNotes());
 
         CustomerEntity update = customerModifyRepository.save(exists);
         Iterable<CustomerLoveEntity> update_loves = customerLoveModifyRepository.saveAll(loves);

@@ -48,9 +48,12 @@ public class UserModifyService {
 
         UsersEntity user = userModifyRequestMapper.requestToEntity(request);
         UsersEntity exists = userModifyRepository.findById(Integer.valueOf(request.getUser_ID())).orElseThrow();
-        exists.setUserPhone(user.getUserPhone());
-        exists.setUserPassword(SecurityUtils.encodePassword(user.getUserPassword()));  // encode
-        exists.setUserAddress(user.getUserAddress());
+        if(!user.getUserPhone().isEmpty())
+            exists.setUserPhone(user.getUserPhone());
+        if(!user.getUserPassword().isEmpty())
+            exists.setUserPassword(SecurityUtils.encodePassword(user.getUserPassword()));  // encode
+        if(!user.getUserAddress().isEmpty())
+            exists.setUserAddress(user.getUserAddress());
         UsersEntity update = userModifyRepository.save(exists);
 
         response.setMessage("success");

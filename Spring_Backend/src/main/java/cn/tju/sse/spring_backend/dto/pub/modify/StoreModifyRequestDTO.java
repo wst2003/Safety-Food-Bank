@@ -18,5 +18,5 @@ public class StoreModifyRequestDTO {
     private String sto_introduction;
     private String[] categories;
     private MultipartFile stoLicenseImg;
-    private MultipartFile stoPicture;
+    private MultipartFile[] stoPicture;
 }

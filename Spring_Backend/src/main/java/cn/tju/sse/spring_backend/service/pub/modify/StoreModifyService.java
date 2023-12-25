@@ -12,11 +12,14 @@ import cn.tju.sse.spring_backend.repository.pub.modify.CommoditiesCategoriesRepo
 import cn.tju.sse.spring_backend.repository.pub.modify.StoreCategoriesModifyRepository;
 import cn.tju.sse.spring_backend.repository.pub.modify.StoreImageModifyRepository;
 import cn.tju.sse.spring_backend.repository.pub.modify.StoreModifyRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -84,6 +87,7 @@ public class StoreModifyService {
      * @see StoreModifyRequestDTO
      * @see StoreModifyResponseDTO
      */
+    @Transactional
     public StoreModifyResponseDTO storeModify(StoreModifyRequestDTO request){
         StoreModifyResponseDTO response = new StoreModifyResponseDTO();
 
@@ -102,6 +106,12 @@ public class StoreModifyService {
             return response;
         }
 
+        if(request.getSto_name().isEmpty())
+            request.setSto_name(exists.getStoName());
+
+        if(request.getSto_introduction().isEmpty())
+            request.setSto_introduction(exists.getStoIntroduction());
+
         Iterable<StoreCategoriesEntity> categories =
                 List.of(storeModifyRequestMapper.requestToCategoryEntities(request));
 
@@ -112,48 +122,55 @@ public class StoreModifyService {
 
         // set simple attribute
         StoreEntity store = storeModifyRequestMapper.requestToStoreEntity(request);
-        exists.setStoName(store.getStoName());
-        exists.setStoIntroduction(store.getStoIntroduction());
+
+        if(store.getStoName() != null)
+            exists.setStoName(store.getStoName());
+        if(store.getStoIntroduction() != null)
+            exists.setStoIntroduction(store.getStoIntroduction());
 
         // process license
         // if there is a license, delete it
-        String deleteLicense = Paths.get(exists.getStoLicenseimg()).getFileName().toString();
-        boolean originalLicenseExists = ObsOperationTool.isObjectPathExist(LICENSE_PATH + "/" + deleteLicense);
-        if(originalLicenseExists){
-            boolean del =  ObsOperationTool.deleteObject(LICENSE_PATH, deleteLicense, false);
-            if(!del){
-                System.out.println("original license delete failed");
+        if(!request.getStoLicenseImg().isEmpty()){
+            String deleteLicense = Paths.get(exists.getStoLicenseimg()).getFileName().toString();
+            boolean originalLicenseExists = ObsOperationTool.isObjectPathExist(LICENSE_PATH + "/" + deleteLicense);
+            if(originalLicenseExists){
+                boolean del =  ObsOperationTool.deleteObject(LICENSE_PATH, deleteLicense, false);
+                if(!del){
+                    System.out.println("original license delete failed");
+                }
+            }
+            else
+                System.out.println("original license " + LICENSE_PATH + "/" + deleteLicense +  " not exists");
+            // update license path
+            String licenseName = store.getStoId() + "_license.jpg";
+            exists.setStoLicenseimg(LICENSE_PATH + "/" +licenseName);
+            // save store
+            try {
+                ObsOperationTool.uploadInputStream(LICENSE_PATH, licenseName, request.getStoLicenseImg().getInputStream());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
         }
-        else
-            System.out.println("original license " + LICENSE_PATH + "/" + deleteLicense +  " not exists");
-        // update license path
-        String licenseName = store.getStoId() + "_license.jpg";
-        exists.setStoLicenseimg("licenses/"+licenseName);
-
-
         // set new image path
-        StoreimageEntity ImageEntity = new StoreimageEntity();
-        ImageEntity.setStoId(Integer.parseInt(request.getSto_ID()));
-        String imageName = store.getStoId() + "_picture_" + request.getStoPicture().getOriginalFilename();
-        ImageEntity.setStoImage("store_image/"+imageName);
-
-        // save store
-        try {
-            ObsOperationTool.uploadInputStream(LICENSE_PATH, licenseName, request.getStoLicenseImg().getInputStream());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        List<StoreimageEntity> ImageEntities = new ArrayList<>();
+        for (MultipartFile image : request.getStoPicture()) {
+            if (image.isEmpty())
+                continue;
+            StoreimageEntity ImageEntity = new StoreimageEntity();
+            ImageEntity.setStoId(Integer.parseInt(request.getSto_ID()));
+            String imageName = store.getStoId() + "_picture_" + image.getOriginalFilename();
+            ImageEntity.setStoImage(IMAGE_PATH + "/" + imageName);
+            // save image
+            try {
+                ObsOperationTool.uploadInputStream(IMAGE_PATH, imageName, image.getInputStream());
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            ImageEntities.addLast(ImageEntity);
         }
+
         storeModifyRepository.save(exists);
-
-        // save image
-        try {
-            ObsOperationTool.uploadInputStream(IMAGE_PATH, imageName, request.getStoPicture().getInputStream());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        storeImageModifyRepository.save(ImageEntity);
-
+        storeImageModifyRepository.saveAll(ImageEntities);
         // save categories
         storeCategoriesModifyRepository.saveAll(categories);
 

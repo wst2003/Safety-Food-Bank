@@ -6,6 +6,7 @@ import cn.tju.sse.spring_backend.dto.cus.commodity.mapper.CommodityShoppingCartR
 import cn.tju.sse.spring_backend.model.*;
 import cn.tju.sse.spring_backend.repository.cus.commodity.*;
 
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,6 +43,7 @@ public class CommodityShoppingCartService {
      * @see CommodityShoppingCartResponseDTO
      * @see CommodityShoppingCartRequestDTO
      */
+    @Transactional
     public CommodityShoppingCartResponseDTO shoppingCart(CommodityShoppingCartRequestDTO requestDTO){
         int cusId = requestDTO.getCus_id();
         Integer[] com_id_arr = requestDTO.getCom_id_arr();
