@@ -253,9 +253,9 @@ onMounted(async () => {
     // 获取已有的商家图片
   const imgResponse = await axios.get('/api/pub/getinformation/storeimg', { params: { sto_ID: sto_ID } });
   if (imgResponse.status === 200) {
-    storedImages.value = imgResponse.data.imageURL.map(pic => ({
-      fullUrl: 'http://localhost:5000\\' + pic,
-      relativePath: pic
+    storedImages.value = imgResponse.data.map(pic => ({
+      fullUrl: 'https://food-bank.obs.cn-east-3.myhuaweicloud.com\\' + pic.imgURL,
+      relativePath: pic.imgURL
     }));
     console.log(storedImages.value);
   } else {
@@ -266,6 +266,7 @@ onMounted(async () => {
   const response_categoty = await axios.get('/api/pub/category/getcategories');
     if (response_categoty.status === 200) {
       categories.value = response_categoty.data.categorylist;
+      console.log("获取商品类别成功")
     } else {
       console.error(`Error: HTTP status code ${response_categoty.status}`);
     }
@@ -282,7 +283,7 @@ const deleteStoredImage = async (imageIndex) => {
         sto_ID: basicInfo.value.user_ID
       }
     });
-
+    console.log(response.data.message)
     if (response.status === 200 && response.data.message === 'success') {
       // 删除图片在storedImages中的引用
       storedImages.value.splice(imageIndex, 1);
@@ -345,14 +346,16 @@ const modifyUser = async () => {
       });
 
     const formData = new FormData();
-
+    
+    var emptyBlob = new Blob([]);
+    formData.append('sto_licenseImg',emptyBlob)
     fileList.value.forEach((file) => {
-        formData.append('sto_licenseImg', file.raw); // 将文件添加到FormData中
+        formData.set('sto_licenseImg', file.raw); // 将文件添加到FormData中
     });
 
-
+    formData.append('sto_picture',emptyBlob)
     fileList1.value.forEach((file) => {
-        formData.append('sto_picture', file.raw); // 将文件添加到FormData中
+        formData.set('sto_picture', emptyBlob); // 将文件添加到FormData中
     });
 
 

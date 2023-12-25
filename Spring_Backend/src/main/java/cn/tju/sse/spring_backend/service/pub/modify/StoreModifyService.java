@@ -129,14 +129,14 @@ public class StoreModifyService {
             System.out.println("original license " + LICENSE_PATH + "/" + deleteLicense +  " not exists");
         // update license path
         String licenseName = store.getStoId() + "_license.jpg";
-        exists.setStoLicenseimg(licenseName);
+        exists.setStoLicenseimg("licenses/"+licenseName);
 
 
         // set new image path
         StoreimageEntity ImageEntity = new StoreimageEntity();
         ImageEntity.setStoId(Integer.parseInt(request.getSto_ID()));
         String imageName = store.getStoId() + "_picture_" + request.getStoPicture().getOriginalFilename();
-        ImageEntity.setStoImage(imageName);
+        ImageEntity.setStoImage("store_image/"+imageName);
 
         // save store
         try {

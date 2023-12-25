@@ -16,7 +16,7 @@ public class DelStoreImgService {
 
         Integer successNum=delStoreImgRepository.deleteByStoIdAndAndStoImage(Integer.parseInt(delStoreImgRequestDTO.getSto_ID()), delStoreImgRequestDTO.getUrl());
         if(successNum>0){
-            responseDTO.setMessage("删除成功");
+            responseDTO.setMessage("success");
             System.out.println("删除成功");
         }else {
             responseDTO.setMessage("删除失败");

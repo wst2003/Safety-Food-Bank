@@ -33,12 +33,11 @@ public class UserLoginService {
         }
         return userLoginResponseDTO;
     }
-    private UserLoginResponseDTO CodeLogin(String id, String password){
+    private UserLoginResponseDTO CodeLogin(String phoneNumber, String password){
         UserLoginResponseDTO userLoginResponseDTO;
-        int ID=Integer.parseInt(id);
 
         //检查用户是否存在
-        if(!userRegisterRepository.existsById(ID)){
+        if(!userRegisterRepository.existsUsersEntityByUserPhone(phoneNumber)){
             userLoginResponseDTO=new UserLoginResponseDTO();
             userLoginResponseDTO.setMessage("用户不存在");
             userLoginResponseDTO.setUser_type("");
@@ -47,7 +46,7 @@ public class UserLoginService {
         }
 
         //获取用户信息
-        Optional<UsersEntity> usersEntity = userRegisterRepository.findById(ID);
+        Optional<UsersEntity> usersEntity = Optional.ofNullable(userRegisterRepository.findUsersEntitiesByUserPhone(phoneNumber));
         userLoginResponseDTO = DealWithLoginInfo(usersEntity.get(),password,true);
         return userLoginResponseDTO;
     }
