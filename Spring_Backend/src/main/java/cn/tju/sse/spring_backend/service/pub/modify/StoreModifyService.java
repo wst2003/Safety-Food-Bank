@@ -153,9 +153,12 @@ public class StoreModifyService {
         }
         // set new image path
         List<StoreimageEntity> ImageEntities = new ArrayList<>();
+        System.out.println("ImageEntities"+request.getStoPicture().length);
         for (MultipartFile image : request.getStoPicture()) {
-            if (image.isEmpty())
+            if (image.isEmpty()) {
+                System.out.println("It is empty");
                 continue;
+            }
             StoreimageEntity ImageEntity = new StoreimageEntity();
             ImageEntity.setStoId(Integer.parseInt(request.getSto_ID()));
             String imageName = store.getStoId() + "_picture_" + image.getOriginalFilename();

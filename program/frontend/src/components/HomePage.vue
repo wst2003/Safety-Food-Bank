@@ -82,6 +82,7 @@ import { ElMessageBox, Action, ElMessage } from 'element-plus';
           }
           })
           .then(response=>{
+            console.log(response.data)
             const message=response.data.message==="success"?"success":"退出登录失败"
             ElMessageBox.alert(response.data.message, message, {
                   confirmButtonText: 'OK',
