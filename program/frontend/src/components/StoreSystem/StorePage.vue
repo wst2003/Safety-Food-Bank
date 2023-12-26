@@ -92,10 +92,10 @@
           <el-icon><CircleClose /></el-icon>
           <span>已退款订单</span>
         </el-menu-item>
-        <el-menu-item @click="viewChatInfo" index="1-4-1">
-          <el-icon><Comment /></el-icon>
-          <span>聊天入口</span>
-        </el-menu-item>
+<!--        <el-menu-item @click="viewChatInfo" index="1-4-1">-->
+<!--          <el-icon><Comment /></el-icon>-->
+<!--          <span>聊天入口</span>-->
+<!--        </el-menu-item>-->
       </el-menu>
         </el-menu>
 
