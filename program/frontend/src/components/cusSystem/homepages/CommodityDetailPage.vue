@@ -224,7 +224,7 @@
                   </el-tooltip>
                 </div>
                 <div class="right-buttons">
-                  <el-button style="background-color: #e5f9ff;color: #000099;" @click="goToChat">咨询商家</el-button>
+                  <!-- <el-button style="background-color: #e5f9ff;color: #000099;" @click="goToChat">咨询商家</el-button> -->
 
                   <el-button style="background-color: #e5e5ff;color: #000099" @click="toStore">转到商家</el-button>
                   <el-button  type="danger" @click="complain_com">投诉</el-button>

@@ -7,7 +7,7 @@
         <span>{{ sto_name }}</span>
       </div>
       <div class="header-right">
-      <el-button type="danger" @click="goToChat">聊天</el-button>
+      <!-- <el-button type="danger" @click="goToChat">聊天</el-button> -->
       <el-button type="danger"  plain @click="goToHome">回到主页</el-button>
     </div>
       </el-header>
