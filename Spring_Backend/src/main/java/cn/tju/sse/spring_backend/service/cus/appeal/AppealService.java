@@ -93,7 +93,7 @@ public class AppealService {
 
                 ScreenshotEntity screenshotEntity=new ScreenshotEntity();
                 screenshotEntity.setAppId(appeal_id);
-                screenshotEntity.setSctImage(appeal_id_path+"/"+fileName);
+                screenshotEntity.setSctImage(directoryPath+"/"+appeal_id_path+"/"+fileName);
                 screenshotEntity=screenshotRepository.save(screenshotEntity);
                 if(screenshotEntity==null){
                     throw new RuntimeException();
