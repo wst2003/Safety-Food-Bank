@@ -98,7 +98,7 @@ h1, h2 {
 }
 
 .total-layout {
-  background-image: url('../assets/login.gif'); /* Replace with your image path  register.jpg */
+  background-image: url('../assets/storage.jpg'); /* Replace with your image path  register.jpg */
   background-size: cover;
   background-position: center center;
   min-height: 100vh;

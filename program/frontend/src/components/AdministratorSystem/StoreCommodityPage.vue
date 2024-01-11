@@ -413,7 +413,7 @@
         // router.push('/view');
         console.log(goodsList.value[index].com_id);
         router.push({
-          path: '/updateCommodity',
+          path: '/updatecommodity',
           query:{
               com_id:goodsList.value[index].com_id,
               sto_id:sto_id.value
@@ -518,7 +518,7 @@
   }
   const noticeUpload=()=>{
     dialogVisible.value = false;
-    axios.post('api/sto/UpdateCommodity/delcommodity?COM_ID='+goodsList.value[idx.value].com_id)
+    axios.post('api/sto/updatecommodity/delcommodity?COM_ID='+goodsList.value[idx.value].com_id)
           .then(response=>{
             console.log(response);
             ElNotification.success({
